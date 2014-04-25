@@ -8,7 +8,7 @@
 		<div class="panel panel-default" data-ng-repeat="destination in destinations | filter:filter.region | orderBy:'region'">
 			<div class="panel-heading">
 				<h4 class="panel-title well">
-					<a data-toggle="collapse" data-parent="#accordion" href='/#{{ destination._id }}'>{{ destination.location }}</a>
+					<a data-toggle="collapse" data-parent="#accordion" href='/places/#{{ destination._id }}'>{{ destination.location }}</a>
 				</h4>
 			</div>
 			<div id="{{ destination._id }}" class="panel-collapse collapse in">
