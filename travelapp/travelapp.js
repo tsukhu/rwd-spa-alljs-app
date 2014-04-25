@@ -16,18 +16,6 @@ app.config(function ($routeProvider) {
                 controller: 'DestinationsController',
                 templateUrl: '/travelapp/partials/destinations.html'
             })
-        //Define a route that has a route parameter in it (:customerID)
-        .when('/customerorders/:customerID',
-            {
-                controller: 'CustomerOrdersController',
-                templateUrl: '/travelapp/partials/customerOrders.html'
-            })
-        //Define a route that has a route parameter in it (:customerID)
-        .when('/packages',
-            {
-                controller: 'OrdersController',
-                templateUrl: '/travelapp/partials/orders.html'
-            })
         .otherwise({ redirectTo: '/' });
 });
 
