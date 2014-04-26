@@ -1,5 +1,5 @@
 ﻿
-  //This controller retrieves data from the customersService and associates it with the $scope
+//This controller retrieves data from the RESTful destinations API and associates it with the $scope
 //The $scope is ultimately bound to the customers view
 app.controller('DestinationsController', ['$scope', '$http', 'travelService', function ($scope,$http, travelService) {
 
@@ -18,8 +18,9 @@ app.controller('DestinationsController', ['$scope', '$http', 'travelService', fu
 
 }]);
 
-
-app.controller('NavbarController', function ($scope, $location) {
+// This controller for the menu actions which checked if the getClass is true
+// to initiate the route
+app.controller('MenuController', function ($scope, $location) {
     $scope.getClass = function (path) {
         if ($location.path().substr(0, path.length) == path) {
             return true

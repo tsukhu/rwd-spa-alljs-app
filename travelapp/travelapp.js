@@ -8,7 +8,7 @@ app.config(function ($routeProvider) {
     $routeProvider
 		.when('/',
             {
-                controller: 'NavbarController',
+                controller: 'MenuController',
                 templateUrl: '/travelapp/partials/landingPage.html'
             })
         .when('/places',
