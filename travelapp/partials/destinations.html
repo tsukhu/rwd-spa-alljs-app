@@ -1,12 +1,17 @@
 <div class="container">
-	<h2>Destinations</h2>
-	Region: <br /> <input type="text" data-ng-model="filter.region"
-		placeholder="region" /> <br />
-	<div class="accordion" id="accordion">
-		<div class="accordion-group"
+	<div>
+		<h2>Destinations</h2>
+		Region: <br /> <input type="text" class="form-control" data-ng-model="filter.region"
+		placeholder="region" />
+	</div>
+	<br>
+
+		
+	<div class="panel-group" id="accordion">
+		<div class="panel panel-primary"
 			data-ng-repeat="destination in destinations | filter:filter.region | orderBy:'region'">
-			<div class="accordion-heading">
-				<div class="accordion-toggle">
+			<div class="panel-heading">
+				<div class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
 						href='/places/#{{ destination._id }}'>{{ destination.location
 						}}</a>

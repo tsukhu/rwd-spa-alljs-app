@@ -4,139 +4,123 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>India Tourism</title>
-<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="css/bootstrap.min.css">
 <link rel="stylesheet" type="text/css"
-	href="css/bootstrap-responsive.css">
+	href="css/bootstrap-theme.min.css">
+
+<link rel="stylesheet" type="text/css"
+	href="css/bootstrap-responsive.min.css">
 <link rel="stylesheet" type="text/css" href="css/social-buttons.css">
-<!-- 	<link rel="stylesheet" type="text/css" href="css/font-awesome.css"> -->
-<link rel="stylesheet" type="text/css" href="css/customstyle.css">
+<link rel="stylesheet" type="text/css"
+	href="css/customstyle.css">
+
+
+
 </head>
 <body>
-	<div class="container">
-		<!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
 
-		<script src="js/angular.js"></script>
-		<script src="js/angular-route.js"></script>
-		<script src="js/jquery-1.10.1.js"></script>
-		<!--	<script src="js/jquery.nav.js"></script> -->
-		<script src="js/bootstrap.js"></script>
-		<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
-		<script src="js/jquery.localScroll.js"></script>
-		<script src="js/jquery.easing.compatibility.js"></script>
-		<!--	<script src="js/ui-bootstrap-tpls-0.10.0.min.js"></script> -->
+	<!-- Vendor Libs: jQuery only used for Bootstrap functionality -->
+
+	<script src="js/angular.js"></script>
+	<script src="js/angular-route.js"></script>
+	<script src="js/jquery-1.10.1.js"></script>
+	<script src="js/bootstrap.js"></script>
+	<script type="text/javascript" src="js/jquery.scrollTo.min.js"></script>
+	<script src="js/jquery.localScroll.js"></script>
+	<script src="js/jquery.easing.compatibility.js"></script>
 
 
 
-		<div class="navbar navbar-fixed-top">
-			<div class="navbar-inner">
-				<div class="container">
-					<a class="btn btn-navbar" data-toggle="collapse"
-						data-target=".nav-collapse"> <span class="icon-th-list"></span></a>
-					<a class="brand " href="#"> <img src="img/travel.jpg"
-						alt="logo"> India Tourism
-					</a>
-					<div class="nav-collapse nav-pills collapse"
-						data-ng-controller="MenuController">
-						<ul class="nav navbar-nav pull-right">
-							<li class="dropdown"><a href="" class="dropdown-toggle"
-								data-toggle="dropdown">Places <b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li ng-class="{active:getClass('/placesAll')}"><a href="#/placesAll">All Destinations</a></li>
-									<li ng-class="{active:getClass('/groupedDestinations')}"><a href="#/groupedDestinations">Grouped Destinations</a></li>
-								<!-- 	<li><a href="#">Another action</a></li>
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse"
+					data-target=".navbar-collapse">
+					<span class="sr-only">Toggle navigation</span> <span
+						class="icon-bar"></span> <span class="icon-bar"></span> <span
+						class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">India Tourism</a>
+			</div>
+			<div class="collapse navbar-collapse">
+				<ul class="nav navbar-nav">
+					<li class="dropdown"><a href="" class="dropdown-toggle"
+						data-toggle="dropdown">Places <b class="caret"></b></a>
+						<ul class="dropdown-menu">
+							<li ng-class="{active:getClass('/placesAll')}"><a
+								href="#/placesAll">All Destinations</a></li>
+							<li ng-class="{active:getClass('/groupedDestinations')}"><a
+								href="#/groupedDestinations">Grouped Destinations</a></li>
+							<!-- 	<li><a href="#">Another action</a></li>
 									<li><a href="#">Something else here</a></li>
 									<li class="divider"></li>
 									<li><a href="#">Separated link</a></li>
 									<li class="divider"></li>
 									<li><a href="#">One more separated link</a></li> -->
-								</ul></li>
-							
-							<li data-ng-class="{'active':getClass('/orders')}"><a
-								href="#/packages">Travel Packages</a></li>
-							<li><a href="#">About Me</a></li>
-						</ul>
-					</div>
-					<!-- MenuController -->
-				</div>
-				<!-- container -->
+						</ul></li>
+
+					<li data-ng-class="{'active':getClass('/orders')}"><a
+						href="#/packages">Travel Packages</a></li>
+					<li><a href="#">About Me</a></li>
+				</ul>
 			</div>
-			<!-- navbar-inner -->
+			<!--/.nav-collapse -->
 		</div>
-		<!-- navbar -->
+	</div>
 
-		<div class="container">
-			<br>
-			<br>
-			<br>
-			<div data-ng-view=""></div>
-		</div>
-		<div class="footer">
-			<div class="container">
-				<p class="muted credit"></p>
-				<div class="row-fluid">
-					<div class="span4">
-						<p>
-							&copy; 2014 <a href="#">TKS</a>
-						</p>
-					</div>
-					<div class="span4 text-center">
-						<ul class="nav inline">
-							<li><a href="#">About Us</a></li>
-							<li><a href="#">Contact Us</a></li>
-							<button class="btn btn-small btn-linkedin">
-								<i class="fa fa-linkedin"></i>
-							</button>
-							<button class="btn btn-small btn-pinterest">
-								<i class="fa fa-pinterest"></i>
-							</button>
-							<button class="btn btn-small btn-twitter">
-								<i class="fa fa-twitter"></i>
-							</button>
-							<button class="btn btn-small btn-facebook">
-								<i class="fa fa-facebook"></i>
-							</button>
-						</ul>
-					</div>
-					<div class="span4 text-right">
-						<p>Powered By Twitter BootStrap 2.3.2</p>
-					</div>
+
+	<div class="container">
+		<div class="span12" data-ng-view="" style="margin-top: 60px;margin-bottom: 60px"></div>
+	</div>
+
+	<div id="footer" class="container">
+
+		<nav class="navbar navbar-default navbar-fixed-bottom">
+			<div class="navbar-inner navbar-content-center">
+				<div class="span12">
+					<ul class="nav nav-pills">
+						<li><a href="http://in.linkedin.com/in/tsukhu/">Tarun Sukhu</a></li>
+						<li><a href="#">About Us</a></li>
+						<li><a href="">&copy; 2014</a></li>
+					</ul>
 				</div>
-
 			</div>
-		</div>
+		</nav>
+	</div>
 
-		<script>
-			$.noConflict();
-			jQuery(document).ready(function($) {
-				// Code that uses jQuery's $ can follow here.
-				//		alert("hello");
-				$('.carousel').carousel({
-					interval : 3000
-				});
-				/**
-				 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
-				 * @see http://flesler.demos.com/jquery/scrollTo/
-				 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
-				 */
+	<script>
+		$.noConflict();
+		jQuery(document).ready(function($) {
+			// Code that uses jQuery's $ can follow here.
+			//		alert("hello");
+			//	$('.carousel').carousel({
+			//		interval : 3000
+			//	});
 
-				// The default axis is 'y', but in this demo, I want to scroll both
-				// You can modify any default like this
-				$.localScroll.defaults.axis = 'y'; //'xy';
+			/**
+			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
+			 * @see http://flesler.demos.com/jquery/scrollTo/
+			 * You can use EVERY single setting of jQuery.ScrollTo, in the settings hash you send to jQuery.LocalScroll.
+			 */
 
-				/**
-				 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
-				 * also affect the >> and << links. I want every link in the page to scroll.
-				 */
-				$('#nav').localScroll({
-					duration : 3000,
-					easing : "swing"
-				});
+			// The default axis is 'y', but in this demo, I want to scroll both
+			// You can modify any default like this
+			$.localScroll.defaults.axis = 'y'; //'xy';
+
+			/**
+			 * NOTE: I use $.localScroll instead of $('#navigation').localScroll() so I
+			 * also affect the >> and << links. I want every link in the page to scroll.
+			 */
+			$('#nav').localScroll({
+				duration : 3000,
+				easing : "swing"
 			});
-		</script>
+		});
+	</script>
 
-		<!-- App libs -->
-		<script src="travelapp/travelapp.js"></script>
-		<script src="travelapp/services/travelService.js"></script>
-		<script src="travelapp/controllers/controllers.js"></script>
+	<!-- App libs -->
+	<script src="travelapp/travelapp.js"></script>
+	<script src="travelapp/services/travelService.js"></script>
+	<script src="travelapp/controllers/controllers.js"></script>
 </body>
 </html>
