@@ -1,7 +1,7 @@
 rwd-spa-alljs-app
 =================
 
-Responsive Single Page Application using an end to end Java Script stack
+<h2>Responsive Single Page Application using an end to end Java Script stack</h2>
 <br>
 This is an attempt to build a SPA using an all Java Script stack. 
 <br>
@@ -12,7 +12,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 5) AngularJS will be used to build the SPA with Bootstrap providing the UI components. <br>
 <br>
 <br>
-Added so far<br>
+<h3>Added so far</h3><br>
 1) Basic SPA infrastructure for Node.js/AngularJS/Bootstrap/Express/Connect/MongoDB<br>
 2) Initial set of travel APIs (CRUD) for all destinations in India using MongoDB for persistence.<br>
 3) A Bootstrap Carousel for India Travel Destinations (Need improvement :-))<br>
