@@ -15,7 +15,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 <h4>Added so far</h4><br>
 1) Basic SPA infrastructure for Node.js/AngularJS/Bootstrap/Express/Connect/MongoDB<br>
 2) Initial set of travel APIs (CRUD) for all destinations in India using MongoDB for persistence.<br>
-3) A Bootstrap Carousel for India Travel Destinations (Need improvement :-))<br>
+3) A Bootstrap Carousel for India Travel Destinations (Needs improvement :-))<br>
 4) Accordian view of all India Destinations sourced from the travel APIs with filters<br>
 5) Group By view of all India Destinations grouped by India Region and State<br>
 <br>
