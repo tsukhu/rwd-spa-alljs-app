@@ -1,0 +1,31 @@
+<div class="container">
+ <h1>
+        Grouping Nested ngRepeat Lists In AngularJS
+    </h1>
+ 
+    <p>
+        Group by:
+        <a ng-click="groupBy( 'region' )">Region</a> -
+        <a ng-click="groupBy( 'state' )">State</a>
+    </p>
+ 
+    <!-- BEGIN: Outer ngRepeat. -->
+    <div ng-repeat="group in groups">
+ 
+        <h2>
+            {{ group.region }}
+        </h2>
+ 				{{ group.label }}
+        <ul>
+            <!-- BEGIN: Inner ngRepeat. -->
+            <li ng-repeat="destination in group.destinations">
+ 
+                {{ destination.location }}
+ 
+            </li>
+            <!-- END: Inner ngRepeat. -->
+        </ul>
+ 
+    </div>
+    <!-- END: Outer ngRepeat. -->
+</div>

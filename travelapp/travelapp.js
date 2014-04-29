@@ -11,10 +11,15 @@ app.config(function ($routeProvider) {
                 controller: 'MenuController',
                 templateUrl: '/travelapp/partials/landingPage.html'
             })
-        .when('/places',
+        .when('/placesAll',
             {
                 controller: 'DestinationsController',
                 templateUrl: '/travelapp/partials/destinations.html'
+            })
+         .when('/groupedDestinations',
+            {
+                controller: 'GroupedDestinationsController',
+                templateUrl: '/travelapp/partials/groupedDestinations.html'
             })
         .otherwise({ redirectTo: '/' });
 });
