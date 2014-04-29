@@ -11,6 +11,10 @@ This is an attempt to build a SPA using an all Java Script stack.
 4) RESTful CRUD APIs will be exposed on Node.js server using the  MongoDB driver module <br>
 5) AngularJS will be used to build the SPA with Bootstrap providing the UI components. <br>
 <br>
+<h4>Tools Used</h4><br>
+1) NodeEclipse Plugin for Kepler (http://www.nodeclipse.org/updates/)<br>
+
+
 <br>
 <h4>Added so far</h4><br>
 1) Basic SPA infrastructure for Node.js/AngularJS/Bootstrap/Express/Connect/MongoDB<br>
