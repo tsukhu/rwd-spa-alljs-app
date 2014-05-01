@@ -11,21 +11,32 @@
 			<div class="panel-heading">
 				<div class="panel-title">
 					<a data-toggle="collapse" data-parent="#accordion"
-						href='/places/#{{ destination._id }}'>{{ destination.location}}</a>
+						href='/places/#{{ destination._id }}'>{{
+						destination.location}}</a>
 				</div>
 			</div>
 			<div id="{{ destination._id }}" class="accordion-body collapse">
 				<div class="accordion-inner">
 					<div class="media">
-						<a class="pull-left" > 
-							<img class="media-object" src="pics/{{destination.img}}" alt="{{destination.img}}">
+						<a class="pull-left"> <img class="media-object"
+							src="pics/{{destination.img}}" alt="{{destination.img}}">
 						</a>
 						<div class="media-body">
-							<h4 class="media-heading">{{ destination.location }}</h4>
-							<span class="label label-default">{{ destination.country }}</span>
-							<span class="label label-success">{{ destination.state }}</span>
-							<span class="label label-info">{{ destination.region }}</span>
-							<p>{{ destination.description }}</p>
+							<div class="col-xs-12 col-sm-6 col-lg-8">
+								<h4 class="media-heading">{{ destination.location }}</h4>
+								<span class="label label-default">{{ destination.country }}</span> 
+								<span class="label label-success">{{ destination.state }}</span> 
+								<span class="label label-info">{{ destination.region }}</span>
+								<p>{{ destination.description }}</p>
+							</div>
+							<div class="col-xs-6 col-lg-4">
+								<!-- 
+								<button ng-click="getWeather('{{ destination._id }}','{{ destination.location }},{{ destination.state }},{{ destination.country }}')">Get Weather</button>
+								<p>Weather content will come here</p>
+								<div id="w{{ destination._id }}"></div>
+								<div id="weather"></div> -->
+								<local-weather destination="destination" weather="weather"></local-weather>
+							</div>
 						</div>
 					</div>
 				</div>
