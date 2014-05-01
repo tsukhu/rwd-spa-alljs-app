@@ -17,7 +17,27 @@ app.controller('DestinationsController', [ '$scope', '$http', 'travelService',
 
 				});
 			}
-
+			
+			$scope.getWeather = function(divId,location) {
+				alert("SimpleWeather Called");
+				  jQuery.simpleWeather({
+					    location: 'Austin, TX',
+					    woeid: '',
+					    unit: 'f',
+					    success: function(weather) {
+					      html = '<h2><i class="icon-'+weather.code+'"></i> '+weather.temp+'&deg;'+weather.units.temp+'</h2>';
+					      html += '<ul><li>'+weather.city+', '+weather.region+'</li>';
+					      html += '<li class="currently">'+weather.currently+'</li>';
+					      html += '<li>'+weather.wind.direction+' '+weather.wind.speed+' '+weather.units.speed+'</li></ul>';
+					      alert("#"+divId);
+					      $("#"+divId).html(html);
+					    },
+					    error: function(error) {
+					    	alert("#"+divId);
+					      $("#"+divId).html('<p>'+error+'</p>');
+					    }
+					  });
+			}
 		} ]);
 
 // This controller retrieves data from the RESTful destinations API and

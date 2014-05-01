@@ -1,7 +1,11 @@
 ﻿/// <reference path="../Scripts/angular-1.1.4.js" />
 
 
-var app = angular.module('travelApp', ['ngRoute']);
+var app = angular.module('travelApp', [
+             'ngRoute',
+             'travelApp.directives.localWeather'
+             
+             ]);
 
 //This configures the routes and associates each route with a view and a controller
 app.config(function ($routeProvider) {

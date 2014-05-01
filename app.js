@@ -8,7 +8,7 @@ var express = require('express')
   , user = require('./routes/user')
   , http = require('http')
   , path = require('path');
-
+delete require.cache['./routes/destinations'];
 // Create a web server on port 8080
 connect.createServer(connect.static(__dirname)).listen(8080);
 
@@ -16,7 +16,7 @@ var app = express();
 
 // all environments
 app.configure(function () {
-	app.set('port', process.env.PORT || 3000);
+	app.set('port', process.env.PORT || 4000);
 	//app.set('views', __dirname + '/views');
 	//app.set('view engine', 'jade');
 	app.use(express.favicon());
