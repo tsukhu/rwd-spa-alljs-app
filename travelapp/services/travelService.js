@@ -1,5 +1,6 @@
 ﻿app.service('travelService', function($http) {
 delete $http.defaults.headers.common['X-Requested-With'];
+
 this.getDestinations = function() {
     // $http() returns a $promise that we can add handlers with .then()
     return $http({

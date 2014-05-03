@@ -1,47 +1,59 @@
 
 <div class="container">
-	<div>
-		<h2>Destinations</h2>
-		Region: <br /> <input type="text" class="form-control"
-			data-ng-model="filter.region" placeholder="region" />
+	<div class="page-header well">
+		<h1>
+			Travel Destinations <br>
+			<small>List of all travel destinations with location
+				information and weather</small>
+		</h1>
 	</div>
-	<br>
-	<div class="panel-group" id="accordion">
-		<div class="panel panel-primary"
-			data-ng-repeat="destination in destinations | filter:filter.region | orderBy:'region'">
-			<div class="panel-heading">
-				<div class="panel-title">
-					<a data-toggle="collapse" data-parent="#accordion"
-						href='/places/#{{ destination._id }}'>{{
-						destination.location}}</a>
-				</div>
+	<div class="">
+		<form class="form-inline">
+			<fieldset>
+				<label class="control-label"><strong>Region :</strong></label> <input
+					type="text" class="form-control" data-ng-model="filter.region"
+					placeholder="Enter Region">
+			</fieldset>
+		</form>
+	</div>
+
+<br>
+<div class="panel-group" id="accordion">
+	<div class="panel panel-primary"
+		data-ng-repeat="destination in destinations | filter:filter.region | orderBy:'region'">
+		<div class="panel-heading">
+			<div class="panel-title">
+				<a data-toggle="collapse" data-parent="#accordion"
+					href='/places/#{{ destination._id }}'>{{ destination.location}}</a>
 			</div>
-			<div id="{{ destination._id }}" class="accordion-body collapse">
-				<div class="accordion-inner">
-					<div class="media">
-						<a class="pull-left"> <img class="media-object"
-							src="pics/{{destination.img}}" alt="{{destination.img}}">
-						</a>
-						<div class="media-body">
-							<div class="col-xs-12 col-sm-6 col-lg-8">
-								<h4 class="media-heading">{{ destination.location }}</h4>
-								<span class="label label-default">{{ destination.country }}</span> 
-								<span class="label label-success">{{ destination.state }}</span> 
-								<span class="label label-info">{{ destination.region }}</span>
-								<p>{{ destination.description }}</p>
-							</div>
-							<div class="col-xs-6 col-lg-4">
-								<!-- 
+		</div>
+		<div id="{{ destination._id }}" class="accordion-body collapse">
+			<div class="accordion-inner">
+				<div class="media">
+					<a class="pull-left"> <img class="media-object"
+						src="pics/{{destination.img}}" alt="{{destination.img}}">
+					</a>
+					<div class="media-body">
+						<div class="col-xs-12 col-sm-6 col-lg-8">
+							<h4 class="media-heading">{{ destination.location }}</h4>
+							<span class="label label-default">{{ destination.country
+								}}</span> <span class="label label-success">{{ destination.state
+								}}</span> <span class="label label-info">{{ destination.region
+								}}</span>
+							<p>{{ destination.description }}</p>
+						</div>
+						<div class="col-xs-6 col-lg-4">
+							<!-- 
 								<button ng-click="getWeather('{{ destination._id }}','{{ destination.location }},{{ destination.state }},{{ destination.country }}')">Get Weather</button>
 								<p>Weather content will come here</p>
 								<div id="w{{ destination._id }}"></div>
 								<div id="weather"></div> -->
-								<local-weather destination="destination" weather="weather"></local-weather>
-							</div>
+							<local-weather destination="destination" weather="weather"></local-weather>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+</div>
 </div>

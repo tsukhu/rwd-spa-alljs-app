@@ -1,18 +1,35 @@
 <div class="container">
-	<h2>Grouping Nested ngRepeat Lists In AngularJS</h2>
-	<p>
-		Group by: <a ng-click="groupBy( 'region' )">Region</a> - <a
-			ng-click="groupBy( 'state' )">State</a>
-	</p>
+	<div class="page-header well">
+		<h1>
+			Travel Destinations by Group <br> <small>Grouping Nested
+				ngRepeat Lists In AngularJS. Also using the wonderful badge and list group components of Bootstrap</small>
+		</h1>
+	</div>
+	<div class="">
+		<form class="form-inline">
+			<fieldset>
+				<label class="control-label"><strong>Group By :</strong></label>
+				<div class="btn-group" data-toggle="buttons">
+					<label class="btn btn-primary" ng-click="groupBy( 'region' )"> <input type="radio"
+						name="options" id="option1" > Region
+					</label> <label class="btn btn-primary" ng-click="groupBy( 'state' )"> <input type="radio"
+						name="options" id="option3" > State
+					</label>
+				</div>
+			</fieldset>
+		</form>
+	</div>
 
 	<!-- BEGIN: Outer ngRepeat. -->
 	<div ng-repeat="group in groups">
 
-		<h2>{{ group.region }}</h2>
-		{{ group.label }}
-		<ul>
+		<h3>{{ group.label }}
+		<span class="badge" style="vertical-align:top">{{ group.destinations.length}}</span>
+		</h3>
+		<ul class="list-group">
+		
 			<!-- BEGIN: Inner ngRepeat. -->
-			<li ng-repeat="destination in group.destinations">{{
+			<li class="list-group-item" ng-repeat="destination in group.destinations">{{
 				destination.location }}</li>
 			<!-- END: Inner ngRepeat. -->
 		</ul>
