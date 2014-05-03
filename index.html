@@ -11,8 +11,8 @@
 <link rel="stylesheet" type="text/css"
 	href="css/bootstrap-responsive.min.css">
 <link rel="stylesheet" type="text/css" href="css/social-buttons.css">
-<link rel="stylesheet" type="text/css"
-	href="css/customstyle.css">
+<!-- <link rel="stylesheet" type="text/css"
+	href="css/customstyle.css"> -->
 <!-- <link rel="stylesheet" type="text/css"
 	href="css/jquery.simpleWeather.css"> -->
 
@@ -31,7 +31,7 @@
 	<script src="js/jquery.easing.compatibility.js"></script>
 	<script src="js/jquery.simpleWeather.js"></script>
 	<script src="travelapp/directives/localWeather.js"></script>
-	
+
 
 
 
@@ -94,12 +94,25 @@
 
 	<script>
 		$.noConflict();
+		
+		function equalHeight(group) {    
+			alert("ss");
+		    tallest = 0;    
+		    group.each(function() {       
+		        thisHeight = $(this).height();       
+		        if(thisHeight > tallest) {          
+		            tallest = thisHeight;       
+		        }    
+		    });    
+		    group.each(function() { $(this).height(tallest); });
+		} 
+		
 		jQuery(document).ready(function($) {
 			// Code that uses jQuery's $ can follow here.
 			//		alert("hello");
-			//	$('.carousel').carousel({
-			//		interval : 3000
-			//	});
+				$('.carousel').carousel({
+					interval : 2000
+				});
 
 			/**
 			 * Most jQuery.localScroll's settings, actually belong to jQuery.ScrollTo, check it's demo for an example of each option.
@@ -119,6 +132,9 @@
 				duration : 3000,
 				easing : "swing"
 			});
+			 
+		    // Ensure equal heights on thumbnail boxes
+			// equalHeight($(".thumbnail")); 
 		});
 		
 		

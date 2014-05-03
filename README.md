@@ -23,5 +23,6 @@ This is an attempt to build a SPA using an all Java Script stack.
 4) Accordian view of all India Destinations sourced from the travel APIs with filters<br>
 5) Group By view of all India Destinations grouped by India Region and State.Thanks to a blog by Ben Nadel covering <a href="http://www.bennadel.com/blog/2456-grouping-nested-ngrepeat-lists-in-angularjs.htm">how to implement groupBy in AngularJS using nested ngRepeat</a><br>
 6) Integrated jQuery.simpleWeather and created an AngularJS directive for the same.<br>
+6) Created a landing page with various bootstrap components including thumbnails , wells , panels , jumbotron. <br>
 <br>
 Work in Progress ...
