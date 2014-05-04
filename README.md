@@ -31,4 +31,4 @@ This is an attempt to build a SPA using an all Java Script stack.
 6) Integrated jQuery.simpleWeather and created an AngularJS directive for the same.<br>
 6) Created a landing page with various bootstrap components including thumbnails , wells , panels , jumbotron. <br>
 <br>
-Work in Progress ... Please read the wiki or take a look at the issue tracker for the future roadmap.
+Work in Progress ... Please read the wiki or take a look at the  <a href="https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open"> issue tracker </a>for the future roadmap.
