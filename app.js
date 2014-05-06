@@ -1,30 +1,58 @@
 /**
  * Module dependencies.
  */
-var connect = require('connect');
-var express = require('express')
-  , routes = require('./routes')
-  , destination = require('./routes/destinations')
-  , user = require('./routes/user')
-  , http = require('http')
-  , path = require('path');
+var express = require('express');
+var routes = require('./routes');
+var destination = require('./routes/destinations');
+var user = require('./routes/user');
+var http = require('http');
+var path = require('path');
+
+var mongoose = require('mongoose');
+var passport = require('passport');
+var flash = require('connect-flash');
+
+var routes = require('./routes'); //(app,passport); // load our routes and pass in our app and fully configured passport
+
+// Setup Database config for mongoose
+var configDB = require('./config/userDb.js');
+
+// configuration ===============================================================
+mongoose.connect(configDB.url); // connect to our database
+
+
 delete require.cache['./routes/destinations'];
-// Create a web server on port 8080
-connect.createServer(connect.static(__dirname)).listen(8080);
+
 
 var app = express();
+var allowCrossDomain = function(req, res, next) {
+	  res.header("Access-Control-Allow-Origin", "*");
+	  res.header("Access-Control-Allow-Headers", "X-Requested-With");
+	  next();
+}
+
+require('./config/passport')(passport); // pass passport for configuration
 
 // all environments
 app.configure(function () {
-	app.set('port', process.env.PORT || 4000);
-	//app.set('views', __dirname + '/views');
-	//app.set('view engine', 'jade');
+	app.set('port', process.env.PORT || 3000);
+	app.set('views', __dirname + '/views');
+	app.set('view engine', 'jade');
 	app.use(express.favicon());
-	app.use(express.logger('dev'));   /* 'default', 'short', 'tiny', 'dev' */
-	app.use(express.bodyParser());
+	/* 'default', 'short', 'tiny', 'dev' */
+	app.use(express.logger('dev'));		// log request to console
+	app.use(express.bodyParser());		// provides info on html forms
+	app.use(express.cookieParser());	// read cookies (needed for auth)
 	app.use(express.methodOverride());
+	app.use(allowCrossDomain);
 	app.use(app.router);
 	app.use(express.static(path.join(__dirname, 'public')));
+	
+	// required for passport
+	app.use(express.session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+	app.use(passport.initialize());
+	app.use(passport.session()); // persistent login sessions
+	app.use(flash()); // use connect-flash for flash messages stored in session
 });
 
 

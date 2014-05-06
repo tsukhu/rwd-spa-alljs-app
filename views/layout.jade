@@ -1,7 +1,12 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html(data-ng-app="travelApp")
+	head
+		meta(charset="utf-8")
+		meta(name="viewport",content="width=device-width,initial-scale=1.0")
+		title= title
+		link(rel='stylesheet', type="text/css", href="/css/bootstrap.min.css")
+		link(rel="stylesheet", type="text/css", href="/css/bootstrap-theme.min.css")
+		link(rel="stylesheet", type="text/css", href="/css/bootstrap-responsive.min.css")
+		link(rel="stylesheet", type="text/css", href="/css/social-buttons.css")
+	body
+		block content

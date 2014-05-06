@@ -13,17 +13,17 @@ app.config(function ($routeProvider) {
 		.when('/',
             {
                 controller: 'MenuController',
-                templateUrl: '/travelapp/partials/landingPage.html'
+                templateUrl: 'travelapp/partials/landingPage.html'
             })
         .when('/placesAll',
             {
                 controller: 'DestinationsController',
-                templateUrl: '/travelapp/partials/destinations.html'
+                templateUrl: 'travelapp/partials/destinations.html'
             })
          .when('/groupedDestinations',
             {
                 controller: 'GroupedDestinationsController',
-                templateUrl: '/travelapp/partials/groupedDestinations.html'
+                templateUrl: 'travelapp/partials/groupedDestinations.html'
             })
         .otherwise({ redirectTo: '/' });
 });
