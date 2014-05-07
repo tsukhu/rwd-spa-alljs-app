@@ -132,3 +132,19 @@ app.controller('MenuController', function($scope, $location) {
 		return active;
 	};
 });
+
+app.controller('ProfileController',  [ '$scope', '$http', 'travelService',
+         function($scope, $http, travelService) {
+
+        // I like to have an init() for controllers that need to perform
+        // some initialization. Keeps things in
+        // one place...not required though especially in the simple example
+        // below
+        $scope.user = null;
+		travelService.getProfile().then(function(dataResponse) {
+			$scope.user = dataResponse.data;
+
+		});
+		
+        
+} ]);

@@ -25,6 +25,11 @@ app.config(function ($routeProvider) {
                 controller: 'GroupedDestinationsController',
                 templateUrl: 'travelapp/partials/groupedDestinations.html'
             })
+         .when('/profile',
+            {
+                controller: 'ProfileController',
+                templateUrl: 'travelapp/partials/profile.html'
+            })
         .otherwise({ redirectTo: '/' });
 });
 

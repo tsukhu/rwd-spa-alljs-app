@@ -33,9 +33,25 @@ block content
 								a(href="#/groupedDestinations") Grouped Destinations
 					li(data-ng-class="{'active':getClass('/orders')}")
 						a(href="#/packages") Travel Packages
-					li
-						a(href="#") About Me
+					if (_user)
+						li(ng-class="{active:getClass('#/profile')}") 
+							a(href="#/profile") About Me
+					else
+						li.dropdown
+							a.dropdown-toggle(data-toggle="dropdown") Login
+								b(class="caret")
+							div.dropdown-menu.row-fluid
+								form(action="/login",method="post",style="margin: 0px;padding:5px;",accept-charset="UTF-8")
+									div.form-group
+										label.sr-only(style="padding:5px;") Email
+										input.form-control(type="text",name="email",placeholder="Email")
+									div.form-group
+										label.sr-only(style="padding:5px;") Password
+										input.form-control(type="password",name="password",placeholder="Password")
+									button.btn.btn-warning(type="submit") Login
+											li(ng-class="{active:getClass('/profile')}")
 
+							
 	div.container
 		div.span12(data-ng-view="",style="margin-top: 60px;margin-bottom: 60px")
 

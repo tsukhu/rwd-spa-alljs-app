@@ -10,5 +10,15 @@ this.getDestinations = function() {
         headers: null //{'Authorization': 'Token token=xxxxYYYYZzzz'}
      });
  }
+
+this.getProfile = function() {
+    // $http() returns a $promise that we can add handlers with .then()
+    return $http({
+        method: 'GET',
+        url: 'http://localhost:3000/profiledata',
+        params: null, //'limit=10, sort_by=created:desc',
+        headers: null //{'Authorization': 'Token token=xxxxYYYYZzzz'}
+     });
+ }
 });
 

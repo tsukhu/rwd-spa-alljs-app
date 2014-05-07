@@ -1,0 +1,29 @@
+extends userlayout
+
+block content
+	.container
+		div.page-header.text-center
+			div.container
+				h1
+					span.fa.fa-anchor  Profile Page
+				a.btn.btn-primary.fa.fa-sign-out(href="/logout",style="margin-left: 2px;")
+					span Logout
+				
+				a.btn.btn-primary.fa.fa-home(href="/",style="margin-left: 2px;")
+					span Home
+		div.row-fluid
+			//
+				-- LOCAL INFORMATION --
+			div.col-sm-6
+				div.well
+					h3
+						span.fa.fa-user  Local
+					p
+						strong id: 
+						small #{user._id}
+						br
+						strong email: 
+						small #{user.local.email}
+						br
+						strong password: 
+						small #{user.local.password}
