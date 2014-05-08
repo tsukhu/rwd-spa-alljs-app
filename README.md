@@ -1,7 +1,8 @@
 rwd-spa-alljs-app
 =================
 
-<h3>Responsive Single Page Application using an end to end Java Script stack</h3>
+Responsive Single Page Application using an end to end Java Script stack
+------------------------------------------------------------------------
 <br>
 This is an attempt to build a SPA using an all Java Script stack. 
 <br>
