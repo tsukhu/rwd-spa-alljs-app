@@ -7,7 +7,7 @@ var Server = mongo.Server,
 var CONFIG = require('config').travelapp;
 
 var server = new Server(CONFIG.dbHost, CONFIG.dbPort, {auto_reconnect: CONFIG.autoReconnect});
-db = new Db('destinationsdb', server,{safe:false});
+db = new Db(CONFIG.dbName, server,{safe:false});
  
 db.open(function(err, db) {
     if(!err) {

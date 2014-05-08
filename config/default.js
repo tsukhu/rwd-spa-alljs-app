@@ -18,8 +18,13 @@ module.exports = {
     travelapp: {
       dbName: "destinationsdb",
       dbHost: "localhost",
+      port: 3000,
       dbPort: 27017,
       auto_reconnect: true,
+      secret: 'thisismysecret',
+      viewDir: '/views',
+      publicFolder: 'public',
+      logMode: 'dev', //  'default', 'short', 'tiny', 'dev' 
       userDbUrl: 'mongodb://localhost:27017/userDb'
     }
   }

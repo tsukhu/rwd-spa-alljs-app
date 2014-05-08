@@ -11,6 +11,8 @@ var mongoose = require('mongoose');
 var passport = require('passport');
 var flash = require('connect-flash');
 
+//get the environment specific configuration
+var CONFIG = require('config').travelapp;
 
 // Setup Database config for mongoose
 var configDB = require('./config/userDb.js');
@@ -29,21 +31,20 @@ require('./config/passport')(passport); // pass passport for configuration
 
 // all environments
 app.configure(function () {
-	app.set('port', process.env.PORT || 3000);
-	app.set('views', __dirname + '/views');
+	app.set('port', process.env.PORT || CONFIG.port);
+	app.set('views', __dirname + CONFIG.viewDir);
 	app.set('view engine', 'jade');
 	app.use(express.favicon());
-	/* 'default', 'short', 'tiny', 'dev' */
-	app.use(express.logger('dev'));		// log request to console
+	app.use(express.logger(CONFIG.logMode));		// log request to console
 	app.use(express.bodyParser());		// provides info on html forms
 	app.use(express.cookieParser());	// read cookies (needed for auth)
 	app.use(express.methodOverride());
 	app.use(allowCrossDomain);
 //	app.use(app.router);
-	app.use(express.static(path.join(__dirname, 'public')));
+	app.use(express.static(path.join(__dirname, CONFIG.publicFolder))); //location of the files
 	
 	// required for passport
-	app.use(express.session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+	app.use(express.session({ secret: CONFIG.secret })); // session secret
 	app.use(passport.initialize());
 	app.use(passport.session()); // persistent login sessions
 	app.use(flash()); // use connect-flash for flash messages stored in session
