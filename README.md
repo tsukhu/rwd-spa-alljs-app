@@ -24,15 +24,15 @@ This is an attempt to build a SPA using an all Java Script stack.
 
 <hr>
 <h4>Installation</h4><br>
-1) Setup MongoDB<br>
+* Setup MongoDB<br>
 * Install mongodb<br>
 * Create your database path <i>YOUR_DB_PATH</i><br>
 * Start Database server	`mongod --dbpath <i>YOUR_DB_PATH</i>`<br>
-2) Install npm modules<br>
+* Install npm modules<br>
 * Run `npm install` at the base of the project directory (containing package.json)<br>
-3) Start the node server<br>
+* Start the node server<br>
 * `node app.js`<br>
-4) Browse the application on any device using http://localhost:3000/
+* Browse the application on any device using http://localhost:3000/
 
 <br>
 <h4>Added so far</h4><br>
