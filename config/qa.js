@@ -21,6 +21,7 @@ module.exports = {
       port: 3000,
       dbPort: 27017,
       auto_reconnect: true,
+      cookie_max_age: 604800,
       secret: 'thisismysecret',
       viewDir: '/views',
       publicFolder: 'public',

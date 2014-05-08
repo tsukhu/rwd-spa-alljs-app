@@ -17,6 +17,8 @@ var CONFIG = require('config').travelapp;
 // Setup Database config for mongoose
 var configDB = require('./config/userDb.js');
 
+var MongoStore = require('connect-mongo')(express);
+
 // configuration ===============================================================
 mongoose.connect(configDB.url); // connect to our database
 
@@ -44,7 +46,16 @@ app.configure(function () {
 	app.use(express.static(path.join(__dirname, CONFIG.publicFolder))); //location of the files
 	
 	// required for passport
-	app.use(express.session({ secret: CONFIG.secret })); // session secret
+	app.use(express.session({ 
+		secret: CONFIG.secret,
+		store: new MongoStore({
+			url: configDB.url, 
+            maxAge: CONFIG.cookie_max_age
+		}),
+		cookie : {
+		    maxAge : CONFIG.cookie_max_age // one week
+		  }
+		})); // session secret
 	app.use(passport.initialize());
 	app.use(passport.session()); // persistent login sessions
 	app.use(flash()); // use connect-flash for flash messages stored in session
