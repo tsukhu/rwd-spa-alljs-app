@@ -28,7 +28,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 	- Install mongodb<br>
 	- Create your database path <i>YOUR_DB_PATH</i><br>
 	- Start Database server<br>
-		- "mongodb mongod.exe --dbpath <i>YOUR_DB_PATH</i>"<br>
+		- "mongodb mongod --dbpath <i>YOUR_DB_PATH</i><br>
 2) Install npm modules<br>
 	- Run "npm install" at the base of the project directory (containing package.json)<br>
 3) Start the node server<br>
