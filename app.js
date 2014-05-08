@@ -39,7 +39,7 @@ app.configure(function () {
 	app.use(express.bodyParser());		// provides info on html forms
 	app.use(express.cookieParser());	// read cookies (needed for auth)
 	app.use(express.methodOverride());
-	app.use(allowCrossDomain);
+
 //	app.use(app.router);
 	app.use(express.static(path.join(__dirname, CONFIG.publicFolder))); //location of the files
 	
@@ -54,6 +54,7 @@ app.configure(function () {
 // development only
 if ('development' === app.get('env')) {
   app.use(express.errorHandler());
+  app.use(allowCrossDomain);
 }
 
 require('./routes/routes.js')(app,passport); // load our routes and pass in our app and fully configured passport
