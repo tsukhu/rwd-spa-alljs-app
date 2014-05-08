@@ -3,8 +3,10 @@ var mongo = require('mongodb');
 var Server = mongo.Server,
     Db = mongo.Db,
     BSON = mongo.BSONPure;
- 
-var server = new Server('localhost', 27017, {auto_reconnect: true});
+
+var CONFIG = require('config').travelapp;
+
+var server = new Server(CONFIG.dbHost, CONFIG.dbPort, {auto_reconnect: CONFIG.autoReconnect});
 db = new Db('destinationsdb', server,{safe:false});
  
 db.open(function(err, db) {

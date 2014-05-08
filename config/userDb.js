@@ -1,6 +1,9 @@
 // config/userDb.js
+
+var CONFIG = require('config').travelapp;
+
 module.exports = {
 
-	'url' : 'mongodb://localhost:27017/userDb'
+	'url' : CONFIG.userDbUrl
 
 };

@@ -20,9 +20,19 @@ This is an attempt to build a SPA using an all Java Script stack.
 6) jQuery 1.10.1 <br>
 7) Jade Templating for the main page <br>
 8) PassportJS/connect-flash <br>
+9) Node-config - is a configuration system for Node.js application server deployments.(development, qa, staging, production, etc.).<br>
 
-
-
+<hr>
+<h4>Installation</h4><br>
+1) Setup MongoDB<br>
+	- Install mongodb<br>
+	- Create your database path <YOUR_DB_PATH><br>
+	- Start Database server<br>
+		- "mongodb mongod.exe --dbpath <YOUR_DB_PATH>"<br>
+2) Install npm modules<br>
+	- Run "npm install" at the base of the project directory (containing package.json)<br>
+3) Start the node server<br>
+	- node app.js<br>
 <br>
 <h4>Added so far</h4><br>
 1) Basic SPA infrastructure for Node.js/AngularJS/Bootstrap/Express/Connect/MongoDB<br>
