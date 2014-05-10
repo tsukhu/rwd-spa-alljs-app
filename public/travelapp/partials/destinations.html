@@ -4,7 +4,7 @@
 		<h1>
 			Travel Destinations <br>
 			<small>List of all travel destinations with location
-				information and weather {{favRegion}}</small>
+				information and weather</small>
 		</h1>
 	</div>
 	<div class="">
@@ -24,7 +24,7 @@
 		<div class="panel-heading">
 			<div class="panel-title">
 				<a data-toggle="collapse" data-parent="#accordion"
-					href='/places/#{{ destination._id }}'></a>
+					href='/places/#{{ destination._id }}'>{{ destination.location}}</a>
 			</div>
 		</div>
 		<div id="{{ destination._id }}" class="accordion-body collapse">
