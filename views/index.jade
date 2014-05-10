@@ -4,6 +4,7 @@ block content
 	// Vendor Libs: jQuery only used for Bootstrap functionality
 	script(src='/js/angular.js')
 	script(src="/js/angular-route.js")
+	script(src="/js/angular-cookies.js")
 	script(src="/js/jquery-1.10.1.js")
 	script(src="/js/bootstrap.js")
 	script(src="/js/jquery.scrollTo.min.js")
@@ -34,22 +35,34 @@ block content
 					li(data-ng-class="{'active':getClass('/orders')}")
 						a(href="#/packages") Travel Packages
 					if (_user)
-						li(ng-class="{active:getClass('#/profile')}") 
-							a(href="#/profile") About Me
+						li.dropdown
+							a.dropdown-toggle(data-toggle="dropdown") #{_user.local.email}
+								b(class="caret")
+							ul.dropdown-menu
+								li(ng-class="{active:getClass('#/profile')}") 
+									a(href="#/profile") About Me
+								li(ng-class="{active:getClass('/logout')}") 
+									a(href="/logout") Logout
 					else
 						li.dropdown
 							a.dropdown-toggle(data-toggle="dropdown") Login
 								b(class="caret")
-							div.dropdown-menu.row-fluid
-								form(action="/login",method="post",style="margin: 0px;padding:5px;",accept-charset="UTF-8")
+							div.dropdown-menu.row-fluid.navbar-inverse
+								form.navbar-inverse(action="/login",method="post",style="margin: 0px;padding:5px;",accept-charset="UTF-8")
 									div.form-group
 										label.sr-only(style="padding:5px;") Email
 										input.form-control(type="text",name="email",placeholder="Email")
 									div.form-group
 										label.sr-only(style="padding:5px;") Password
 										input.form-control(type="password",name="password",placeholder="Password")
-									button.btn.btn-warning(type="submit") Login
-											li(ng-class="{active:getClass('/profile')}")
+									div.form-group
+										div.col-sm-offset-2.col-sm-10.col-md-12.col-md-offset-0.col-lg-12.col-lg-offset-0
+											div.checkbox
+												label.label Remember me
+												input(type="checkbox",name="rememberme", checked=("#{rememberme}"==="checked" ? "checked" : undefined))
+									div.form-group
+										button.btn.btn-warning(type="submit") Login
+												li(ng-class="{active:getClass('/profile')}")
 
 							
 	div.container

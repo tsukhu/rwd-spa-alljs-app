@@ -103,9 +103,23 @@ module.exports = function(passport) {
             // if the user is found but the password is wrong
             if (!user.validPassword(password))
                 return done(null, false, req.flash('loginMessage', 'Oops! Wrong password.')); // create the loginMessage and save it to session as flashdata
+            console.log("passport rememberme = "+req.cookies.rememberme);
+            if (req.body.rememberme) {
+            	user.local.rememberme=1;
 
-            // all is well, return successful user
-              return done(null, user);
+            } else {
+            	user.local.rememberme=0;
+            	req.session.cookie.expires = false;
+            }
+            
+        	// save the user
+            user.save(function(err) {
+            	if (err)
+                    throw err;
+            	// all is well, return successful user
+                return done(null, user);
+            });
+
 
         });
 

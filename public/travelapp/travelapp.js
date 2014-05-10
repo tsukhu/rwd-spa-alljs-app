@@ -3,6 +3,7 @@
 
 var app = angular.module('travelApp', [
              'ngRoute',
+             'ngCookies',
              'travelApp.directives.localWeather'
              
              ]);

@@ -47,5 +47,8 @@ This is an attempt to build a SPA using an all Java Script stack.
 8) User login using localStrategy at the moment using passport.js,connect-flash,mongoose,bcrypt-nodejs for encryption. This has been modelled based on the excellent tutorial from <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">scotch.io</a> with additional integration and migration for supporting jade and AngularJS<br>
 9) About me menu item now is displayed conditionally based on whether the user is logged-in and shows the user profile details , otherwise a drop-down menu is displayed<br>
 10) By default sessions are stored in memory by Express, so added external storage of Mongodb using connect-mongo plus cookies have also been enabled.
+11) Added angular-cookies to persist the filter values of the destinations in the places page. Now the filter value entered is retained when you switch between different partials.Using the ngCookies modules and injected $cookieStore into the destinations controller.
+12) Implemented rememberme functionality
+13) Added node-config based handling for standardizing deployment across different environments - dev, qa , prod
 <br>
 Work in Progress ... Please read the <a href="https://github.com/tsukhu/rwd-spa-alljs-app/wiki">wiki</a> or take a look at the  <a href="https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open">issue tracker</a> for the future roadmap.

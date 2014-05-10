@@ -4,15 +4,15 @@
 		<h1>
 			Travel Destinations <br>
 			<small>List of all travel destinations with location
-				information and weather</small>
+				information and weather {{favRegion}}</small>
 		</h1>
 	</div>
 	<div class="">
 		<form class="form-inline">
 			<fieldset>
 				<label class="control-label"><strong>Region :</strong></label> <input
-					type="text" class="form-control" data-ng-model="filter.region"
-					placeholder="Enter Region">
+					type="text" class="form-control" ng-model="favRegion"
+					placeholder="Enter Region"  ng-change="setValue(favRegion)" />
 			</fieldset>
 		</form>
 	</div>
@@ -20,11 +20,11 @@
 <br>
 <div class="panel-group" id="accordion">
 	<div class="panel panel-primary"
-		data-ng-repeat="destination in destinations | filter:filter.region | orderBy:'region'">
+		data-ng-repeat="destination in destinations | filter:favRegion | orderBy:'region'">
 		<div class="panel-heading">
 			<div class="panel-title">
 				<a data-toggle="collapse" data-parent="#accordion"
-					href='/places/#{{ destination._id }}'>{{ destination.location}}</a>
+					href='/places/#{{ destination._id }}'></a>
 			</div>
 		</div>
 		<div id="{{ destination._id }}" class="accordion-body collapse">
