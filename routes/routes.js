@@ -59,7 +59,7 @@ module.exports = function(app, passport) {
     	req.session.cookie.maxAge = thirtyDays;
 	    next();
 	},passport.authenticate('local-login', {
-		successRedirect : '#/profile', // redirect to the secure profile section
+		successRedirect : '/', // redirect to the home page
 		failureRedirect : '/login', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
@@ -78,7 +78,7 @@ module.exports = function(app, passport) {
 	// process the signup form
 	// app.post('/signup', do all our passport stuff here);
 	app.post('/signup', passport.authenticate('local-signup', {
-		successRedirect : '#/profile', // redirect to the secure profile section
+		successRedirect : '/', // redirect to the home page
 		failureRedirect : '/signup', // redirect back to the signup page if there is an error
 		failureFlash : true // allow flash messages
 	}));
