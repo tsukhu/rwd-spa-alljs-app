@@ -34,6 +34,9 @@ This is an attempt to build a SPA using an all Java Script stack.
 * Start the node server<br>
 * `node app.js`<br>
 * Browse the application on any device using http://localhost:3000/
+* Or you could use the npm commands
+* Run Server `npm start`
+* Run Tests `npm test`
 
 <br>
 <h4>Added so far</h4><br>
