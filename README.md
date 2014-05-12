@@ -50,7 +50,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 11) Added angular-cookies to persist the filter values of the destinations in the places page. Now the filter value entered is retained when you switch between different partials.Using the ngCookies modules and injected $cookieStore into the destinations controller.<br>
 12) Implemented rememberme functionality<br>
 13) Added node-config based handling for standardizing deployment across different environments - dev, qa , prod<br>
-14) Migrated to Express 4.x
+14) Migrated to Express 4.x<br>
 15) Added basic infrastructure server side mocha/chai tests using grunt-mocha-test module
 <br>
 Work in Progress ... Please read the <a href="https://github.com/tsukhu/rwd-spa-alljs-app/wiki">wiki</a> or take a look at the  <a href="https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open">issue tracker</a> for the future roadmap.
