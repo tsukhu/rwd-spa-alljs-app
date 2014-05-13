@@ -1,7 +1,7 @@
 rwd-spa-alljs-app
 =================
 
-[![Build Status](https://travis-ci.org/tsukhu/rwd-spa-alljs-app)](https://travis-ci.org/tsukhu/rwd-spa-alljs-app)
+[![Build Status](https://secure.travis-ci.org/tsukhu/node-config.png?branch=master)](https://travis-ci.org/tsukhu/rwd-spa-alljs-app)
 
 Responsive Single Page Application using an end to end Java Script stack
 ------------------------------------------------------------------------
