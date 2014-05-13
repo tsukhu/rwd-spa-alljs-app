@@ -10,23 +10,24 @@ This is an attempt to build a SPA using an all Java Script stack.
 
 1. The theme for the application is a sample travel and tourism site using places in India as source and the plan is to add social elements to the same.
 2. The application will be using a travel destinations database persistence on MongoDB
-
 3. Server will be Node.js using the Express module for the Web Application Hosting
-
 4. RESTful CRUD APIs will be exposed on Node.js server using the  MongoDB driver module
-
 5. AngularJS will be used to build the SPA with Bootstrap (v3.x) providing the UI components.
 
-<h4><u>Tools Used</u></h4><br>
-1) NodeEclipse <a href="http://www.nodeclipse.org/updates/">Plugin for Kepler</a><br>
-2) Git Client for Windows<br>
-3) MongoDB and Mongoose <br>
-4) Bootrap 3.x <br>
-5) AngularJS 1.3.x <br>
-6) jQuery 1.10.1 <br>
-7) Jade Templating for the main page <br>
-8) PassportJS/connect-flash <br>
-9) Node-config - is a configuration system for Node.js application server deployments.(development, qa, staging, production, etc.).<br>
+Tools Used
+----------
+
+1. NodeEclipse <a href="http://www.nodeclipse.org/updates/">Plugin for Kepler</a>
+2. Git Client for Windows
+3. MongoDB and Mongoose
+4. Bootrap 3.x
+5. AngularJS 1.3.x
+6. jQuery 1.10.1
+7. Jade Templating for the main page
+8. PassportJS/connect-flash
+9. Node-config - is a configuration system for Node.js application server deployments.(development, qa, staging, production, etc.).
+ 
+
 
 <hr>
 <h4>Installation</h4><br>
