@@ -26,6 +26,7 @@ Tools Used
 * Jade Templating for the main page
 * PassportJS/connect-flash
 * Node-config - is a configuration system for Node.js application server deployments.(development, qa, staging, production, etc.).
+* Grunt/Mocha/Chai
  
 
 Installation
