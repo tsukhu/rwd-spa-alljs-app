@@ -54,7 +54,7 @@ Added so far
 * Group By view of all India Destinations grouped by India Region and State.Thanks to a blog by Ben Nadel covering [how to implement groupBy in AngularJS using nested ngRepeat](http://www.bennadel.com/blog/2456-grouping-nested-ngrepeat-lists-in-angularjs.htm)
 * Integrated jQuery.simpleWeather and created an AngularJS directive for the same.
 * Created a landing page with various bootstrap components including thumbnails , wells , panels , jumbotron.
-* User login using localStrategy at the moment using passport.js,connect-flash,mongoose,bcrypt-nodejs for encryption. This has been modelled based on the excellent tutorial from <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">scotch.io</a> with additional integration and migration for supporting jade and AngularJS
+* User login using localStrategy at the moment using passport.js,connect-flash,mongoose,bcrypt-nodejs for encryption. This has been modelled based on the excellent tutorial from [scotch.io](http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local) with additional integration and migration for supporting jade and AngularJS
 * About me menu item now is displayed conditionally based on whether the user is logged-in and shows the user profile details , otherwise a drop-down menu is displayed
 * By default sessions are stored in memory by Express, so added external storage of Mongodb using connect-mongo plus cookies have also been enabled.
 * Added angular-cookies to persist the filter values of the destinations in the places page. Now the filter value entered is retained when you switch between different partials.Using the ngCookies modules and injected $cookieStore into the destinations controller.
