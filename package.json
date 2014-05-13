@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-   	"test": "grunt mochaTest"
+   	"test": "node_modules\\.bin\\grunt mochaTest"
   },
   "dependencies": {
     "express": "4.x",
