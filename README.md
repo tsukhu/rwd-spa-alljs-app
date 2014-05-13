@@ -36,7 +36,8 @@ Installation
 * Create your database path <i>YOUR_DB_PATH</i>
 * Start Database server	`mongod --dbpath <i>YOUR_DB_PATH</i>`
 * Install npm modules
-* Run `npm install` at the base of the project directory (containing package.json)
+** Run `npm install` at the base of the project directory (containing package.json)
+** Run `npm install -g grunt-cli` to install grunt command line interface globally
 * Start the node server
 * `node app.js`
 * Browse the application on any device using http://localhost:3000/
