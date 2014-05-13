@@ -17,7 +17,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 Tools Used
 ----------
 
-* NodeEclipse (http://www.nodeclipse.org/updates/)[Plugin for Kepler]
+* NodeEclipse [Plugin for Kepler](http://www.nodeclipse.org/updates)
 * Git Client for Windows
 * MongoDB and Mongoose
 * Bootrap 3.x
