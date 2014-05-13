@@ -51,7 +51,7 @@ Added so far
 * Initial set of travel APIs (CRUD) for all destinations in India using MongoDB for persistence.
 * A Bootstrap Carousel for India Travel Destinations (Needs improvement :-))
 * Accordian view of all India Destinations sourced from the travel APIs with filters
-* Group By view of all India Destinations grouped by India Region and State.Thanks to a blog by Ben Nadel covering <a href="http://www.bennadel.com/blog/2456-grouping-nested-ngrepeat-lists-in-angularjs.htm">how to implement groupBy in AngularJS using nested ngRepeat</a>
+* Group By view of all India Destinations grouped by India Region and State.Thanks to a blog by Ben Nadel covering [how to implement groupBy in AngularJS using nested ngRepeat](http://www.bennadel.com/blog/2456-grouping-nested-ngrepeat-lists-in-angularjs.htm)
 * Integrated jQuery.simpleWeather and created an AngularJS directive for the same.
 * Created a landing page with various bootstrap components including thumbnails , wells , panels , jumbotron.
 * User login using localStrategy at the moment using passport.js,connect-flash,mongoose,bcrypt-nodejs for encryption. This has been modelled based on the excellent tutorial from <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">scotch.io</a> with additional integration and migration for supporting jade and AngularJS
@@ -62,4 +62,4 @@ Added so far
 * Added node-config based handling for standardizing deployment across different environments - dev, qa , prod
 * Migrated to Express 4.x
 * Added basic infrastructure server side mocha/chai tests using grunt-mocha-test module
-* Work in Progress ... Please read the <a href="https://github.com/tsukhu/rwd-spa-alljs-app/wiki">wiki</a> or take a look at the  <a href="https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open">issue tracker</a> for the future roadmap.
+* Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
