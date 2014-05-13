@@ -28,38 +28,37 @@ Tools Used
 9. Node-config - is a configuration system for Node.js application server deployments.(development, qa, staging, production, etc.).
  
 
+Installation
+------------
 
-<hr>
-<h4>Installation</h4><br>
-* Setup MongoDB<br>
-* Install mongodb<br>
-* Create your database path <i>YOUR_DB_PATH</i><br>
-* Start Database server	`mongod --dbpath <i>YOUR_DB_PATH</i>`<br>
-* Install npm modules<br>
-* Run `npm install` at the base of the project directory (containing package.json)<br>
-* Start the node server<br>
-* `node app.js`<br>
+* Setup MongoDB
+* Install mongodb
+* Create your database path <i>YOUR_DB_PATH</i>
+* Start Database server	`mongod --dbpath <i>YOUR_DB_PATH</i>`
+* Install npm modules
+* Run `npm install` at the base of the project directory (containing package.json)
+* Start the node server
+* `node app.js`
 * Browse the application on any device using http://localhost:3000/
 * Or you could use the npm commands
 * Run Server `npm start`
 * Run Tests `npm test`
 
-<br>
-<h4>Added so far</h4><br>
-1) Basic SPA infrastructure for Node.js/AngularJS/Bootstrap/Express/Connect/MongoDB<br>
-2) Initial set of travel APIs (CRUD) for all destinations in India using MongoDB for persistence.<br>
-3) A Bootstrap Carousel for India Travel Destinations (Needs improvement :-))<br>
-4) Accordian view of all India Destinations sourced from the travel APIs with filters<br>
-5) Group By view of all India Destinations grouped by India Region and State.Thanks to a blog by Ben Nadel covering <a href="http://www.bennadel.com/blog/2456-grouping-nested-ngrepeat-lists-in-angularjs.htm">how to implement groupBy in AngularJS using nested ngRepeat</a><br>
-6) Integrated jQuery.simpleWeather and created an AngularJS directive for the same.<br>
-7) Created a landing page with various bootstrap components including thumbnails , wells , panels , jumbotron. <br>
-8) User login using localStrategy at the moment using passport.js,connect-flash,mongoose,bcrypt-nodejs for encryption. This has been modelled based on the excellent tutorial from <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">scotch.io</a> with additional integration and migration for supporting jade and AngularJS<br>
-9) About me menu item now is displayed conditionally based on whether the user is logged-in and shows the user profile details , otherwise a drop-down menu is displayed<br>
-10) By default sessions are stored in memory by Express, so added external storage of Mongodb using connect-mongo plus cookies have also been enabled.<br>
-11) Added angular-cookies to persist the filter values of the destinations in the places page. Now the filter value entered is retained when you switch between different partials.Using the ngCookies modules and injected $cookieStore into the destinations controller.<br>
-12) Implemented rememberme functionality<br>
-13) Added node-config based handling for standardizing deployment across different environments - dev, qa , prod<br>
-14) Migrated to Express 4.x<br>
-15) Added basic infrastructure server side mocha/chai tests using grunt-mocha-test module
-<br>
-Work in Progress ... Please read the <a href="https://github.com/tsukhu/rwd-spa-alljs-app/wiki">wiki</a> or take a look at the  <a href="https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open">issue tracker</a> for the future roadmap.
+Added so far
+------------
+* Basic SPA infrastructure for Node.js/AngularJS/Bootstrap/Express/Connect/MongoDB
+* Initial set of travel APIs (CRUD) for all destinations in India using MongoDB for persistence.
+* A Bootstrap Carousel for India Travel Destinations (Needs improvement :-))
+* Accordian view of all India Destinations sourced from the travel APIs with filters
+* Group By view of all India Destinations grouped by India Region and State.Thanks to a blog by Ben Nadel covering <a href="http://www.bennadel.com/blog/2456-grouping-nested-ngrepeat-lists-in-angularjs.htm">how to implement groupBy in AngularJS using nested ngRepeat</a>
+* Integrated jQuery.simpleWeather and created an AngularJS directive for the same.
+* Created a landing page with various bootstrap components including thumbnails , wells , panels , jumbotron.
+* User login using localStrategy at the moment using passport.js,connect-flash,mongoose,bcrypt-nodejs for encryption. This has been modelled based on the excellent tutorial from <a href="http://scotch.io/tutorials/javascript/easy-node-authentication-setup-and-local">scotch.io</a> with additional integration and migration for supporting jade and AngularJS
+* About me menu item now is displayed conditionally based on whether the user is logged-in and shows the user profile details , otherwise a drop-down menu is displayed
+* By default sessions are stored in memory by Express, so added external storage of Mongodb using connect-mongo plus cookies have also been enabled.
+* Added angular-cookies to persist the filter values of the destinations in the places page. Now the filter value entered is retained when you switch between different partials.Using the ngCookies modules and injected $cookieStore into the destinations controller.
+* Implemented rememberme functionality
+* Added node-config based handling for standardizing deployment across different environments - dev, qa , prod
+* Migrated to Express 4.x
+* Added basic infrastructure server side mocha/chai tests using grunt-mocha-test module
+* Work in Progress ... Please read the <a href="https://github.com/tsukhu/rwd-spa-alljs-app/wiki">wiki</a> or take a look at the  <a href="https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open">issue tracker</a> for the future roadmap.
