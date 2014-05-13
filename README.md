@@ -29,6 +29,7 @@ Tools Used
 * PassportJS/connect-flash
 * Node-config - is a configuration system for Node.js application server deployments.(development, qa, staging, production, etc.).
 * Grunt/Mocha/Chai
+* Travis CI Service Hook
  
 
 Installation
@@ -65,4 +66,5 @@ Added so far
 * Added node-config based handling for standardizing deployment across different environments - dev, qa , prod
 * Migrated to Express 4.x
 * Added basic infrastructure server side mocha/chai tests using grunt-mocha-test module
+* Enabled CI using Travis CI Service Hook
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
