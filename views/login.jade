@@ -12,21 +12,56 @@ block content
 				div.alert.alert-danger
 					= message
 			//
-				LOGIN FORM
-			form(action="/login",method="post")
-				div.form-group
+				LOGIN FORM ,onSubmit="return updateRedirect()"
+			form(name="userLogin",action="/login",method="post") 
+				
+				label Login with 
+					div.form-group.btn-group(data-toggle="buttons-radio",data-toggle-name="loginOption")
+						button#btn-email.btn.active.btn-warning(type="button",name="emailtype",data-toggle="button",data-toggle-value="login-email") Email
+						button#btn-username.btn.btn-warning(type="button",name="usertype",data-toggle="button", data-toggle-value="login-user") Username
+					input(type="hidden",name="loginOption",value="login-email")
+				div#emailtype.form-group
 					label Email
-					input.form-control(type="text",name="email",placeholder="Email")
+					input.form-control(type="email",name="email",placeholder="Email")
+				div#usertype.form-group
+					label Username
+					input.form-control(type="text",name="username",placeholder="Username")
 				div.form-group
 					label Password
 					input.form-control(type="password",name="password",placeholder="Password")
 				div.checkbox
 					label Remember me
-						input(type="checkbox",name="rememberme", checked=("#{rememberme}"==="checked" ? "checked" : undefined))
+						input(type="checkbox",name="rememberme")
 				button.btn.btn-warning.btn-lg(type="submit") Login
 			hr
 			p Need an account? 
 				a(href="/signup") Signup
 			p Or go 
 				a(href="/") home.
-				
+			script(type='text/javascript').
+				$(function () {
+					$('div.btn-group[data-toggle-name]').each(function () {
+						var group = $(this);
+						$('button', group).each(function () {
+							$(this).on('click', function () {
+								var toggle_value=($(this).data("toggle-value"));
+								$('input[name="loginOption"]').val(toggle_value);
+								if (toggle_value==="login-user") {
+									$("#usertype").show();
+									$("#loginOption").show();
+									$("#emailtype").hide();
+									$("#btn-email").removeClass( "active" );
+									$("#btn-username").addClass( "active" );
+									$('input[name="email"]').val("");
+								} else {
+									$("#usertype").hide();
+									$("#emailtype").show();
+									$("#btn-username").removeClass( "active" );
+									$("#btn-email").addClass( "active" );
+								}
+							});
+						});
+					});
+					$('.btn-group').button();
+					$("#usertype").hide();
+					});

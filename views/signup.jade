@@ -16,7 +16,10 @@ block content
 			form(action="/signup",method="post")
 				div.form-group
 					label Email
-					input.form-control(type="text",name="email")
+					input.form-control(type="email",name="email",required)
+				div.form-group
+					label Username
+					input.form-control(type="text",name="username")
 				div.form-group
 					label Password
 					input.form-control(type="password",name="password")
