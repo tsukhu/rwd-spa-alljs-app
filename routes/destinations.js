@@ -34,6 +34,7 @@ exports.findById = function(req, res) {
 };
  
 exports.findAll = function(req, res) {
+	console.log('Retrieving destinations:');
     db.collection('destinations', function(err, collection) {
         collection.find().toArray(function(err, items) {
             res.send(items);
