@@ -52,12 +52,13 @@ block content
 									$("#emailtype").hide();
 									$("#btn-email").removeClass( "active" );
 									$("#btn-username").addClass( "active" );
-									$('input[name="email"]').val("");
+									$('input[name="email"]').val("dummy@test.com");
 								} else {
 									$("#usertype").hide();
 									$("#emailtype").show();
 									$("#btn-username").removeClass( "active" );
 									$("#btn-email").addClass( "active" );
+									$('input[name="email"]').val("");
 								}
 							});
 						});
