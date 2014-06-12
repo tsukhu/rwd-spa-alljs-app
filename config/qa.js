@@ -26,6 +26,7 @@ module.exports = {
       viewDir: '/views',
       publicFolder: 'public',
       logMode: 'dev', //  'default', 'short', 'tiny', 'dev' 
-      userDbUrl: 'mongodb://localhost:27017/userDb'
+      userDbUrl: 'mongodb://localhost:27017/userDb',
+      pollDbUrl: 'mongodb://localhost:27017/pollsDb'
     }
   }

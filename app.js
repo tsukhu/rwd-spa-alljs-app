@@ -3,6 +3,7 @@
  */
 var express = require('express');
 
+
 // var user = require('./routes/user');
 var http = require('http');
 var path = require('path');
@@ -32,6 +33,10 @@ var MongoStore = require('connect-mongo')(session);
 mongoose.connect(configDB.url); // connect to our database
 
 var app = express();
+
+var server = http.createServer(app);
+var io = require('socket.io').listen(server);
+
 var allowCrossDomain = function(req, res, next) {
 	res.header("Access-Control-Allow-Origin", "*");
 	res.header("Access-Control-Allow-Headers", "X-Requested-With");
@@ -69,6 +74,14 @@ app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
 
+
+//Handle Errors gracefully
+app.use(function(err, req, res, next) {
+	if(!err) return next();
+	console.log(err.stack);
+	res.json({error: true});
+});
+
 // development only
 if ('development' === app.get('env')) {
 	app.use(errorHandler());
@@ -78,6 +91,14 @@ if ('development' === app.get('env')) {
 require('./routes/routes.js')(app, passport); // load our routes and pass in
 												// our app and fully configured
 												// passport
-app.listen(app.get('port'), function(){
-	  console.log('Express server listening on port ' + app.get('port'));
-	});
+//app.listen(app.get('port'), function(){
+//	  console.log('Express server listening on port ' + app.get('port'));
+//	});
+
+var poll_routes = require('./routes/poll_routes');
+
+io.sockets.on('connection', poll_routes.vote);
+
+server.listen(app.get('port'), function(){
+  console.log('Express server listening on port ' + app.get('port'));
+});

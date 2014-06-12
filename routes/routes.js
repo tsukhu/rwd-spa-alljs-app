@@ -1,4 +1,5 @@
 var destination = require('./destinations');
+var poll_routes = require('./poll_routes');
 
 delete require.cache['./routes/destinations'];
 
@@ -12,6 +13,13 @@ module.exports = function(app, passport) {
 		res.render('index', { title: 'India Tourism' ,_user : req.user });
 	});
 
+	// =====================================
+	// Poll 
+	// =====================================
+	app.get('/polls', function(req, res) {
+		res.render('polls', { title: 'Polls' ,_user : req.user });
+	});
+	
 	// =====================================
 	// LOGIN ===============================
 	// =====================================
@@ -85,6 +93,10 @@ module.exports = function(app, passport) {
 	app.put('/destinations/:id', destination.updateDestination);
 	app.delete('/destinations/:id', destination.deleteDestination);
 	
+	app.get('/polls/polls', poll_routes.list);
+    app.get('/polls/:id', poll_routes.poll);
+    app.post('/polls', poll_routes.create);
+    app.post('/vote', poll_routes.vote);
 };
 
 // route middleware to make sure a user is logged in

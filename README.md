@@ -67,4 +67,5 @@ Added so far
 * Migrated to Express 4.x
 * Added basic infrastructure server side mocha/chai tests using grunt-mocha-test module
 * Enabled CI using Travis CI Service Hook
+* Initial Stages of adding a real time travel user poll based on the excellent article by [Joe Lenon](http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/).
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.

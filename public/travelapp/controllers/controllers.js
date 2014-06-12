@@ -13,14 +13,13 @@ app.controller('DestinationsController', [
 			// below
 			$scope.destinations = [];
 			$scope.user = null;
-			$scope.favRegion=null;
-			//$scope.favRegion = null;
+			$scope.favRegion = null;
+			// $scope.favRegion = null;
 			init();
 			function init() {
 				// $scope.destinations = travelService.getDestinations();
 				travelService.getDestinations().then(function(dataResponse) {
 					$scope.destinations = dataResponse.data;
-
 
 				});
 
@@ -30,22 +29,21 @@ app.controller('DestinationsController', [
 				});
 
 				$scope.favRegion = $cookieStore.get('favRegion');
-				
-				//this.filter.region= "test";
-			//	alert($scope.favRegion);
+
+				// this.filter.region= "test";
+				// alert($scope.favRegion);
 			}
 
 			$scope.setValue = function(favRegion) {
-				
+
 				if (favRegion) {
-					
+
 					$scope.favRegion = favRegion;
 					$cookieStore.put('favRegion', $scope.favRegion);
 
 				}
 			}
 
-			
 			$scope.getWeather = function(divId, location) {
 				alert("SimpleWeather Called");
 				jQuery.simpleWeather({
@@ -167,8 +165,8 @@ app.controller('MenuController', function($scope, $location) {
 	};
 });
 
-app.controller('ProfileController', [ '$scope', '$http',
-		'travelService', function($scope, $http, travelService) {
+app.controller('ProfileController', [ '$scope', '$http', 'travelService',
+		function($scope, $http, travelService) {
 
 			// I like to have an init() for controllers that need to perform
 			// some initialization. Keeps things in
@@ -180,5 +178,98 @@ app.controller('ProfileController', [ '$scope', '$http',
 				$scope.user = dataResponse.data;
 
 			});
+
+		} ]);
+
+// Managing the poll list
+app.controller('PollListCtrl', [ '$scope', 'Poll', function($scope, Poll) {
+
+	$scope.polls = Poll.query();
+
+} ]);
+
+// Voting / viewing poll results
+app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
+		function($scope, $routeParams, socket, Poll) {
+			$scope.poll = Poll.get({
+				pollId : $routeParams.pollId
+			});
+
+			socket.on('myvote', function(data) {
+				console.dir(data);
+				if (data._id === $routeParams.pollId) {
+					$scope.poll = data;
+				}
+			});
+
+			socket.on('vote', function(data) {
+				console.dir(data);
+				if (data._id === $routeParams.pollId) {
+					$scope.poll.choices = data.choices;
+					$scope.poll.totalVotes = data.totalVotes;
+				}
+			});
+
+			$scope.vote = function() {
+				var pollId = $scope.poll._id, choiceId = $scope.poll.userVote;
+
+				if (choiceId) {
+					var voteObj = {
+						poll_id : pollId,
+						choice : choiceId
+					};
+					socket.emit('send:vote', voteObj);
+				} else {
+					alert('You must select an option to vote for');
+				}
+			};
+
+		} ]);
+
+// Creating a new poll
+app.controller('PollNewCtrl', [ '$scope', '$location', 'Poll',
+		function($scope, $location, Poll) {
+			$scope.poll = {
+				question : '',
+				choices : [ {
+					text : ''
+				}, {
+					text : ''
+				}, {
+					text : ''
+				} ]
+			};
+			$scope.addChoice = function() {
+				$scope.poll.choices.push({
+					text : ''
+				});
+			};
+			$scope.createPoll = function() {
+				console.log('Create Poll Called');
+				var poll = $scope.poll;
+				if (poll.question.length > 0) {
+					var choiceCount = 0;
+					for (var i = 0, ln = poll.choices.length; i < ln; i++) {
+						var choice = poll.choices[i];
+						if (choice.text.length > 0) {
+							choiceCount++;
+						}
+					}
+					if (choiceCount > 1) {
+						var newPoll = new Poll(poll);
+						newPoll.$save(function(p, resp) {
+							if (!p.error) {
+								$location.path('polls');
+							} else {
+								console.log('Could not create poll');
+							}
+						});
+					} else {
+						console.log('You must enter at least two choices');
+					}
+				} else {
+					console.log('You must enter a question');
+				}
+			};
 
 		} ]);

@@ -5,6 +5,8 @@ block content
 	script(src='/js/angular.js')
 	script(src="/js/angular-route.js")
 	script(src="/js/angular-cookies.js")
+	script(src="/js/angular-resource.js")
+	script(src="/js/socket.io.js")
 	script(src="/js/jquery-1.10.1.js")
 	script(src="/js/bootstrap.js")
 	script(src="/js/jquery.scrollTo.min.js")
@@ -33,7 +35,7 @@ block content
 							li(ng-class="{active:getClass('/groupedDestinations')}") 
 								a(href="#/groupedDestinations") Grouped Destinations
 					li(data-ng-class="{'active':getClass('/orders')}")
-						a(href="#/packages") Travel Packages
+						a(href="#/polls") Travel Poll
 					if (_user)
 						li.dropdown
 							a.dropdown-toggle(data-toggle="dropdown") #{_user.local.email}
