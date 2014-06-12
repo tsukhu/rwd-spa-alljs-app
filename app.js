@@ -35,6 +35,8 @@ mongoose.connect(configDB.url); // connect to our database
 var app = express();
 
 var server = http.createServer(app);
+
+//initialize socket.io
 var io = require('socket.io').listen(server);
 
 var allowCrossDomain = function(req, res, next) {
@@ -97,6 +99,7 @@ require('./routes/routes.js')(app, passport); // load our routes and pass in
 
 var poll_routes = require('./routes/poll_routes');
 
+// listen on connection event using callback method of vote
 io.sockets.on('connection', poll_routes.vote);
 
 server.listen(app.get('port'), function(){

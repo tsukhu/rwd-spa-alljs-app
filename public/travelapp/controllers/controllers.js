@@ -194,14 +194,17 @@ app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
 			$scope.poll = Poll.get({
 				pollId : $routeParams.pollId
 			});
-
+			// myvote message handler
+			// update poll object if viewing the same poll question
 			socket.on('myvote', function(data) {
 				console.dir(data);
 				if (data._id === $routeParams.pollId) {
 					$scope.poll = data;
 				}
 			});
-
+			
+			// broadcast vote message handler
+			// Update poll response numbers if viewing the same poll question
 			socket.on('vote', function(data) {
 				console.dir(data);
 				if (data._id === $routeParams.pollId) {
@@ -210,9 +213,10 @@ app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
 				}
 			});
 
+			// vote() method
 			$scope.vote = function() {
 				var pollId = $scope.poll._id, choiceId = $scope.poll.userVote;
-
+				// Send out poll choice object to send:vote socket
 				if (choiceId) {
 					var voteObj = {
 						poll_id : pollId,

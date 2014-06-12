@@ -55,13 +55,13 @@ app.config(function($routeProvider) {
 		controller : 'ProfileController',
 		templateUrl : 'travelapp/partials/profile.html'
 	}).when('/polls', {
-		templateUrl : 'travelapp/partials/list.html',
+		templateUrl : 'travelapp/partials/pollListing.html',
 		controller : 'PollListCtrl'
 	}).when('/poll/:pollId', {
-		templateUrl : 'travelapp/partials/item.html',
+		templateUrl : 'travelapp/partials/pollItem.html',
 		controller : 'PollItemCtrl'
 	}).when('/new', {
-		templateUrl : 'travelapp/partials/new.html',
+		templateUrl : 'travelapp/partials/pollCreation.html',
 		controller : 'PollNewCtrl'
 	}).otherwise({
 		redirectTo : '/'
