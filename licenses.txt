@@ -1,0 +1,8 @@
+--------------------
+Build real-time polls application with Node.js, Express, AngularJS, and MongoDB
+http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/
+
+Copyright (c) 2013 Joe Lennon
+The MIT License (MIT)
+
+--------------------
