@@ -30,6 +30,7 @@ Tools Used
 * Node-config - is a configuration system for Node.js application server deployments.(development, qa, staging, production, etc.).
 * Grunt/Mocha/Chai
 * Travis CI Service Hook
+* Socket.io 0.9.x
  
 
 Installation
