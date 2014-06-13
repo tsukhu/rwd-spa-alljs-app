@@ -23,11 +23,24 @@ glyphicon-plus"></span> New Poll</a>
 			<li><em>No polls in database. Would you like to <a
 					href="#/new">create one</a>?</li>
 		</ul>
-		<ul ng-switch-default>
-			<li ng-repeat="poll in polls | filter:query"><a
-				href="#/poll/{{poll._id}}">View: {{poll.question}} </a> <a
-				href="#/remove/{{poll._id}}">Remove: {{poll.question}} </a></li>
-		</ul>
+		<div class="table-responsive">
+			<table class="table table-striped table-bordered table-hover" ng-switch-default>
+				<thead>
+					<tr>
+						<th>Poll Question</th>
+						<th></th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr ng-repeat="poll in polls | filter:query">
+						<td ><a href="#/poll/{{poll._id}}">{{poll.question}}</a></td>
+						<td style="text-align:center; vertical-align:middle;"><a href="#/remove/{{poll._id}}" class="btn btn-danger">
+								<span class="glyphicon glyphicon-minus"></span> Remove
+						</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
 	<p>&nbsp;</p>
 </div>

@@ -16,6 +16,75 @@ var db = mongoose.createConnection('localhost', 'pollsapp'); //connect to polls 
 var PollSchema = require('../models/Poll.js').PollSchema; // load schema
 var Poll = db.model('polls', PollSchema); // Load data model for schema
 
+var nullVotes=[{ip:''}];
+var pollArray=[
+	{
+		question:'Which is your favourite travel destination in India',
+		choices: [
+					{text: 'Goa',votes: nullVotes},
+					{text: 'Himashal Pradesh',votes: nullVotes},
+					{text: 'New Delhi',votes: nullVotes},
+					{text: 'Mumbai',votes: nullVotes},
+					{text: 'Andamans',votes: nullVotes},
+					{text: 'Kashmir',votes: nullVotes}
+			]
+	},
+	{
+		question:'What is the preferred holiday theme',
+		choices: [
+					{text: 'Adventure Sports',votes: nullVotes},
+					{text: 'Shopping',votes: nullVotes},
+					{text: 'Pilgrimage',votes: nullVotes},
+					{text: 'Nature',votes: nullVotes},
+					{text: 'Historical Places',votes: nullVotes}
+			]
+	},
+	{
+		question:'What types of hotels do you generally stay in?',
+		choices: [
+					{text: '7 Star',votes: nullVotes},
+					{text: '5 Star',votes: nullVotes},
+					{text: '3 Start',votes: nullVotes}
+			]
+	},
+	{
+		question:'What is the preferred mode of travel within the city?',
+		choices: [
+					{text: 'Chauffer Driven Taxi',votes: nullVotes},
+					{text: 'Self Driven Rented Car',votes: nullVotes},
+					{text: 'Public Transport',votes: nullVotes}
+			]
+	},
+	{
+		question:'When you are on holiday, you generally?',
+		choices: [
+					{text: 'Are with Family',votes: nullVotes},
+					{text: 'Are with Friends',votes: nullVotes},
+					{text: 'go Alone',votes: nullVotes}
+			]
+	}
+
+];
+
+// Pre-populate DB on app startup
+Poll.remove({}, function(err){
+	var i=0;
+	var saved=0;
+	while(i < pollArray.length){
+        new Poll(pollArray[i]).save(function(err, doc){
+            saved++;
+            if(err){
+                console.log(err);
+            } else {
+                if(saved === pollArray.length) {
+                    console.log('database populated');
+                }
+            }
+        });
+        i++;
+    }
+});
+
 exports.index = function(req, res) {
 	res.render('index', {
 		title : 'Polls'

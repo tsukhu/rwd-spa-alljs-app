@@ -72,6 +72,6 @@ Added so far
 * Initial Stages of adding a real time travel user poll based on the excellent article by [Joe Lenon](http://www.ibm.com/developerworks/library/wa-nodejs-polling-app/) using socket.io
 * Enhancements added to the user poll so far include
 ** Delete Poll 
-** Poll Listing Improvements for the delete functionality (WIP)
+** Poll Listing Improvements with delete functionality as well as bootstrapped the initial set of poll questions
 ** Chart integration for the real time poll results (WIP)
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
