@@ -15,6 +15,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 * Server will be Node.js using the Express module for the Web Application Hosting
 * RESTful CRUD APIs will be exposed on Node.js server using the  MongoDB driver module
 * AngularJS will be used to build the SPA with Bootstrap (v3.x) providing the UI components.
+* Socket.io based real time travel poll with chart based results.
 
 Tools Used
 ----------
