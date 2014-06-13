@@ -189,6 +189,17 @@ app.controller('PollListCtrl', [ '$scope', 'Poll', function($scope, Poll) {
 } ]);
 
 // Voting / viewing poll results
+app.controller('PollRemoveItemCtrl', [ '$scope', '$routeParams', 'Poll',
+		function($scope, $routeParams, Poll) {
+		console.log("here");
+		// Call Delete Poll ID which in turn will invoke the delete function in poll_routes.js
+		Poll.delete({}, {'pollId': $routeParams.pollId}); // Calls: DELETE /polls/:pollId
+		// Refresh list 
+		$scope.polls = Poll.query();
+
+} ]);
+			
+// Voting / viewing poll results
 app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
 		function($scope, $routeParams, socket, Poll) {
 			$scope.poll = Poll.get({

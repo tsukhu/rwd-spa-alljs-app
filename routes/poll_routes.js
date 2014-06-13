@@ -84,6 +84,19 @@ exports.create = function(req, res) {
 	});
 };
 
+// JSON API for deleting a poll
+exports.remove = function(req,res) {
+	// Load poll question by ID
+	console.log("remove called");
+	var pollId = req.params.id;
+	// Find poll question by ID
+	Poll.findByIdAndRemove(pollId, function(err, doc) {
+		if (err || !doc) {
+			throw 'Error';
+		}
+	});
+};
+
 // JSON API for poll vote event callback
 exports.vote = function(socket) {
 	// Send Vote event handler

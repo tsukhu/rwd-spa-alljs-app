@@ -25,7 +25,8 @@ glyphicon-plus"></span> New Poll</a>
 		</ul>
 		<ul ng-switch-default>
 			<li ng-repeat="poll in polls | filter:query"><a
-				href="#/poll/{{poll._id}}">{{poll.question}}</a></li>
+				href="#/poll/{{poll._id}}">View: {{poll.question}} </a> <a
+				href="#/remove/{{poll._id}}">Remove: {{poll.question}} </a></li>
 		</ul>
 	</div>
 	<p>&nbsp;</p>

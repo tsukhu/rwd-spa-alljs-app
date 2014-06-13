@@ -4,7 +4,8 @@ var app = angular.module('travelApp', [ 'ngRoute', 'ngCookies', 'ngResource',
 		'travelApp.directives.localWeather' ]);
 
 app.factory('Poll', function($resource) {
-	return $resource('polls/:pollId', {}, {
+	return $resource('polls/:pollId', {pollId: "@pollId" }, 
+	{
 		query : {
 			method : 'GET',
 			params : {
@@ -60,6 +61,9 @@ app.config(function($routeProvider) {
 	}).when('/poll/:pollId', {
 		templateUrl : 'travelapp/partials/pollItem.html',
 		controller : 'PollItemCtrl'
+	}).when('/remove/:pollId', {
+		templateUrl : 'travelapp/partials/pollListing.html',
+		controller : 'PollRemoveItemCtrl'
 	}).when('/new', {
 		templateUrl : 'travelapp/partials/pollCreation.html',
 		controller : 'PollNewCtrl'

@@ -97,6 +97,7 @@ module.exports = function(app, passport) {
     app.get('/polls/:id', poll_routes.poll);
     app.post('/polls', poll_routes.create);
     app.post('/vote', poll_routes.vote);
+    app.delete('/polls/:id', poll_routes.remove);
 };
 
 // route middleware to make sure a user is logged in
