@@ -202,15 +202,74 @@ app.controller('PollRemoveItemCtrl', [ '$scope', '$routeParams', 'Poll',
 // Voting / viewing poll results
 app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
 		function($scope, $routeParams, socket, Poll) {
-			$scope.poll = Poll.get({
-				pollId : $routeParams.pollId
-			});
+		
+		//////////////////////////
+	$scope.chart = {};
+	init();
+	function init() { 
+		   $scope.chart.type = "BarChart";
+    	  $scope.chart.cssStyle = "height:300px; width:400px;";
+    var chartCols=[
+        {id: "text", label: "Option", type: "string"},
+        {id: "votes", label: "Votes", type: "number"}
+    ];
+    var chartRows=[];
+    $scope.chart.data = {
+    			"cols": chartCols,
+    			"rows":[]
+    			};
+
+     $scope.chart.options = {
+        "title": "Poll Result",
+        "isStacked": "false",
+        "fill": 20,
+        "displayExactValues": true,
+        "vAxis": {
+            "title": "Poll Result", "gridlines": {"count": 6}
+        },
+        "hAxis": {
+            "title": "Choice"
+        }
+    };
+
+    $scope.chartformatters = {};
+	
+	
+	};
+ 
+			
+		
+			Poll.get({pollId : $routeParams.pollId}).$promise.then(function(poll) {
+           
+           	$scope.poll = poll;
+           
+           	if ($scope.poll) {
+				if ($scope.poll.choices) {
+			 	 for (var i = 0; i < $scope.poll.choices.length; i++) {
+    					var choice = $scope.poll.choices[i];
+    					var voteShare= choice.votes.length;
+    					var chartRows =  {c: [{v: choice.text},{v: voteShare}] };
+    					$scope.chart.data.rows.push(chartRows);
+   	 				}
+			 }
+			}
+         });
+
+
+   	 				
 			// myvote message handler
 			// update poll object if viewing the same poll question
 			socket.on('myvote', function(data) {
 				console.dir(data);
 				if (data._id === $routeParams.pollId) {
 					$scope.poll = data;
+					init();
+					for (var i = 0; i < $scope.poll.choices.length; i++) {
+    					var choice = $scope.poll.choices[i];
+    					var voteShare= choice.votes.length;
+    					var chartRows =  {c: [{v: choice.text},{v: voteShare}] };
+    					$scope.chart.data.rows.push(chartRows);
+   	 				}
 				}
 			});
 			
@@ -221,6 +280,13 @@ app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
 				if (data._id === $routeParams.pollId) {
 					$scope.poll.choices = data.choices;
 					$scope.poll.totalVotes = data.totalVotes;
+					init();
+					for (var i = 0; i < $scope.poll.choices.length; i++) {
+    					var choice = $scope.poll.choices[i];
+    					var voteShare= choice.votes.length;
+    					var chartRows =  {c: [{v: choice.text},{v: voteShare}] };
+    					$scope.chart.data.rows.push(chartRows);
+   	 				}
 				}
 			});
 

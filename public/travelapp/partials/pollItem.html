@@ -29,29 +29,12 @@
 		</div>
 	</form>
 </div>
-	
+
 <div ng-show="poll.userVoted">
-	<table class="result-table">
-		<tr ng-repeat="choice in poll.choices">
-			<td>{{choice.text}}  </td>
-			<td>
-				<table
-						style="background-color: lightblue; width: {{(choice.votes.length/poll.totalVotes)*100}}px; text-align: right">
-					<tr>
-							<td>{{choice.votes.length}}</td>
-						</tr>
-				</table>
-			</td>
-		</tr>
-	</table>
-			
-	<p>
-		<em>
-			{{poll.totalVotes}} votes counted so far.
-			<span ng-show="poll.userChoice">You voted for <strong>{{poll.userChoice.text}}</strong>.</span>
-		</em>
-	</p>
-	
+	<div google-chart chart="chart" style="{{chart.cssStyle}}"/>
+</div>	
+<div ng-show="poll.userVoted">
+
 	<p>
 		<hr>
 		</p>

@@ -16,7 +16,7 @@ var db = mongoose.createConnection('localhost', 'pollsapp'); //connect to polls 
 var PollSchema = require('../models/Poll.js').PollSchema; // load schema
 var Poll = db.model('polls', PollSchema); // Load data model for schema
 
-var nullVotes=[{ip:''}];
+var nullVotes=[];
 var pollArray=[
 	{
 		question:'Which is your favourite travel destination in India',
