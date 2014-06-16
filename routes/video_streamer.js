@@ -1,6 +1,5 @@
 var fs = require('fs'),
     path = require('path');
-var indexPage, movie_webm, movie_mp4, movie_ogg;
 
 function startsWith(str, prefix) {
     return str.lastIndexOf(prefix, 0) === 0;
