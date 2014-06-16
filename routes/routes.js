@@ -1,5 +1,6 @@
 var destination = require('./destinations');
 var poll_routes = require('./poll_routes');
+var video_streamer = require('./video_streamer');
 
 delete require.cache['./routes/destinations'];
 
@@ -98,6 +99,10 @@ module.exports = function(app, passport) {
     app.post('/polls', poll_routes.create);
     app.post('/vote', poll_routes.vote);
     app.delete('/polls/:id', poll_routes.remove);
+    
+    app.get('/streamMovie/:fileName',video_streamer.streamMovie);
+ //   app.get('/movie.ogg',video_streamer.movieOgg);
+ //   app.get('/movie.webm',video_streamer.movieWebm);
 };
 
 // route middleware to make sure a user is logged in

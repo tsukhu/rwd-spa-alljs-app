@@ -16,6 +16,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 * RESTful CRUD APIs will be exposed on Node.js server using the  MongoDB driver module
 * AngularJS will be used to build the SPA with Bootstrap (v3.x) providing the UI components.
 * Socket.io based real time travel poll with chart based results.
+* Added support for streaming video using the HTML5 video tags and a video streaming implementation inspired by(Paolorossi's Video Streamer)[https://gist.github.com/paolorossi/1993068] and has added tweaks for supporting multiple formats.
 
 Tools Used
 ----------
@@ -74,4 +75,5 @@ Added so far
 ** Delete Poll 
 ** Poll Listing Improvements with delete functionality as well as bootstrapped the initial set of poll questions
 ** Chart integration for the real time poll results with [Google Chart Tools Angular JS Directive](https://github.com/bouil/angular-google-chart) . See screenshots for visualization details in realtime.
+** HTML5 Video Streaming on Landing Page.
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
