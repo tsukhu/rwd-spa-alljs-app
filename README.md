@@ -10,13 +10,13 @@ Responsive Single Page Application using an end to end Java Script stack
 This is an attempt to build a SPA using an all Java Script stack. 
 
 
-* The theme for the application is a sample travel and tourism site using places in India as source and the plan is to add social elements to the same.
+* The theme for the application is a sample travel and tourism site using places in India as source and the plan is to add social elements to the same
 * The application will be using a travel destinations database persistence on MongoDB
 * Server will be Node.js using the Express module for the Web Application Hosting
 * RESTful CRUD APIs will be exposed on Node.js server using the  MongoDB driver module
-* AngularJS will be used to build the SPA with Bootstrap (v3.x) providing the UI components.
-* Socket.io based real time travel poll with chart based results.
-* Added support for streaming video using the HTML5 video tags.
+* AngularJS will be used to build the SPA with Bootstrap (v3.x) providing the UI components
+* Socket.io based real time travel poll with chart based results
+* Added support for streaming video using the HTML5 video tags
 Tools Used
 ----------
 
@@ -73,7 +73,7 @@ Added so far
 * Enhancements added to the user poll so far include
 ** Delete Poll 
 ** Poll Listing Improvements with delete functionality as well as bootstrapped the initial set of poll questions
-** Chart integration for the real time poll results with [Google Chart Tools Angular JS Directive](https://github.com/bouil/angular-google-chart) . See screenshots for visualization details in realtime.
+** Chart integration for the real time poll results with [Google Chart Tools Angular JS Directive](https://github.com/bouil/angular-google-chart) . See screenshots for visualization details in realtime
 * HTML5 Video Streaming on Landing Page.A video streaming implementation inspired by [Paolorossi's Video Streamer](https://gist.github.com/paolorossi/1993068) and has added tweaks for supporting multiple formats.
 
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
