@@ -16,7 +16,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 * RESTful CRUD APIs will be exposed on Node.js server using the  MongoDB driver module
 * AngularJS will be used to build the SPA with Bootstrap (v3.x) providing the UI components.
 * Socket.io based real time travel poll with chart based results.
-* Added support for streaming video using the HTML5 video tags and a video streaming implementation inspired by(Paolorossi's Video Streamer)[https://gist.github.com/paolorossi/1993068] and has added tweaks for supporting multiple formats.
+* Added support for streaming video using the HTML5 video tags and a video streaming implementation inspired by [Paolorossi's Video Streamer](https://gist.github.com/paolorossi/1993068) and has added tweaks for supporting multiple formats.
 
 Tools Used
 ----------
