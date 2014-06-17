@@ -76,5 +76,4 @@ Added so far
 ** Poll Listing Improvements with delete functionality as well as bootstrapped the initial set of poll questions
 ** Chart integration for the real time poll results with [Google Chart Tools Angular JS Directive](https://github.com/bouil/angular-google-chart) . See screenshots for visualization details in realtime
 * HTML5 Video Streaming on Landing Page.A video streaming implementation inspired by [Paolorossi's Video Streamer](https://gist.github.com/paolorossi/1993068) and has added tweaks for supporting multiple formats.
-
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
