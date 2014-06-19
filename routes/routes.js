@@ -1,7 +1,8 @@
 var destination = require('./destinations');
 var poll_routes = require('./poll_routes');
 var video_streamer = require('./video_streamer');
-
+var locales = [{ language: 'US English',
+				  locale: 'en_US'}];
 delete require.cache['./routes/destinations'];
 
 

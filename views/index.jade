@@ -65,6 +65,16 @@ block content
 									div.form-group
 										button.btn.btn-warning(type="submit") Login
 												li(ng-class="{active:getClass('/profile')}")
+				ul.nav.navbar-nav.navbar-right
+					li.dropdown
+						a(href="",class="dropdown-toggle",data-toggle="dropdown") 
+							span.glyphicon.glyphicon-flag 
+							b(class="caret")
+						ul.dropdown-menu
+							li(ng-class="{active:getClass('/placesAll')}") 
+								a(href="#/placesAll") US English
+							li(ng-class="{active:getClass('/groupedDestinations')}") 
+								a(href="#/groupedDestinations") French
 
 							
 	div.container
