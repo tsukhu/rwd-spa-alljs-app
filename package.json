@@ -28,7 +28,8 @@
     "method-override" : "~1.0.0",
     "errorhandler" : "~1.0.0",
     "socket.io": "~0.9.16",
-    "socket.io-client": "~0.9.16"
+    "socket.io-client": "~0.9.16",
+    "i18n-node-angular": "*"
   },
   "devDependencies": {
 	    "grunt": "latest",

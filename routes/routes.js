@@ -1,18 +1,31 @@
 var destination = require('./destinations');
 var poll_routes = require('./poll_routes');
 var video_streamer = require('./video_streamer');
-var locales = [{ language: 'US English',
-				  locale: 'en_US'}];
+var locales = [
+				{ language: 'US English',
+				  locale: 'en_US',
+				  flag: 'us'},
+				{ language: 'French',
+				  locale: 'fr_fr',
+				  flag: 'fr'} 
+			];
 delete require.cache['./routes/destinations'];
+
 
 
 module.exports = function(app, passport) {
 
+	// Language Change
+	app.get("/lang/:lang",function(req,res) {
+		console.log("Language Change ="+req.params.lang);
+		res.redirect('/');
+	});
+	
 	// =====================================
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
-		res.render('index', { title: 'India Tourism' ,_user : req.user });
+		res.render('index', { title: 'India Tourism' ,_user : req.user , locales: locales});
 	});
 
 	// =====================================
@@ -116,3 +129,4 @@ function isLoggedIn(req, res, next) {
 	// if they aren't redirect them to the home page
 	res.redirect('/');
 }
+

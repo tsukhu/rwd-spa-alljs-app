@@ -71,11 +71,10 @@ block content
 							span.glyphicon.glyphicon-flag 
 							b(class="caret")
 						ul.dropdown-menu
-							li(ng-class="{active:getClass('/placesAll')}") 
-								a(href="#/placesAll") US English
-							li(ng-class="{active:getClass('/groupedDestinations')}") 
-								a(href="#/groupedDestinations") French
-
+							- each locale in locales
+								li(ng-class="{active:getClass('/placesAll')}")
+									a(href="/lang/#{locale.locale}") #{locale.language}
+										span(class="flag-icon flag-icon-#{locale.flag} pull-right")
 							
 	div.container
 		div.span12(data-ng-view="",style="margin-top: 60px;margin-bottom: 60px")
