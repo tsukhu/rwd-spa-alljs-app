@@ -17,6 +17,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 * AngularJS will be used to build the SPA with Bootstrap (v3.x) providing the UI components
 * Socket.io based real time travel poll with chart based results
 * Added support for streaming video using the HTML5 video tags
+* Added i18n support using i18n-node and i18n-node-angular
 
 Tools Used
 ----------
@@ -33,6 +34,7 @@ Tools Used
 * Grunt/Mocha/Chai
 * Travis CI Service Hook
 * Socket.io 0.9.x
+* i18n-node , i18n-node-angular
  
 
 Installation
