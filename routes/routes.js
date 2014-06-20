@@ -12,6 +12,7 @@ var locales = [
 delete require.cache['./routes/destinations'];
 
 var i18n=require("i18n");
+var i18nRoutes = require( "i18n-node-angular" );
 
 i18n.configure({
     locales:['en_US', 'fr_fr'],
@@ -25,7 +26,9 @@ i18n.configure({
 module.exports = function(app, passport) {
 	// init i18n module for this loop
   	app.use(i18n.init);
+	app.use(i18nRoutes.getLocale );
 	
+	i18nRoutes.configure( app );
 	
 	// Language Change
 	app.get("/lang/:lang",function(req,res) {

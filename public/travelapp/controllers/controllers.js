@@ -158,12 +158,14 @@ app.controller('GroupedDestinationsController', [ '$scope', '$http',
 		} ]);
 // This controller for the menu actions which checked if the getClass is true
 // to initiate the route
-app.controller('MenuController', function($scope, $location) {
-	$scope.isActive = function(viewLocation) {
+app.controller('MenuController', ['i18n','$scope','$location',function(i18n,$scope, $location) {
+	// Inject the service into the scope, so we can access __() and 'loaded'.
+  	$scope.i18n = i18n;
+  	$scope.isActive = function(viewLocation) {
 		var active = (viewLocation === $location.path());
 		return active;
 	};
-});
+}]);
 
 app.controller('ProfileController', [ '$scope', '$http', 'travelService',
 		function($scope, $http, travelService) {

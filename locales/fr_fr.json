@@ -5,9 +5,11 @@
 	"All Destinations" : "Toutes les destinations",
 	"Grouped Destinations": "Destinations groupes",
 	"Login": "Connexion",
-	"About Me": "À propos de moi",
+	"About Me": "Mon profil",
 	"Logout": "Déconnexion",
 	"Email": "Email",
 	"Password":"Mot de passe",
-	"Remember me": "Se souvenir de moi"
+	"Remember me": "Se souvenir de moi",
+	"Amazing India SPA": "Incroyable Inde",
+	"Amazing India Description": "Visitez quelques-unes des destinations passionnantes en Inde. The idea behind this site was to create an end to end java script based SPA.Tools and Frameworks used AngularJS, Bootstrap , Node.js , MongoDB for Persistence , Social Buttons for Twitter Bootstrap, JQuery One Page Navigation Plugin"
 }

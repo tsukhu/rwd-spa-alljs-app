@@ -1,7 +1,7 @@
 ﻿/// <reference path="../Scripts/angular-1.1.4.js" />
 
 var app = angular.module('travelApp', [ 'ngRoute', 'ngCookies', 'ngResource',
-		'travelApp.directives.localWeather' ,'googlechart']);
+		'travelApp.directives.localWeather' ,'googlechart' , 'i18n']);
 
 app.factory('Poll', function($resource) {
 	return $resource('polls/:pollId', {pollId: "@pollId" }, 
@@ -45,7 +45,10 @@ app.factory('socket', function($rootScope) {
 app.config(function($routeProvider) {
 	$routeProvider.when('/', {
 		controller : 'MenuController',
-		templateUrl : 'travelapp/partials/landingPage.html'
+		templateUrl : 'travelapp/partials/landingPage.html',
+		resolve  : {
+                           i18n    : [ "i18n", function( i18n ) { return i18n.i18n(); } ]
+                    }
 	}).when('/placesAll', {
 		controller : 'DestinationsController',
 		templateUrl : 'travelapp/partials/destinations.html'
