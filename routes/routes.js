@@ -11,13 +11,28 @@ var locales = [
 			];
 delete require.cache['./routes/destinations'];
 
+var i18n=require("i18n");
+
+i18n.configure({
+    locales:['en_US', 'fr_fr'],
+    cookie: 'locale',
+    directory: __dirname + '/../locales',
+    // you may alter a site wide default locale
+    defaultLocale: 'en_US'
+});
 
 
 module.exports = function(app, passport) {
-
+	// init i18n module for this loop
+  	app.use(i18n.init);
+	
+	
 	// Language Change
 	app.get("/lang/:lang",function(req,res) {
+		var locale=req.params.lang;
+		res.cookie('locale', locale);
 		console.log("Language Change ="+req.params.lang);
+		res.setLocale(locale);
 		res.redirect('/');
 	});
 	

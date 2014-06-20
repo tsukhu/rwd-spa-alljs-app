@@ -23,47 +23,47 @@ block content
 					span(class="icon-bar")
 					span(class="icon-bar")
 					span(class="icon-bar")
-				a(class="navbar-brand",href="#") India Tourism
+				a(class="navbar-brand",href="#")= __('India Tourism')
 			div.collapse.navbar-collapse
 				ul.nav.navbar-nav
 					li.dropdown
-						a(href="",class="dropdown-toggle",data-toggle="dropdown") Places 
+						a(href="",class="dropdown-toggle",data-toggle="dropdown")= __('Places') 
 							b(class="caret")
 						ul.dropdown-menu
 							li(ng-class="{active:getClass('/placesAll')}") 
-								a(href="#/placesAll") All Destinations
+								a(href="#/placesAll")= __('All Destinations')
 							li(ng-class="{active:getClass('/groupedDestinations')}") 
-								a(href="#/groupedDestinations") Grouped Destinations
+								a(href="#/groupedDestinations")= __('Grouped Destinations')
 					li(data-ng-class="{'active':getClass('/orders')}")
-						a(href="#/polls") Travel Poll
+						a(href="#/polls")= __('Travel Poll')
 					if (_user)
 						li.dropdown
 							a.dropdown-toggle(data-toggle="dropdown") #{_user.local.email}
 								b(class="caret")
 							ul.dropdown-menu
 								li(ng-class="{active:getClass('#/profile')}") 
-									a(href="#/profile") About Me
+									a(href="#/profile")= __('About Me')
 								li(ng-class="{active:getClass('/logout')}") 
-									a(href="/logout") Logout
+									a(href="/logout")= __('Logout')
 					else
 						li.dropdown
-							a.dropdown-toggle(data-toggle="dropdown") Login
+							a.dropdown-toggle(data-toggle="dropdown")= __('Login')
 								b(class="caret")
 							div.dropdown-menu.row-fluid.navbar-inverse
 								form.navbar-inverse(action="/login",method="post",style="margin: 0px;padding:5px;",accept-charset="UTF-8")
 									div.form-group
-										label.sr-only(style="padding:5px;") Email
+										label.sr-only(style="padding:5px;")= __('Email')
 										input.form-control(type="text",name="email",placeholder="Email")
 									div.form-group
-										label.sr-only(style="padding:5px;") Password
+										label.sr-only(style="padding:5px;")= __('Password')
 										input.form-control(type="password",name="password",placeholder="Password")
 									div.form-group
 										div.col-sm-offset-2.col-sm-10.col-md-12.col-md-offset-0.col-lg-12.col-lg-offset-0
 											div.checkbox
-												label.label Remember me
+												label.label= __('Remember me')
 												input(type="checkbox",name="rememberme")
 									div.form-group
-										button.btn.btn-warning(type="submit") Login
+										button.btn.btn-warning(type="submit")= __('Login')
 												li(ng-class="{active:getClass('/profile')}")
 				ul.nav.navbar-nav.navbar-right
 					li.dropdown
