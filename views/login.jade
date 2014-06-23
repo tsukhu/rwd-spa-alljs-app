@@ -21,21 +21,21 @@ block content
 						button#btn-username.btn.btn-warning(type="button",name="usertype",data-toggle="button", data-toggle-value="login-user") Username
 					input(type="hidden",name="loginOption",value="login-email")
 				div#emailtype.form-group
-					label Email
+					label= __('Email')
 					input.form-control(type="email",name="email",placeholder="Email")
 				div#usertype.form-group
-					label Username
+					label= __('Username')
 					input.form-control(type="text",name="username",placeholder="Username")
 				div.form-group
-					label Password
+					label= __('Password')
 					input.form-control(type="password",name="password",placeholder="Password")
 				div.checkbox
-					label Remember me
+					label= __('Remember me')
 						input(type="checkbox",name="rememberme")
-				button.btn.btn-warning.btn-lg(type="submit") Login
+				button.btn.btn-warning.btn-lg(type="submit")= __('Login')
 			hr
 			p Need an account? 
-				a(href="/signup") Signup
+				a(href="/signup")= __('Signup')
 			p Or go 
 				a(href="/") home.
 			script(type='text/javascript').

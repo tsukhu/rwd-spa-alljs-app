@@ -1,15 +1,17 @@
 {
 	"Travel Poll": "Travel Poll",
 	"India Tourism": "India Tourism",
-	"Places" : "Places",
-	"All Destinations" : "All Destinations",
+	"Places": "Places",
+	"All Destinations": "All Destinations",
 	"Grouped Destinations": "Grouped Destinations",
 	"Login": "Login",
 	"About Me": "About Me",
 	"Logout": "Logout",
 	"Email": "Email",
-	"Password":"Password",
+	"Password": "Password",
 	"Remember me": "Remember me",
-	"Amazing India SPA":"Amazing India SPA",
-	"Amazing India Description": "Visit some of the exciting destinations in India. The idea behind this site was to create an end to end java script based SPA.Tools and Frameworks used AngularJS, Bootstrap , Node.js , MongoDB for Persistence , Social Buttons for Twitter Bootstrap, JQuery One Page Navigation Plugin"
+	"Signup": "Signup",
+	"Amazing India SPA": "Amazing India SPA",
+	"Amazing India Description": "Visit some of the exciting destinations in India. The idea behind this site was to create an end to end java script based SPA.Tools and Frameworks used AngularJS, Bootstrap , Node.js , MongoDB for Persistence , Social Buttons for Twitter Bootstrap, JQuery One Page Navigation Plugin",
+	"Username": "Username"
 }
