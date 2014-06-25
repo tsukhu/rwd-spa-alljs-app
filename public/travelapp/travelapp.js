@@ -51,13 +51,22 @@ app.config(function($routeProvider) {
                     }
 	}).when('/placesAll', {
 		controller : 'DestinationsController',
-		templateUrl : 'travelapp/partials/destinations.html'
+		templateUrl : 'travelapp/partials/destinations.html',
+		resolve  : {
+                           i18n    : [ "i18n", function( i18n ) { return i18n.i18n(); } ]
+                    }
 	}).when('/groupedDestinations', {
 		controller : 'GroupedDestinationsController',
-		templateUrl : 'travelapp/partials/groupedDestinations.html'
+		templateUrl : 'travelapp/partials/groupedDestinations.html',
+		resolve  : {
+                           i18n    : [ "i18n", function( i18n ) { return i18n.i18n(); } ]
+                    }
 	}).when('/profile', {
 		controller : 'ProfileController',
-		templateUrl : 'travelapp/partials/profile.html'
+		templateUrl : 'travelapp/partials/profile.html',
+		resolve  : {
+                           i18n    : [ "i18n", function( i18n ) { return i18n.i18n(); } ]
+                    }
 	}).when('/polls', {
 		templateUrl : 'travelapp/partials/pollListing.html',
 		controller : 'PollListCtrl'

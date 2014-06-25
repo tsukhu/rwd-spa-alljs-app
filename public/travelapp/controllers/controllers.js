@@ -1,16 +1,17 @@
 ﻿//This controller retrieves data from the RESTful destinations API and associates it with the $scope
 //The $scope is ultimately bound to the customers view
-app.controller('DestinationsController', [
+app.controller('DestinationsController', ['i18n',
 		'$scope',
 		'$http',
 		'$cookieStore',
 		'travelService',
-		function($scope, $http, $cookieStore, travelService) {
+		function(i18n,$scope, $http, $cookieStore, travelService) {
 
 			// I like to have an init() for controllers that need to perform
 			// some initialization. Keeps things in
 			// one place...not required though especially in the simple example
 			// below
+			$scope.i18n = i18n;
 			$scope.destinations = [];
 			$scope.user = null;
 			$scope.favRegion = null;

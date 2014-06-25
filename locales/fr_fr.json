@@ -13,5 +13,8 @@
 	"Remember me": "Se souvenir de moi",
 	"Amazing India SPA": "Incroyable Inde",
 	"Amazing India Description": "Visitez quelques-unes des destinations passionnantes en Inde. The idea behind this site was to create an end to end java script based SPA.Tools and Frameworks used AngularJS, Bootstrap , Node.js , MongoDB for Persistence , Social Buttons for Twitter Bootstrap, JQuery One Page Navigation Plugin",
-	"Username": "Username"
+	"Username": "Username",
+	"Travel Destinations":"Destination de voyage",
+	"Travel Destinations by Group":"Destination de voyage par groupe",
+	"Travel Page Details":"Liste de toutes les destinations de voyage avec informations de localisation et le temps"
 }
