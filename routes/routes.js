@@ -25,15 +25,30 @@ i18n.configure({
 
 module.exports = function(app, passport) {
 	// init i18n module for this loop
+	
   	app.use(i18n.init);
 	app.use(i18nRoutes.getLocale );
 	
 	i18nRoutes.configure( app );
 	
+	app.get( "/i18n/:locale", function(req,res) {
+		var locale = request.params.locale;
+  		response.sendfile( "locales/" + locale + ".json" );
+	});
+
+    app.get( "/i18n/:locale/:phrase",  function(request,response) {
+		var locale = request.params.locale;
+  		var phrase = request.params.phrase;
+  		var result = i18n.__( {phrase: phrase, locale: locale} );
+  		response.send( result );
+	});
+    
 	// Language Change
 	app.get("/lang/:lang",function(req,res) {
 		var locale=req.params.lang;
-		res.cookie('locale', locale);
+		res.cookie('locale', locale,{
+		maxAge : 600000
+	});
 		console.log("Language Change ="+req.params.lang);
 		res.setLocale(locale);
 		res.redirect('/');
@@ -43,6 +58,13 @@ module.exports = function(app, passport) {
 	// HOME PAGE (with login links) ========
 	// =====================================
 	app.get('/', function(req, res) {
+	   var locale=req.cookies.locale;
+	   // if locale cookie not set 
+	   // default to en_US
+	   if (!locale) {
+	   	res.setLocale('en_US');
+	   	res.redirect('/lang/en_US');
+	   }
 		res.render('index', { title: 'India Tourism' ,_user : req.user , locales: locales});
 	});
 
