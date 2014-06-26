@@ -65,7 +65,7 @@ module.exports = function(app, passport) {
 	   	res.setLocale('en_US');
 	   	res.redirect('/lang/en_US');
 	   }
-		res.render('index', { title: 'India Tourism' ,_user : req.user , locales: locales});
+	   	res.render('index', { title: 'India Tourism' ,_user : req.user , locales: locales});
 	});
 
 	// =====================================
