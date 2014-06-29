@@ -13,7 +13,9 @@ block content
 	script(src="/js/jquery.localScroll.js")
 	script(src="/js/jquery.easing.compatibility.js")
 	script(src="/js/jquery.simpleWeather.js")
+	script(src="/js/bootstrap-switch.js")
 	script(src="/travelapp/directives/localWeather.js")
+	script(src="/travelapp/directives/inputSwitch.js")
 	script(src="/travelapp/directives/ng-google-chart.js")
 	script(src="/js/i18n-node-angular.js")
 	div.navbar.navbar-inverse.navbar-fixed-top(role="navigation")
@@ -108,7 +110,7 @@ block content
 		
 		jQuery(document).ready(function($) {
 			// Code that uses jQuery's $ can follow here.
-			//		alert("hello");
+				//	alert("hello");
 				$('.carousel').carousel({
 					interval : 2000
 				});
@@ -134,6 +136,7 @@ block content
 			
 			// Ensure equal heights on thumbnail boxes
 			// equalHeight($(".thumbnail"));
+			
 		});
 		
 	// App libs

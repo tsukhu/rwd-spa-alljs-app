@@ -259,7 +259,9 @@ app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
          });
 
 
-   	 				
+   	 	//	$scope.$on('$viewContentLoaded', function() {
+        //		jQuery('input[type="checkbox"],[type="radio"]').bootstrapSwitch();
+   	 	//	});			
 			// myvote message handler
 			// update poll object if viewing the same poll question
 			socket.on('myvote', function(data) {
