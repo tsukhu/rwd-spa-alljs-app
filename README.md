@@ -19,6 +19,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 * Added support for streaming video using the HTML5 video tags
 * Added i18n support using i18n-node and i18n-node-angular
 * Added Bootstrap switch based visualization of the poll question options (Toggle Switch for radio buttons - UxD improvement)
+* Directives Added - Weather for each location `local-weather` , Bootstrap Toggle Switch for poll questions `input-switch`
 
 Tools Used
 ----------
