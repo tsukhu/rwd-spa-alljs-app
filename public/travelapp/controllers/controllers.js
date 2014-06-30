@@ -359,3 +359,38 @@ app.controller('PollNewCtrl', [ '$scope', '$location', 'Poll',
 			};
 
 		} ]);
+		
+// Carousel Controller 
+app.controller('CarouselDemoCtrl', [ '$scope',
+	function($scope) {
+		$scope.myInterval = 3000;
+  		$scope.slides = [
+		    {
+		      image: 'pics/hampi.jpg',
+		      href: 'http://goindia.about.com/od/historicalplaces/p/hampiguide.htm',
+		      label: 'Village of Hampi (Karnataka)'
+		    },
+		    {
+		      image: 'pics/keralabackwaters.jpg', 
+		      href: 'http://goindia.about.com/od/southindia/ig/Kerala-Backwaters-Attractions/',
+		      label: 'Kerala Backwaters'
+		    },
+		    {
+		      image: 'pics/kochi.jpg',
+		      href: 'http://goindia.about.com/od/kerala/tp/Kochi-Attractions.htm',
+		      label: 'Kochi'
+		    },
+		    {
+		      image: 'pics/madurai.jpg',
+		      href: 'http://goindia.about.com/od/tamilnadu/tp/top-tamil-nadu-attractions.htm',
+		      label: 'Madurai'
+		    },
+		    {
+		      image: 'pics/varkala.jpg',
+		      href: 'http://goindia.about.com/od/festivalsevents/ig/Varkala-Temple-Festival/',
+		      label: 'Varkala Temple Festival'
+		    }
+  		];
+	}
+	]
+);

@@ -5,87 +5,27 @@
 
 	<div class="jumbotron">
 		<h2>{{'Amazing India SPA'|i18n}}</h2>
-		<p>{{'Amazing India Description'|i18n}}<p>
-		<!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p> -->
+		<p>{{'Amazing India Description'|i18n}}
+		<p>
+			<!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p> -->
 		<p>Login or Register with:</p>
 
 		<a href="/login" class="btn btn-primary"><span class="fa fa-user"></span>
 			Local Login</a> <a href="/signup" class="btn btn-primary"><span
 			class="fa fa-user"></span> Local Signup</a> <br> <br>
-		<div id="this-carousel-id" class="carousel slide" data-ride="carousel">
-			<!-- class of slide for animation -->
-			<ol class="carousel-indicators">
-				<li data-target="#this-carousel-id" data-slide-to="0" class="active"></li>
-				<li data-target="#this-carousel-id" data-slide-to="1"></li>
-				<li data-target="#this-carousel-id" data-slide-to="2"></li>
-				<li data-target="#this-carousel-id" data-slide-to="3"></li>
-				<li data-target="#this-carousel-id" data-slide-to="4"></li>
-			</ol>
-			<div class="carousel-inner">
-				<div class="item active">
-					<!-- class of active since it's the first item -->
-					<img src="pics/hampi.jpg" alt="Hampi" />
-					<div class="carousel-caption">
-						<p>
-							<a
-								href="http://goindia.about.com/od/historicalplaces/p/hampiguide.htm"
-								class="btn btn-success btn-small">Village of Hampi
-								(Karnataka)</a>
-						</p>
-					</div>
+		<div ng-controller="CarouselDemoCtrl" id="slides_control">
+			<div>
+				<carousel interval="myInterval"> <slide
+					ng-repeat="slide in slides" active="slide.active"> <img
+					ng-src="{{slide.image}}">
+				<div class="carousel-caption">
+					<p>
+						<a href={{slide.href}} class="btn btn-success btn-small transparent ">{{slide.label}}</a>
+					</p>
 				</div>
-				<div class="item">
-					<img src="pics/keralabackwaters.jpg" alt="Kerala Backwaters" />
-					<div class="carousel-caption">
-						<p>
-							<a
-								href="http://goindia.about.com/od/southindia/ig/Kerala-Backwaters-Attractions/"
-								class="btn btn-success btn-small">Kerala Backwaters</a>
-						</p>
-					</div>
-				</div>
-				<div class="item">
-					<img src="pics/kochi.jpg" alt="Kochi" />
-					<div class="carousel-caption">
-						<p>
-							<a
-								href="http://goindia.about.com/od/kerala/tp/Kochi-Attractions.htm"
-								class="btn btn-success btn-small">Kochi</a>
-						</p>
-					</div>
-				</div>
-				<div class="item">
-					<img src="pics/madurai.jpg" alt="Madurai" />
-					<div class="carousel-caption">
-						<p>
-							<a
-								href="http://goindia.about.com/od/tamilnadu/tp/top-tamil-nadu-attractions.htm"
-								class="btn btn-success btn-small">Madurai</a>
-						</p>
-					</div>
-				</div>
-				<div class="item">
-					<img src="pics/varkala.jpg" alt="Varkala" />
-					<div class="carousel-caption">
-						<p>
-							<a
-								href="http://goindia.about.com/od/festivalsevents/ig/Varkala-Temple-Festival/"
-								class="btn btn-success btn-small">Varkala Temple Festival</a>
-						</p>
-					</div>
-				</div>
+				</slide> </carousel>
 			</div>
-			<!-- /.carousel-inner -->
-			<!-- Controls -->
-			<a class="left carousel-control" href="#this-carousel-id"
-				data-slide="prev"> <span
-				class="glyphicon glyphicon-chevron-left"></span>
-			</a> <a class="right carousel-control" href="#this-carousel-id"
-				data-slide="next"> <span
-				class="glyphicon glyphicon-chevron-right"></span>
-			</a>
 		</div>
-		<!-- /.carousel -->
 	</div>
 </div>
 <div class="container">
@@ -130,8 +70,8 @@
 						assists with creating single-page applications, one-page web
 						applications that only require HTML, CSS, and JavaScript on the
 						client side. Its goal is to augment web applications with
-						model–view–controller (MVC) capability, in an effort to make both
-						development and testing easier.</div>
+						model–view–controller (MVC) capability, in an effort to make
+						both development and testing easier.</div>
 				</div>
 
 				<div class="panel panel-info" id="section-4">

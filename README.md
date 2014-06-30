@@ -38,6 +38,7 @@ Tools Used
 * Socket.io 0.9.x
 * i18n-node , i18n-node-angular
 * Bootstrap Switch 3
+* Angular JS native directives based on Bootstrap markup and CSS
  
 
 Installation
@@ -84,4 +85,5 @@ Added so far
 * Adding i18n-node based translation and also using i18n-node-angular to ensure consistent implementation within the app.
 * Added directive for bootstrap toggle switch and used it in the poll (instead of the standard radio buttons)
 * User angular-smoothscroll directive on the landing page
+* Changed the landing page Carousel to use the angular JS directives for `caurosel` and `slide`
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
