@@ -1,7 +1,7 @@
 ﻿/// <reference path="../Scripts/angular-1.1.4.js" />
 
 var app = angular.module('travelApp', [ 'ngRoute', 'ngCookies', 'ngResource',
-		'travelApp.directives.localWeather' ,'travelApp.directives.switch','googlechart' , 'i18n']);
+		'travelApp.directives.localWeather' ,'travelApp.directives.switch','googlechart' , 'i18n','angularSmoothscroll']);
 
 app.factory('Poll', function($resource) {
 	return $resource('polls/:pollId', {pollId: "@pollId" }, 
