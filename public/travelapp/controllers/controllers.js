@@ -359,8 +359,8 @@ app.controller('PollNewCtrl', [ '$scope', '$location', 'Poll',
 			};
 
 		} ]);
-		
-// Carousel Controller 
+
+// Carousel Controller 		
 app.controller('CarouselDemoCtrl', [ '$scope',
 	function($scope) {
 		$scope.myInterval = 3000;

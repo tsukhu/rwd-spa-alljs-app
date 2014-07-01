@@ -59,24 +59,6 @@ app.use(cookieParser());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, CONFIG.publicFolder))); // location of the files
 
-// required for passport
-app.use(session({
-	secret : CONFIG.secret,  	// session secret
-	store : new MongoStore({
-		url : configDB.url,
-		maxAge : CONFIG.cookie_max_age
-	}),
-	cookie : {
-		maxAge : CONFIG.cookie_max_age
-	// one week
-	}
-}));
-
-app.use(passport.initialize());
-app.use(passport.session()); // persistent login sessions
-app.use(flash()); // use connect-flash for flash messages stored in session
-
-
 //Handle Errors gracefully
 app.use(function(err, req, res, next) {
 	if(!err) return next();
@@ -90,18 +72,46 @@ if ('development' === app.get('env')) {
 	app.use(allowCrossDomain);
 }
 
-require('./routes/routes.js')(app, passport); // load our routes and pass in
+var sessionStore = new MongoStore(
+	{ 
+		url : configDB.url,
+		maxAge : CONFIG.cookie_max_age,
+		clear_interval: 3600,
+    	auto_reconnect: true
+		}, 
+		function(e) {  //wait for the connection to occur before allowing your application to start listening
+  			// required for passport
+			app.use(session({
+				secret : CONFIG.secret,  	// session secret
+				store : new MongoStore({
+					url : configDB.url,
+					maxAge : CONFIG.cookie_max_age
+				}),
+				cookie : {
+					maxAge : CONFIG.cookie_max_age
+				// one week
+				}
+			}));
+ 			
+ 			app.use(passport.initialize());
+			app.use(passport.session()); // persistent login sessions
+			app.use(flash()); // use connect-flash for flash messages stored in session
+			
+			require('./routes/routes.js')(app, passport); // load our routes and pass in
 												// our app and fully configured
 												// passport
-//app.listen(app.get('port'), function(){
-//	  console.log('Express server listening on port ' + app.get('port'));
-//	});
 
-var poll_routes = require('./routes/poll_routes');
+			var poll_routes = require('./routes/poll_routes');
+			
+			// listen on connection event using callback method of vote
+			io.sockets.on('connection', poll_routes.vote);
+			
+			server.listen(app.get('port'), function(){
+			  console.log('Express server listening on port ' + app.get('port'));
+			});
+	}
+);
 
-// listen on connection event using callback method of vote
-io.sockets.on('connection', poll_routes.vote);
 
-server.listen(app.get('port'), function(){
-  console.log('Express server listening on port ' + app.get('port'));
-});
+
+
