@@ -24,7 +24,8 @@ glyphicon-plus"></span> New Poll</a>
 					href="#/new">create one</a>?</li>
 		</ul>
 		<div class="table-responsive">
-			<table class="table table-striped table-bordered table-hover" ng-switch-default>
+			<table class="table table-striped table-bordered table-hover"
+				ng-switch-default>
 				<thead>
 					<tr>
 						<th>Poll Question</th>
@@ -33,10 +34,24 @@ glyphicon-plus"></span> New Poll</a>
 				</thead>
 				<tbody>
 					<tr ng-repeat="poll in polls | filter:query">
-						<td ><a href="#/poll/{{poll._id}}">{{poll.question}}</a></td>
-						<td style="text-align:center; vertical-align:middle;"><a href="#/remove/{{poll._id}}" class="btn btn-danger">
+						<td><a href="#/poll/{{poll._id}}">{{poll.question}}</a></td>
+						<td style="text-align: center; vertical-align: middle;">
+						<div class="hidden-sm hidden-xs visible-md visible-lg">
+							<a href="#/remove/{{poll._id}}" class="btn btn-danger"> <span
+								class="glyphicon glyphicon-minus"></span> Remove
+							</a>
+						</div>
+						<div class="visible-sm hidden-xs hidden-md hidden-lg">
+							<a href="#/remove/{{poll._id}}" class="btn btn-sm btn-danger">
 								<span class="glyphicon glyphicon-minus"></span> Remove
-						</a></td>
+							</a>
+						</div>
+						<div class="visible-xs hidden-sm hidden-md hidden-lg">
+							<a href="#/remove/{{poll._id}}" class="btn btn-xs btn-danger">
+								<span class="glyphicon glyphicon-minus"></span>
+							</a>
+						</div>
+						</td>
 					</tr>
 				</tbody>
 			</table>

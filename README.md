@@ -20,6 +20,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 * Added i18n support using i18n-node and i18n-node-angular
 * Added Bootstrap switch based visualization of the poll question options (Toggle Switch for radio buttons - UxD improvement)
 * Directives Added - Weather for each location `local-weather` , Bootstrap Toggle Switch for poll questions `input-switch`
+* Added Responsive Text and Buttons using media queries as well as using the Bootstrap responsive utilities for hiding and showing elements
 
 Tools Used
 ----------
@@ -86,4 +87,5 @@ Added so far
 * Added directive for bootstrap toggle switch and used it in the poll (instead of the standard radio buttons)
 * User angular-smoothscroll directive on the landing page
 * Changed the landing page Carousel to use the angular JS directives for `caurosel` and `slide`
+* Added Media Queries for responsive text (Shrinking based on resolution) and Button Sizes based on Bootstrap responsive utilities of `visible-$`, `hidden-$`, `btn-xs`, `btn-sm` etc
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.

@@ -5,3 +5,69 @@
   	border-bottom: #777 1px solid;
  	border-left: #777 1px solid;
 }
+
+@media all and (min-width: 960px) {
+    .container{
+        font-size: 18px;
+    }
+    
+    .jumbotron h2{
+        font-size: 21px;
+    }
+    
+    .jumbotron p{
+        font-size: 18px;
+    }
+    
+    .well,
+    .page-header h1 {
+    	font-size: 24px;
+    }
+}
+ 
+@media all and (max-width: 959px) and (min-width: 600px) {
+    .container{
+        font-size: 16px;
+    }
+    
+    .jumbotron h2{
+        font-size: 18px;
+    }
+    
+    .jumbotron p{
+        font-size: 16px;
+    }
+    
+    .well,
+    .page-header h1 {
+    	font-size: 20px;
+    }
+}
+ 
+@media all and (max-width: 599px) and (min-width: 320px) {
+    .container{
+        font-size: 12px;
+    } 
+    
+  .jumbotron h2 {
+    font-size: 14px;
+  }
+  
+     .jumbotron p{
+        font-size: 12px;
+    }
+    
+
+    .well,
+    .page-header h1 {
+    	font-size: 16px;
+    }
+}
+
+
+
+
+
+
+
+
