@@ -3,16 +3,20 @@
 
 <div class="container">
 
-	<div class="jumbotron">
-		<h2>{{'Amazing India SPA'|i18n}}</h2>
-		<p>{{'Amazing India Description'|i18n}}
-		<p>
-			<!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p> -->
-		<p>Login or Register with:</p>
+	<div class="jumbotron jumbotron-India">
+		<div class="well">
+			<h2>{{'Amazing India SPA'|i18n}}</h2>
+			<p>{{'Amazing India Description'|i18n}}
+			<p>
+				<!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p> -->
+			<p>Login or Register with:</p>
 
-		<a href="/login" class="btn btn-primary"><span class="fa fa-user"></span>
-			Local Login</a> <a href="/signup" class="btn btn-primary"><span
-			class="fa fa-user"></span> Local Signup</a> <br> <br>
+			<a href="/login" class="btn btn-primary"><span class="fa fa-user"></span>
+				Local Login</a> <a href="/signup" class="btn btn-primary"><span
+				class="fa fa-user"></span> Local Signup</a> 
+			<br> 
+		</div>
+		<br>
 		<div ng-controller="CarouselDemoCtrl" id="slides_control">
 			<div>
 				<carousel interval="myInterval"> <slide
@@ -20,7 +24,8 @@
 					ng-src="{{slide.image}}">
 				<div class="carousel-caption">
 					<p>
-						<a href={{slide.href}} class="btn btn-success btn-small transparent ">{{slide.label}}</a>
+						<a href={{slide.href}}
+							class="btn btn-success btn-small transparent ">{{slide.label}}</a>
 					</p>
 				</div>
 				</slide> </carousel>
@@ -31,7 +36,7 @@
 <div class="container">
 	<div class="row-fluid">
 		<div class="span8">
-			<video controls class="img img-responsive">
+			<video controls class="center-block img img-rounded img-responsive">
 				<source src="streamMovie/movie.mp4" type="video/mp4" />
 				<source src="streamMovie/movie.ogg" type="video/webm" />
 				<source src="streamMovie/movie.webm" type="video/ogg" />
@@ -40,6 +45,7 @@
 				<code>video</code>
 				element.
 			</video>
+			<br>
 			<div id="content">
 				<div class="panel panel-info" id="section-1">
 					<div class="panel-heading">Bootstrap</div>
