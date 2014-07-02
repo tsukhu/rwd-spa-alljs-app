@@ -61,7 +61,7 @@ module.exports = function(app, passport) {
 	   var locale=req.cookies.locale;
 	   // if locale cookie not set 
 	   // default to en_US
-	   if (!locale && initializedLocale===false) {
+	   if (!locale || initializedLocale===false) {
 	   	res.setLocale('en_US');
 	   	initializedLocale=true;
 	   	res.redirect('/lang/en_US');
