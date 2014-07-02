@@ -59,8 +59,10 @@ exports.streamMovie = function(req, res) {
   
    res.on('close', function(){
           console.log('response closed');
+          if (res.openedFile) {
           res.openedFile.unpipe(this);
           fs.close(this.openedFile.fd);
+          }
      });
             
 };
