@@ -25,7 +25,7 @@ i18n.configure({
 
 module.exports = function(app, passport) {
 	// init i18n module for this loop
-	
+	initializedLocale=false;
   	app.use(i18n.init);
 	app.use(i18nRoutes.getLocale );
 	
@@ -61,9 +61,11 @@ module.exports = function(app, passport) {
 	   var locale=req.cookies.locale;
 	   // if locale cookie not set 
 	   // default to en_US
-	   if (!locale) {
+	   if (!locale && initializedLocale===false) {
 	   	res.setLocale('en_US');
+	   	initializedLocale=true;
 	   	res.redirect('/lang/en_US');
+	   	
 	   }
 	   	res.render('index', { title: 'India Tourism' ,_user : req.user , locales: locales});
 	});
