@@ -6,7 +6,7 @@ angular.module('travelApp.directives.switch',[])
 		},
 		controller: function($scope,$element) {
         	jQuery(document).ready(function () {
-            	jQuery('input[type="checkbox"],[type="radio"]').bootstrapSwitch();
+            	jQuery('input[name="choice"],[type="radio"]').bootstrapSwitch();
             	isInitialized = true;
         	});
 

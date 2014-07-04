@@ -97,7 +97,7 @@ block content
 		$.noConflict();
 		
 		function equalHeight(group) {    
-			alert("ss");
+		//	alert("ss");
 			tallest = 0;    
 			group.each(function() {       
 				thisHeight = $(this).height();
@@ -114,9 +114,14 @@ block content
 				$('.carousel').carousel({
 					interval : 2000
 				});
-		
+				
+				$('.dropdown-menu form').click(function (e)
+				{
+					e.stopPropagation();
+				});
+			
 			// Ensure equal heights on thumbnail boxes
-			// equalHeight($(".thumbnail"));
+			equalHeight($(".thumbnail"));
 			
 		});
 		
