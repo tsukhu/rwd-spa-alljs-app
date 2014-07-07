@@ -40,6 +40,16 @@
 	    "chai": "~1.8.1",
 	    "sinon": "~1.7",
 	    "sinon-chai": "latest",
-	    "supertest" : "latest"
+	    "supertest" : "latest",
+	    "grunt-contrib-jshint": "latest",
+	    "debug": "*",
+	    "diff" : "*",
+	    "formidable" : "*",
+	    "form-data" : "*",
+	    "extend" : "*",
+	    "mime" : "*",
+	    "readable-stream" : "*",
+	    "qs" : "*",
+	    "cookiejar": "*"
 	  }
 }

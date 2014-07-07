@@ -43,7 +43,7 @@ app.controller('DestinationsController', ['i18n',
 					$cookieStore.put('favRegion', $scope.favRegion);
 
 				}
-			}
+			};
 
 			$scope.getWeather = function(divId, location) {
 				alert("SimpleWeather Called");
@@ -52,16 +52,16 @@ app.controller('DestinationsController', ['i18n',
 					woeid : '',
 					unit : 'f',
 					success : function(weather) {
-						html = '<h2><i class="icon-' + weather.code + '"></i> '
-								+ weather.temp + '&deg;' + weather.units.temp
-								+ '</h2>';
-						html += '<ul><li>' + weather.city + ', '
-								+ weather.region + '</li>';
-						html += '<li class="currently">' + weather.currently
-								+ '</li>';
-						html += '<li>' + weather.wind.direction + ' '
-								+ weather.wind.speed + ' '
-								+ weather.units.speed + '</li></ul>';
+						html = '<h2><i class="icon-' + weather.code + '"></i> '	+ 
+						weather.temp + '&deg;' + 
+						weather.units.temp	+ 
+						'</h2>';
+						html += '<ul><li>' + weather.city + ', ' + 
+						weather.region + '</li>';
+						html += '<li class="currently">' + weather.currently + 
+						'</li>';
+						html += '<li>' + weather.wind.direction + ' ' + 
+						weather.wind.speed + ' ' + weather.units.speed + '</li></ul>';
 						alert("#" + divId);
 						$("#" + divId).html(html);
 					},
@@ -70,7 +70,7 @@ app.controller('DestinationsController', ['i18n',
 						$("#" + divId).html('<p>' + error + '</p>');
 					}
 				});
-			}
+			};
 		} ]);
 
 // This controller retrieves data from the RESTful destinations API and
@@ -134,10 +134,11 @@ app.controller('GroupedDestinationsController', [ '$scope', '$http',
 				for (var i = 0; i < $scope.destinations.length; i++) {
 
 					var destination = $scope.destinations[i];
+					var group;
 					// Should we create a new group?
 					if (destination[attribute] !== groupValue) {
 
-						var group = {
+						group = {
 							label : destination[attribute],
 							destinations : []
 						};
@@ -157,6 +158,7 @@ app.controller('GroupedDestinationsController', [ '$scope', '$http',
 			};
 
 		} ]);
+		
 // This controller for the menu actions which checked if the getClass is true
 // to initiate the route
 app.controller('MenuController', ['i18n','$scope','$location',function(i18n,$scope, $location) {
@@ -238,7 +240,7 @@ app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
     $scope.chartformatters = {};
 	
 	
-	};
+	}
  
 			
 		
@@ -258,10 +260,7 @@ app.controller('PollItemCtrl', [ '$scope', '$routeParams', 'socket', 'Poll',
 			}
          });
 
-
-   	 	//	$scope.$on('$viewContentLoaded', function() {
-        //		jQuery('input[type="checkbox"],[type="radio"]').bootstrapSwitch();
-   	 	//	});			
+	
 			// myvote message handler
 			// update poll object if viewing the same poll question
 			socket.on('myvote', function(data) {

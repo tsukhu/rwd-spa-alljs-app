@@ -55,7 +55,7 @@ exports.addDestination = function(req, res) {
             }
         });
     });
-}
+};
  
 exports.updateDestination = function(req, res) {
     var id = req.params.id;
@@ -73,7 +73,7 @@ exports.updateDestination = function(req, res) {
             }
         });
     });
-}
+};
  
 exports.deleteDestination = function(req, res) {
     var id = req.params.id;
@@ -88,7 +88,7 @@ exports.deleteDestination = function(req, res) {
             }
         });
     });
-}
+};
  
 /*--------------------------------------------------------------------------------------------------------------------*/
 // Populate database with sample data -- Only used once: the first time the application is started.

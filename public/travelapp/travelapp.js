@@ -1,7 +1,7 @@
 ﻿/// <reference path="../Scripts/angular-1.1.4.js" />
 
 var app = angular.module('travelApp', [ 'ngRoute', 'ngCookies', 'ngResource',
-		'travelApp.directives.localWeather' ,'travelApp.directives.switch','travelApp.directives.equalHeight','googlechart' , 'i18n','angularSmoothscroll','ui.bootstrap','travelapp.config']);
+		'travelApp.directives.localWeather' ,'travelApp.directives.switch','travelApp.directives.equalHeight','travelApp.directives.canvasjs','googlechart' , 'i18n','angularSmoothscroll','ui.bootstrap','travelapp.config']);
 
 app.factory('Poll', function($resource) {
 	return $resource('polls/:pollId', {pollId: "@pollId" }, 
@@ -79,6 +79,9 @@ app.config(function($routeProvider) {
 	}).when('/new', {
 		templateUrl : 'travelapp/partials/pollCreation.html',
 		controller : 'PollNewCtrl'
+	}).when('/dash', {
+		templateUrl : 'travelapp/partials/dashboard.html',
+		controller : 'MenuController'
 	}).otherwise({
 		redirectTo : '/'
 	});

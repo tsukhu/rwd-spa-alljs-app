@@ -23,7 +23,7 @@ exports.streamMovie = function(req, res) {
   //Calculate the size of the file
   var stat = fs.statSync(streamPath);
   var total = stat.size;
-  
+  var file;
   var contentType="video/mp4";
   
   if (endsWith(movieFileName,".ogg")) {
@@ -35,7 +35,7 @@ exports.streamMovie = function(req, res) {
   }
   
   // Chunks based streaming
-  if (req.headers['range']) {
+  if (req.headers.range) {
     var range = req.headers.range;
     var parts = range.replace(/bytes=/, "").split("-");
     var partialstart = parts[0];
@@ -46,15 +46,16 @@ exports.streamMovie = function(req, res) {
     var chunksize = (end-start)+1;
     console.log('RANGE: ' + start + ' - ' + end + ' = ' + chunksize);
  
-    var file = fs.createReadStream(streamPath, {start: start, end: end});
+    file = fs.createReadStream(streamPath, {start: start, end: end});
     res.writeHead(206, { 'Content-Range': 'bytes ' + start + '-' + end + '/' + total, 'Accept-Ranges': 'bytes', 'Content-Length': chunksize, 'Content-Type': contentType });
     res.openedFile = file; 
     file.pipe(res);
   } else {
     console.log('ALL: ' + total);
+    file =  fs.createReadStream(streamPath);
     res.writeHead(200, { 'Content-Length': total, 'Content-Type': contentType });
     res.openedFile = file; 
-    fs.createReadStream(streamPath).pipe(res);
+	file.pipe(res);
   }
   
    res.on('close', function(){
