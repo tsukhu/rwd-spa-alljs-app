@@ -3,20 +3,37 @@
  */
 var express = require('express');
 
-
-// var user = require('./routes/user');
+//http server
 var http = require('http');
+
+//Server path utils
 var path = require('path');
 
-var favicon = require('static-favicon');
+//app icon
+var favicon = require('serve-favicon');
+
+// express related logging
 var logger = require('morgan');
+
+//Parse Cookie header and populate req.cookies
 var cookieParser = require('cookie-parser');
+
+//Parse request bodies
 var bodyParser = require('body-parser');
+
+//Provides faux HTTP method
 var methodOverride = require('method-override');
+
+//Development error handler
 var errorHandler = require('errorHandler');
 
+// mongodb OM
 var mongoose = require('mongoose');
+
+//user auth
 var passport = require('passport');
+
+//session flash messages
 var flash = require('connect-flash');
 
 // get the environment specific configuration
@@ -51,7 +68,7 @@ require('./config/passport')(passport); // pass passport for configuration
 app.set('port', process.env.PORT || CONFIG.port);
 app.set('views', __dirname + CONFIG.viewDir);
 app.set('view engine', 'jade');
-app.use(favicon());
+app.use(favicon(__dirname + '/public/img/favicon.ico'));
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
