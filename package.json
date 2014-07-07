@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "start": "node app.js",
-   	"test": "node_modules\\.bin\\grunt mochaTest"
+   	"test": "node_modules\\.bin\\grunt mochaTest",
+   	"precommit": "node_modules\\.bin\\grunt precommit"
   },
   "dependencies": {
     "express": "4.x",
@@ -42,6 +43,7 @@
 	    "sinon-chai": "latest",
 	    "supertest" : "latest",
 	    "grunt-contrib-jshint": "latest",
+	    "grunt-jsbeautifier": "latest",
 	    "debug": "*",
 	    "diff" : "*",
 	    "formidable" : "*",

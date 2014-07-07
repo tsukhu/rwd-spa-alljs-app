@@ -24,6 +24,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 * Added initial configuration module in Angular JS for the settings used in the services for travelApp. This will later be sourced from the node config 
 module so that there is a consistent way of maintaining the configuration.
 * Added `grunt-jshint` module for code review.
+* Added `grunt-jsbeautifier` module for code formating.
 
 
 Tools Used

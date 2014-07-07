@@ -13,19 +13,19 @@
     			   by the application setting a configuration value. The location is specified by NODE_CONFIG_RUNTIME_JSON environment variable. 
     			   By default, it is a file called runtime.json in NODE_CONFIG_DIR directory.
     			   Node-config monitors this file and loads any new configurations it detects. 
- */ 
-module.exports = {
-    travelapp: {
-      dbName: "destinationsdb",
-      dbHost: "localhost",
-      port: 3000,
-      dbPort: 27017,
-      auto_reconnect: true,
-      cookie_max_age: 604800,
-      secret: 'thisismysecret',
-      viewDir: '/views',
-      publicFolder: 'public',
-      logMode: 'dev', //  'default', 'short', 'tiny', 'dev' 
-      userDbUrl: 'mongodb://localhost:27017/userDb'
-    }
-  }
+ */
+ module.exports = {
+     travelapp: {
+         dbName: "destinationsdb",
+         dbHost: "localhost",
+         port: 3000,
+         dbPort: 27017,
+         auto_reconnect: true,
+         cookie_max_age: 604800,
+         secret: 'thisismysecret',
+         viewDir: '/views',
+         publicFolder: 'public',
+         logMode: 'dev', //  'default', 'short', 'tiny', 'dev' 
+         userDbUrl: 'mongodb://localhost:27017/userDb'
+     }
+ };
