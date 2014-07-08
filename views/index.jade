@@ -98,7 +98,7 @@ block content
 		$.noConflict();
 		
 		jQuery(document).ready(function($) {
-				
+				// Login drop down menu needs to stay on screen
 				$('.dropdown-menu form').click(function (e)
 				{
 					e.stopPropagation();
@@ -114,3 +114,5 @@ block content
 	script(src="/travelapp/controllers/controllers.js")
 	script(src="/js/canvasjs.min.js")
 	script(src="/travelapp/directives/angularCanvasjs.js")
+	script(src="/js/Class.create.js")
+	script(src="/js/jquery-encoder-0.1.0.js")

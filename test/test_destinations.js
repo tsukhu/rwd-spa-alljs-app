@@ -88,7 +88,7 @@ var destinations = [{
     location: 'Akshardham Temple',
     district: null,
     state: 'New Delhi',
-    description: "Swaminarayan Akshardham in New Delhi epitomizes 10,000 years of Indian culture in all its breathtaking grandeur, beauty, wisdom an d bliss. It brilliantly showcases the essence of India�s ancient architecture, traditions and timeless spiritual messages. The Akshardham experience is an enlightening journey through India's glorious art, values and contributions for the progress, happiness and harmony of mankind.",
+    description: "Swaminarayan Akshardham in New Delhi epitomizes 10,000 years of Indian culture in all its breathtaking grandeur, beauty, wisdom an d bliss. It brilliantly showcases the essence of India's ancient architecture, traditions and timeless spiritual messages. The Akshardham experience is an enlightening journey through India's glorious art, values and contributions for the progress, happiness and harmony of mankind.",
     source: 'http://www.delhitourism.gov.in/delhitourism/tourist_place/index.jsp',
     img: 'akshardham_64x64.jpg'
 }, {
@@ -115,7 +115,7 @@ var destinations = [{
     location: 'Golden Temple',
     district: 'Amritsar',
     state: 'Punjab',
-    description: "Amritsar was founded in 1577 by Guru Ram Das, the fourth guru of Sikhs. It's the spiritual capital of the Sikhs and gained its name, meaning \"Holy Pool of Nectar\", from the body of water around the Golden Temple. The exquisite Golden Temple attracts pilgrims from all over the world. It looks particularly arresting at night when it�s beautifully lit up, with its imposing pure gold dome illuminated.",
+    description: "Amritsar was founded in 1577 by Guru Ram Das, the fourth guru of Sikhs. It's the spiritual capital of the Sikhs and gained its name, meaning \"Holy Pool of Nectar\", from the body of water around the Golden Temple. The exquisite Golden Temple attracts pilgrims from all over the world. It looks particularly arresting at night when it's beautifully lit up, with its imposing pure gold dome illuminated.",
     source: 'http://goindia.about.com/od/topdestinations/tp/top-punjab-travel-destinations.htm',
     img: 'goldentemple_64x64.jpg'
 }, {

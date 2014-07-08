@@ -376,11 +376,16 @@ app.controller('PollNewCtrl', ['$scope', '$location', 'Poll',
             console.log('Create Poll Called');
             var poll = $scope.poll;
             if (poll.question.length > 0) {
+                // jQuery encoder to secure poll inputs.
+                poll.question = jQuery.encoder.encodeForHTML(poll.question);
                 var choiceCount = 0;
                 for (var i = 0, ln = poll.choices.length; i < ln; i++) {
                     var choice = poll.choices[i];
+
                     if (choice.text.length > 0) {
                         choiceCount++;
+                        // jQuery encoder to secure poll inputs.
+                        poll.choices[i].text = jQuery.encoder.encodeForHTML(choice.text);
                     }
                 }
                 if (choiceCount > 1) {
