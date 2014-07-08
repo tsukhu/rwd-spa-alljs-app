@@ -97,32 +97,13 @@ block content
 	script.
 		$.noConflict();
 		
-		function equalHeight(group) {    
-		//	alert("ss");
-			tallest = 0;    
-			group.each(function() {       
-				thisHeight = $(this).height();
-				if(thisHeight > tallest) {
-					tallest = thisHeight;
-				}
-			});
-			group.each(function() { $(this).height(tallest); });
-		} 
-		
 		jQuery(document).ready(function($) {
-			// Code that uses jQuery's $ can follow here.
-				//	alert("hello");
-				$('.carousel').carousel({
-					interval : 2000
-				});
 				
 				$('.dropdown-menu form').click(function (e)
 				{
 					e.stopPropagation();
 				});
 			
-			// Ensure equal heights on thumbnail boxes
-			equalHeight($(".thumbnail"));
 			
 		});
 		

@@ -6,6 +6,9 @@ var LocalStrategy = require('passport-local').Strategy;
 // load up the user model
 var User = require('../models/user');
 
+// added ESCAPI support for login and signup.
+var ESAPI = require('node-esapi');
+
 // expose this function to our app using module.exports
 module.exports = function(passport) {
 
@@ -49,7 +52,7 @@ module.exports = function(passport) {
                 // find a user whose email is the same as the forms email
                 // we are checking to see if the user trying to login already exists
                 User.findOne({
-                    'local.email': email
+                    'local.email': ESAPI.encoder().encodeForURL(email)
                 }, function(err, user) {
                     // if there are any errors, return the error
                     if (err) {
@@ -60,11 +63,10 @@ module.exports = function(passport) {
                     if (user) {
                         return done(null, false, req.flash('signupMessage', 'This email (' + email + ')is already taken.'));
                     } else {
-                        console.log(req.body.username);
                         if (req.body.username !== null) {
 
                             User.findOne({
-                                'local.username': req.body.username
+                                'local.username': ESAPI.encoder().encodeForHTML(req.body.username)
                             }, function(err, user) {
                                 if (err) {
                                     return done(err);
@@ -72,15 +74,15 @@ module.exports = function(passport) {
 
                                 // check to see if theres already a user with that email
                                 if (user) {
-                                    return done(null, false, req.flash('signupMessage', 'This username (' + req.body.username + ')is already taken.'));
+                                    return done(null, false, req.flash('signupMessage', 'This username (' + ESAPI.encoder().encodeForHTML(req.body.username) + ')is already taken.'));
                                 } else {
                                     // if there is no user with that email or username
                                     // create the user
                                     var newUser = new User();
 
                                     // set the user's local credentials
-                                    newUser.local.email = email;
-                                    newUser.local.username = req.body.username;
+                                    newUser.local.email = ESAPI.encoder().encodeForURL(email);
+                                    newUser.local.username = ESAPI.encoder().encodeForHTML(req.body.username);
                                     newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
                                     console.log(newUser.local.email + " : " + newUser.local.username + " : " + newUser.local.password);
                                     // save the user
@@ -100,7 +102,7 @@ module.exports = function(passport) {
                             var newUser = new User();
 
                             // set the user's local credentials
-                            newUser.local.email = email;
+                            newUser.local.email = ESAPI.encoder().encodeForURL(email);
                             newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
                             //console.log(newUser.local.email + " : " + newUser.local.username + " : " + newUser.local.password);
                             // save the user
@@ -139,11 +141,11 @@ module.exports = function(passport) {
 
             // login form hidden field for login option (username or email)
             // if username set then set the key for username and password
-            if (req.body.loginOption === 'login-user') {
+            if (ESAPI.encoder().encodeForURL(req.body.loginOption) === 'login-user') {
                 // find a user whose email is the same   the forms email
                 // we are checking to see if the user trying to login already exists
                 User.findOne({
-                    'local.username': req.body.username
+                    'local.username': ESAPI.encoder().encodeForHTML(req.body.username)
                 }, function(err, user) {
                     // if there are any errors, return the error before anything else
                     if (err) {
@@ -151,7 +153,7 @@ module.exports = function(passport) {
                     }
                     // if no user is found, return the message
                     if (!user) {
-                        return done(null, false, req.flash('loginMessage', 'No ' + req.body.username + ' found.')); // req.flash is the way to set flashdata using connect-flash
+                        return done(null, false, req.flash('loginMessage', 'No ' + ESAPI.encoder().encodeForHTML(req.body.username) + ' found.')); // req.flash is the way to set flashdata using connect-flash
                     }
                     // if the user is found but the password is wrong
                     if (!user.validPassword(password)) {
@@ -175,7 +177,7 @@ module.exports = function(passport) {
                 // find a user whose email is the same as the forms email
                 // we are checking to see if the user trying to login already exists
                 User.findOne({
-                    'local.email': email
+                    'local.email': ESAPI.encoder().encodeForURL(email)
                 }, function(err, user) {
                     // if there are any errors, return the error before anything else
                     if (err) {

@@ -32,7 +32,8 @@
     "socket.io": "~0.9.16",
     "socket.io-client": "~0.9.16",
     "i18n": "*",
-    "i18n-node-angular": "*"
+    "i18n-node-angular": "*",
+    "node-esapi": "*"
   },
   "devDependencies": {
 	    "grunt": "latest",

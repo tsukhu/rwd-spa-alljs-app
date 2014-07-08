@@ -25,6 +25,7 @@ This is an attempt to build a SPA using an all Java Script stack.
 module so that there is a consistent way of maintaining the configuration.
 * Added `grunt-jshint` module for code review.
 * Added `grunt-jsbeautifier` module for code formating.
+* Added ESAPI support for the login and sign-up forms using module `node-esapi`.
 
 
 Tools Used
@@ -45,6 +46,7 @@ Tools Used
 * i18n-node , i18n-node-angular
 * Bootstrap Switch 3
 * Angular JS native directives based on Bootstrap markup and CSS
+* Node ESAPI (Enterprise Security API for JS)
  
 
 Installation
