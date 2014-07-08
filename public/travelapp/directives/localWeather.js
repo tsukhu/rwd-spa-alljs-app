@@ -9,9 +9,9 @@ angular.module('travelApp.directives.localWeather',[])
 		templateUrl: "travelapp/directives/localWeather.html",
 		controller: function($scope,$element) {
 			console.log($scope.destination.location);
-	
-			var location=$scope.destination.location+","+$scope.destination.state +","+$scope.destination.country;
-			jQuery.simpleWeather({
+			jQuery(document).ready(function () {
+				var location=$scope.destination.location+","+$scope.destination.state +","+$scope.destination.country;
+				jQuery.simpleWeather({
 				    location: location,
 				    woeid: '',
 				    unit: 'c',
@@ -26,6 +26,8 @@ angular.module('travelApp.directives.localWeather',[])
 					     $element.html('<p>'+error+'</p>');
 				    }
 				  });
+			});
+
 		}
 	}
 });

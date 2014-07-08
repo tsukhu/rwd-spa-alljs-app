@@ -38,16 +38,11 @@
 							<span class="label label-default">{{ destination.country
 								}}</span> <span class="label label-success">{{ destination.state
 								}}</span> <span class="label label-info">{{ destination.region
-								}}</span>
+								}}</span><br><br>
 							<p>{{ destination.description }}</p>
 						</div>
-						<div class="col-xs-6 col-lg-4">
-							<!-- 
-								<button ng-click="getWeather('{{ destination._id }}','{{ destination.location }},{{ destination.state }},{{ destination.country }}')">Get Weather</button>
-								<p>Weather content will come here</p>
-								<div id="w{{ destination._id }}"></div>
-								<div id="weather"></div> -->
-							<local-weather destination="destination" weather="weather"></local-weather>
+						<div class="col-xs-12 col-sm-6 col-lg-4">
+							<local-weather id="weather" destination="destination" weather="weather"></local-weather>
 						</div>
 					</div>
 				</div>
