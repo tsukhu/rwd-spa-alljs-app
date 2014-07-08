@@ -96,21 +96,18 @@ var pollArray = [{
 
 ];
 
+
+function pollSaveResult(err, doc) {
+    if (err) {
+        console.log(err);
+    }
+}
+
 // Pre-populate DB on app startup
 Poll.remove({}, function(err) {
     var i = 0;
-    var saved = 0;
     while (i < pollArray.length) {
-        new Poll(pollArray[i]).save(function(err, doc) {
-            saved++;
-            if (err) {
-                console.log(err);
-            } else {
-                if (saved === pollArray.length) {
-                    console.log('database populated');
-                }
-            }
-        });
+        new Poll(pollArray[i]).save(pollSaveResult);
         i++;
     }
 });
@@ -139,9 +136,9 @@ exports.poll = function(req, res) {
         if (poll) {
             var userVoted = false,
                 userChoice, totalVotes = 0;
-            for (var c in poll.choices) {
+            for (var c = 0; c < poll.choices.length; c++) {
                 var choice = poll.choices[c];
-                for (var v in choice.votes) {
+                for (var v = 0; v < choice.votes.length; v++) {
                     var vote = choice.votes[v];
                     totalVotes++;
                     // Mark if user already voted based on IP

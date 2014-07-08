@@ -13,107 +13,6 @@ db = new Db(CONFIG.dbName, server, {
     safe: false
 });
 
-db.open(function(err, db) {
-    if (!err) {
-        console.log("Connected to 'traveldb' database");
-        db.collection('destinations', {
-            strict: true
-        }, function(err, collection) {
-            if (err) {
-                console.log("The 'destinations' collection doesn't exist. Creating it with sample data...");
-                populateDB();
-            }
-        });
-    } else {
-        console.log(err);
-    }
-});
-
-exports.findById = function(req, res) {
-    var id = req.params.id;
-    console.log('Retrieving destination: ' + id);
-    db.collection('destinations', function(err, collection) {
-        collection.findOne({
-            '_id': new BSON.ObjectID(id)
-        }, function(err, item) {
-            res.send(item);
-        });
-    });
-};
-
-exports.findAll = function(req, res) {
-    console.log('Retrieving destinations:');
-    db.collection('destinations', function(err, collection) {
-        collection.find().toArray(function(err, items) {
-            res.send(items);
-        });
-    });
-};
-
-exports.addDestination = function(req, res) {
-    var destination = req.body;
-    console.log('Adding destination: ' + JSON.stringify(destination));
-    db.collection('destinations', function(err, collection) {
-        collection.insert(destination, {
-            safe: true
-        }, function(err, result) {
-            if (err) {
-                res.send({
-                    'error': 'An error has occurred'
-                });
-            } else {
-                console.log('Success: ' + JSON.stringify(result[0]));
-                res.send(result[0]);
-            }
-        });
-    });
-};
-
-exports.updateDestination = function(req, res) {
-    var id = req.params.id;
-    var destination = req.body;
-    console.log('Updating destination: ' + id);
-    console.log(JSON.stringify(destination));
-    db.collection('destinations', function(err, collection) {
-        collection.update({
-            '_id': new BSON.ObjectID(id)
-        }, destination, {
-            safe: true
-        }, function(err, result) {
-            if (err) {
-                console.log('Error updating destination: ' + err);
-                res.send({
-                    'error': 'An error has occurred'
-                });
-            } else {
-                console.log('' + result + ' document(s) updated');
-                res.send(destination);
-            }
-        });
-    });
-};
-
-exports.deleteDestination = function(req, res) {
-    var id = req.params.id;
-    console.log('Deleting destination: ' + id);
-    db.collection('destinations', function(err, collection) {
-        collection.remove({
-            '_id': new BSON.ObjectID(id)
-        }, {
-            safe: true
-        }, function(err, result) {
-            if (err) {
-                res.send({
-                    'error': 'An error has occurred - ' + err
-                });
-            } else {
-                console.log('' + result + ' document(s) deleted');
-                res.send(req.body);
-            }
-        });
-    });
-};
-
 /*--------------------------------------------------------------------------------------------------------------------*/
 // Populate database with sample data -- Only used once: the first time the application is started.
 // You'd typically not find this code in a real-life app, since the database would already exist.
@@ -280,4 +179,106 @@ var populateDB = function() {
         }, function(err, result) {});
     });
 
+};
+
+
+db.open(function(err, db) {
+    if (!err) {
+        console.log("Connected to 'traveldb' database");
+        db.collection('destinations', {
+            strict: true
+        }, function(err, collection) {
+            if (err) {
+                console.log("The 'destinations' collection doesn't exist. Creating it with sample data...");
+                populateDB();
+            }
+        });
+    } else {
+        console.log(err);
+    }
+});
+
+exports.findById = function(req, res) {
+    var id = req.params.id;
+    console.log('Retrieving destination: ' + id);
+    db.collection('destinations', function(err, collection) {
+        collection.findOne({
+            '_id': new BSON.ObjectID(id)
+        }, function(err, item) {
+            res.send(item);
+        });
+    });
+};
+
+exports.findAll = function(req, res) {
+    console.log('Retrieving destinations:');
+    db.collection('destinations', function(err, collection) {
+        collection.find().toArray(function(err, items) {
+            res.send(items);
+        });
+    });
+};
+
+exports.addDestination = function(req, res) {
+    var destination = req.body;
+    console.log('Adding destination: ' + JSON.stringify(destination));
+    db.collection('destinations', function(err, collection) {
+        collection.insert(destination, {
+            safe: true
+        }, function(err, result) {
+            if (err) {
+                res.send({
+                    'error': 'An error has occurred'
+                });
+            } else {
+                console.log('Success: ' + JSON.stringify(result[0]));
+                res.send(result[0]);
+            }
+        });
+    });
+};
+
+exports.updateDestination = function(req, res) {
+    var id = req.params.id;
+    var destination = req.body;
+    console.log('Updating destination: ' + id);
+    console.log(JSON.stringify(destination));
+    db.collection('destinations', function(err, collection) {
+        collection.update({
+            '_id': new BSON.ObjectID(id)
+        }, destination, {
+            safe: true
+        }, function(err, result) {
+            if (err) {
+                console.log('Error updating destination: ' + err);
+                res.send({
+                    'error': 'An error has occurred'
+                });
+            } else {
+                console.log('' + result + ' document(s) updated');
+                res.send(destination);
+            }
+        });
+    });
+};
+
+exports.deleteDestination = function(req, res) {
+    var id = req.params.id;
+    console.log('Deleting destination: ' + id);
+    db.collection('destinations', function(err, collection) {
+        collection.remove({
+            '_id': new BSON.ObjectID(id)
+        }, {
+            safe: true
+        }, function(err, result) {
+            if (err) {
+                res.send({
+                    'error': 'An error has occurred - ' + err
+                });
+            } else {
+                console.log('' + result + ' document(s) deleted');
+                res.send(req.body);
+            }
+        });
+    });
 };

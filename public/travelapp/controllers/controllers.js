@@ -16,7 +16,7 @@ app.controller('DestinationsController', ['i18n',
         $scope.user = null;
         $scope.favRegion = null;
         // $scope.favRegion = null;
-        init();
+
 
         function init() {
             // $scope.destinations = travelService.getDestinations();
@@ -35,6 +35,8 @@ app.controller('DestinationsController', ['i18n',
             // this.filter.region= "test";
             // alert($scope.favRegion);
         }
+
+        init();
 
         $scope.setValue = function(favRegion) {
 
@@ -88,7 +90,7 @@ app.controller('GroupedDestinationsController', ['$scope', '$http',
         // below
         $scope.destinations = [];
         $scope.groups = [];
-        init();
+
 
         function init() {
             // $scope.destinations = travelService.getDestinations();
@@ -97,6 +99,8 @@ app.controller('GroupedDestinationsController', ['$scope', '$http',
 
             });
         }
+
+        init();
 
         // I sort the given collection on the given property.
         function sortOn(collection, region) {
@@ -222,7 +226,7 @@ app.controller('PollItemCtrl', ['$scope', '$routeParams', 'socket', 'Poll',
 
         //////////////////////////
         $scope.chart = {};
-        init();
+
 
         function init() {
             $scope.chart.type = "BarChart";
@@ -263,7 +267,7 @@ app.controller('PollItemCtrl', ['$scope', '$routeParams', 'socket', 'Poll',
 
         }
 
-
+        init();
 
         Poll.get({
             pollId: $routeParams.pollId
