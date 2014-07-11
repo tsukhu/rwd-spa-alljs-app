@@ -412,7 +412,7 @@ app.controller('PollNewCtrl', ['$scope', '$location', 'Poll',
     }
 ]);
 
-// Carousel Controller 		
+//	Carousel Controller		
 app.controller('CarouselDemoCtrl', ['$scope',
     function($scope) {
         $scope.myInterval = 3000;
@@ -437,5 +437,218 @@ app.controller('CarouselDemoCtrl', ['$scope',
             href: 'http://goindia.about.com/od/festivalsevents/ig/Varkala-Temple-Festival/',
             label: 'Varkala Temple Festival'
         }];
+    }
+]);
+
+
+// This controller for the menu actions which checked if the getClass is true
+// to initiate the route
+app.controller('DashController', ['i18n', '$scope',
+    function(i18n, $scope) {
+        // Inject the service into the scope, so we can access __() and 'loaded'.
+        $scope.i18n = i18n;
+        $scope.kpis = {};
+
+        $scope.kpis = [{
+                title: {
+                    text: "Bookings by Location"
+                },
+                axisX: {
+                    interval: 1,
+                    gridThickness: 0,
+                    labelFontSize: 10,
+                    labelFontStyle: "normal",
+                    labelFontWeight: "normal",
+                    labelFontFamily: "Lucida Sans Unicode"
+
+                },
+                axisY2: {
+                    interlacedColor: "rgba(1,77,101,.2)",
+                    gridColor: "rgba(1,77,101,.1)"
+
+                },
+                data: [{
+                    type: "bar",
+                    name: "companies",
+                    axisYType: "secondary",
+                    color: "#014D65",
+                    dataPoints: [{
+                        label: 'Madurai',
+                        y: 20,
+                        legendText: ''
+                    }, {
+                        label: 'Kerala',
+                        y: 55,
+                        legendText: ''
+                    }, {
+                        label: 'Mysore',
+                        y: 25,
+                        legendText: ''
+                    }, {
+                        label: 'New Delhi',
+                        y: 15,
+                        legendText: ''
+                    }, {
+                        label: 'Dharamshala',
+                        y: 23,
+                        legendText: ''
+                    }, {
+                        label: 'Kulu Manali',
+                        y: 14,
+                        legendText: ''
+                    }, {
+                        label: 'Darjeeling',
+                        y: 25,
+                        legendText: ''
+                    }, {
+                        label: 'Agra',
+                        y: 31,
+                        legendText: ''
+                    }, {
+                        label: 'Bharatpur',
+                        y: 4,
+                        legendText: ''
+                    }, {
+                        label: 'Goa',
+                        y: 50,
+                        legendText: ''
+                    }, {
+                        label: 'Amritsar',
+                        y: 7,
+                        legendText: ''
+                    }, {
+                        label: 'Kashmir',
+                        y: 9,
+                        legendText: ''
+                    }, {
+                        label: 'Mumbai',
+                        y: 15,
+                        legendText: ''
+                    }, {
+                        label: 'Kolkata',
+                        y: 12,
+                        legendText: ''
+                    }, {
+                        label: 'Sikkim',
+                        y: 37,
+                        legendText: ''
+                    }]
+                }]
+            }, {
+                title: {
+                    text: "Travellers by Age group"
+                },
+                data: [{
+                    type: "doughnut",
+                    startAngle: 60,
+                    toolTipContent: "{y} Age group",
+
+                    showInLegend: true,
+                    dataPoints: [{
+                            y: 20,
+                            label: "Above 65 years",
+                            legendText: "Above 65 years"
+                        }, {
+                            y: 10,
+                            label: "45 to 65 years",
+                            legendText: "45 to 65 years"
+                        }, {
+                            y: 40,
+                            label: "25 to 35 years",
+                            legendText: "25 to 35 years"
+                        }, {
+                            y: 20,
+                            label: "15 to 25 years",
+                            legendText: "15 to 25 years"
+                        }, {
+                            y: 10,
+                            label: "Below 15 years",
+                            legendText: "Below 15 years"
+                        }
+
+                    ]
+                }]
+            }, {
+                title: {
+                    text: "Foreign Tourist Arrivals (FTAs) In India 1997-2014"
+                },
+                axisY: {
+                    title: "FTAs in million"
+                },
+                legend: {
+                    verticalAlign: "bottom",
+                    horizontalAlign: "center"
+                },
+                data: [
+
+                    {
+                        type: "column",
+                        showInLegend: true,
+                        legendMarkerColor: "grey",
+                        legendText: "FTAs in million",
+                        dataPoints: [{
+                            y: 2.37,
+                            label: "1997"
+                        }, {
+                            y: 2.36,
+                            label: "1998"
+                        }, {
+                            y: 2.48,
+                            label: "1999"
+                        }, {
+                            y: 2.65,
+                            label: "2000"
+                        }, {
+                            y: 2.54,
+                            label: "2001"
+                        }, {
+                            y: 2.38,
+                            label: "2002"
+                        }, {
+                            y: 2.73,
+                            label: "2003"
+                        }, {
+                            y: 3.46,
+                            label: "2004"
+                        },{
+                            y: 3.92,
+                            label: "2005"
+                        },{
+                            y: 4.45,
+                            label: "2006"
+                        },{
+                            y: 5.08,
+                            label: "2007"
+                        },{
+                            y: 5.28,
+                            label: "2008"
+                        },{
+                            y: 5.17,
+                            label: "2009"
+                        },{
+                            y: 5.78,
+                            label: "2010"
+                        },{
+                            y: 6.29,
+                            label: "2011"
+                        },{
+                            y: 3.24,
+                            label: "2012"
+                        },{
+                            y: 4.29,
+                            label: "2013"
+                        },{
+                            y: 4.33,
+                            label: "2014"
+                        }
+                        
+                        
+                        
+                        ]
+                    }
+                ]
+            }
+
+        ];
     }
 ]);

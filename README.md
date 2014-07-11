@@ -19,13 +19,14 @@ This is an attempt to build a SPA using an all Java Script stack.
 * Added support for streaming video using the HTML5 video tags
 * Added i18n support using i18n-node and i18n-node-angular
 * Added Bootstrap switch based visualization of the poll question options (Toggle Switch for radio buttons - UxD improvement)
-* Directives Added - Weather for each location `local-weather` , Bootstrap Toggle Switch for poll questions `input-switch` , Make bootstrap thumbnails the same size `equal-height`
+* Directives Created - Weather for each location `local-weather` , Bootstrap Toggle Switch for poll questions `input-switch` , Make bootstrap thumbnails the same size `equal-height`
 * Added Responsive Text and Buttons using media queries as well as using the Bootstrap responsive utilities for hiding and showing elements
 * Added initial configuration module in Angular JS for the settings used in the services for travelApp. This will later be sourced from the node config 
 module so that there is a consistent way of maintaining the configuration.
 * Added `grunt-jshint` module for code review.
 * Added `grunt-jsbeautifier` module for code formating.
 * Added ESAPI support for the login and sign-up forms using module `node-esapi` and jquery-encoder for security handing for AngularJS controllers (used in poll question creation).
+* Added a dashboard view using HTML5/responsive canvasJS charts and created an angular JS directive `angular-canvasjs` for rendering it. It really looks good !!
 
 
 Tools Used
@@ -47,6 +48,7 @@ Tools Used
 * Bootstrap Switch 3
 * Angular JS native directives based on Bootstrap markup and CSS
 * Node ESAPI (Enterprise Security API for JS), jquery-encoder
+* CanvasJS Charts
  
 
 Installation
@@ -95,4 +97,5 @@ Added so far
 * User angular-smoothscroll directive on the landing page
 * Changed the landing page Carousel to use the angular JS directives for `caurosel` and `slide`
 * Added Media Queries for responsive text (Shrinking based on resolution) and Button Sizes based on Bootstrap responsive utilities of `visible-$`, `hidden-$`, `btn-xs`, `btn-sm` etc
+* CanvasJS based dashboard created which is responsive. I required to build a directive `angular-canvasjs` for the same. Screenshot added for the same.
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.

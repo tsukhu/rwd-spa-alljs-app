@@ -81,7 +81,7 @@ app.config(function($routeProvider) {
 		controller : 'PollNewCtrl'
 	}).when('/dash', {
 		templateUrl : 'travelapp/partials/dashboard.html',
-		controller : 'MenuController'
+		controller : 'DashController'
 	}).otherwise({
 		redirectTo : '/'
 	});

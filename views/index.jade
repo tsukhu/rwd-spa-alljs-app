@@ -40,6 +40,8 @@ block content
 								a(href="#/groupedDestinations")= __('Grouped Destinations')
 					li(data-ng-class="{'active':getClass('/orders')}")
 						a(href="#/polls")= __('Travel Poll')
+					li(data-ng-class="{'active':getClass('/orders')}")
+						a(href="#/dash")= __('Travel Dashboard')
 					if (_user)
 						li.dropdown
 							a.dropdown-toggle(data-toggle="dropdown") #{_user.local.email}

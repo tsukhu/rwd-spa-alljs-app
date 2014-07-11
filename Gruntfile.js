@@ -24,13 +24,13 @@ module.exports = function(grunt) {
     jshint: {
       // You get to make the name
       // The paths tell JSHint which files to validate
-      all: ['app.js','config/**','models/**/*.js','test/**/*.js','routes/**/*.js', 'public/travelapp/controllers/**/*.js'],
+      all: ['app.js','config/**','models/**/*.js','test/**/*.js','routes/**/*.js', 'public/travelapp/controllers/**/*.js','public/travelapp/directives/**/*.js','public/travelapp/services/**/*.js','!public/travelapp/directives/ng-google-chart.js'],
       options: {
                 jshintrc: true
             }
     },
     jsbeautifier: {
-            files: ['app.js','config/**','models/**/*.js','test/**/*.js','routes/**/*.js', 'public/travelapp/controllers/**/*.js'],
+            files: ['app.js','config/**','models/**/*.js','test/**/*.js','routes/**/*.js', 'public/travelapp/controllers/**/*.js','public/travelapp/directives/**/*.js','public/travelapp/services/**/*.js','public/travelapp/config/**/*.js'],
             options: {
                 html: {
                     braceStyle: "collapse",
