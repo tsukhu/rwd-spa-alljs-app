@@ -27,6 +27,8 @@ module so that there is a consistent way of maintaining the configuration.
 * Added `grunt-jsbeautifier` module for code formating.
 * Added ESAPI support for the login and sign-up forms using module `node-esapi` and jquery-encoder for security handing for AngularJS controllers (used in poll question creation).
 * Added a dashboard view using HTML5/responsive canvasJS charts and created an angular JS directive `angular-canvasjs` for rendering it. It really looks good !!
+* The travel destinations `Places->All Destinations` page now has support for google maps (using [Google Maps AngularJS Directive](https://github.com/allenhwkim/angularjs-google-maps) and [ngDialog for Modal and popups in AngularJS](https://github.com/likeastore/ngDialog)
+
 
 
 Tools Used
@@ -49,6 +51,8 @@ Tools Used
 * Angular JS native directives based on Bootstrap markup and CSS
 * Node ESAPI (Enterprise Security API for JS), jquery-encoder
 * CanvasJS Charts
+* ngMap (Google Maps directive for Angular JS)
+* ngDialog (Modal Dialogs/Popups for Angular JS)
  
 
 Installation

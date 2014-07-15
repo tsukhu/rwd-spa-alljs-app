@@ -1,11 +1,12 @@
 //This controller retrieves data from the RESTful destinations API and associates it with the $scope
 //The $scope is ultimately bound to the customers view
-app.controller('DestinationsController', ['i18n',
+app.controller('DestinationsController', ['i18n', '$rootScope',
     '$scope',
     '$http',
     '$cookieStore',
     'travelService',
-    function(i18n, $scope, $http, $cookieStore, travelService) {
+    'ngDialog',
+    function(i18n, $rootScope, $scope, $http, $cookieStore, travelService, ngDialog) {
 
         // I like to have an init() for controllers that need to perform
         // some initialization. Keeps things in
@@ -37,6 +38,15 @@ app.controller('DestinationsController', ['i18n',
         }
 
         init();
+
+        $scope.clickToOpen = function(destination) {
+            $scope.destination = destination;
+            ngDialog.open({
+                template: 'travelapp/partials/mapTempl.html',
+                className: 'ngdialog-theme-plain',
+                scope: $scope
+            });
+        };
 
         $scope.setValue = function(favRegion) {
 
@@ -76,6 +86,7 @@ app.controller('DestinationsController', ['i18n',
         };
     }
 ]);
+
 
 // This controller retrieves data from the RESTful destinations API and
 // associates it with the $scope
@@ -587,63 +598,63 @@ app.controller('DashController', ['i18n', '$scope',
                         legendMarkerColor: "grey",
                         legendText: "FTAs in million",
                         dataPoints: [{
-                            y: 2.37,
-                            label: "1997"
-                        }, {
-                            y: 2.36,
-                            label: "1998"
-                        }, {
-                            y: 2.48,
-                            label: "1999"
-                        }, {
-                            y: 2.65,
-                            label: "2000"
-                        }, {
-                            y: 2.54,
-                            label: "2001"
-                        }, {
-                            y: 2.38,
-                            label: "2002"
-                        }, {
-                            y: 2.73,
-                            label: "2003"
-                        }, {
-                            y: 3.46,
-                            label: "2004"
-                        },{
-                            y: 3.92,
-                            label: "2005"
-                        },{
-                            y: 4.45,
-                            label: "2006"
-                        },{
-                            y: 5.08,
-                            label: "2007"
-                        },{
-                            y: 5.28,
-                            label: "2008"
-                        },{
-                            y: 5.17,
-                            label: "2009"
-                        },{
-                            y: 5.78,
-                            label: "2010"
-                        },{
-                            y: 6.29,
-                            label: "2011"
-                        },{
-                            y: 3.24,
-                            label: "2012"
-                        },{
-                            y: 4.29,
-                            label: "2013"
-                        },{
-                            y: 4.33,
-                            label: "2014"
-                        }
-                        
-                        
-                        
+                                y: 2.37,
+                                label: "1997"
+                            }, {
+                                y: 2.36,
+                                label: "1998"
+                            }, {
+                                y: 2.48,
+                                label: "1999"
+                            }, {
+                                y: 2.65,
+                                label: "2000"
+                            }, {
+                                y: 2.54,
+                                label: "2001"
+                            }, {
+                                y: 2.38,
+                                label: "2002"
+                            }, {
+                                y: 2.73,
+                                label: "2003"
+                            }, {
+                                y: 3.46,
+                                label: "2004"
+                            }, {
+                                y: 3.92,
+                                label: "2005"
+                            }, {
+                                y: 4.45,
+                                label: "2006"
+                            }, {
+                                y: 5.08,
+                                label: "2007"
+                            }, {
+                                y: 5.28,
+                                label: "2008"
+                            }, {
+                                y: 5.17,
+                                label: "2009"
+                            }, {
+                                y: 5.78,
+                                label: "2010"
+                            }, {
+                                y: 6.29,
+                                label: "2011"
+                            }, {
+                                y: 3.24,
+                                label: "2012"
+                            }, {
+                                y: 4.29,
+                                label: "2013"
+                            }, {
+                                y: 4.33,
+                                label: "2014"
+                            }
+
+
+
                         ]
                     }
                 ]

@@ -1,0 +1,7 @@
+<div class="ngdialog-message">
+	<h3>{{ destination.location }}</h3>
+	<map center="{{ destination.location }},{{destination.state }},{{ destination.country}}" >
+		 <marker position="{{ destination.location }},{{destination.state }},{{ destination.country}}" title="{{ destination.location }}" animation="Animation.BOUNCE" ></marker>
+		 <control name="overviewMap" opened="true" />
+	</map>
+</div>

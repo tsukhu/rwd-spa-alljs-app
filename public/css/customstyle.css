@@ -71,7 +71,9 @@
 }
 
 
+map, div[map] {display:block; width:400px; height:300px;}
 
+.angular-google-map-container { height: 400px; }
 
 
 
