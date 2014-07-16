@@ -38,10 +38,12 @@ block content
 								a(href="#/placesAll")= __('All Destinations')
 							li(ng-class="{active:getClass('/groupedDestinations')}") 
 								a(href="#/groupedDestinations")= __('Grouped Destinations')
-					li(data-ng-class="{'active':getClass('/orders')}")
+					li(data-ng-class="{'active':getClass('/polls')}")
 						a(href="#/polls")= __('Travel Poll')
-					li(data-ng-class="{'active':getClass('/orders')}")
+					li(data-ng-class="{'active':getClass('/dash')}")
 						a(href="#/dash")= __('Travel Dashboard')
+					li(data-ng-class="{'active':getClass('/invoice')}")
+						a(href="#/invoice")= __('Travel Invoice')
 					if (_user)
 						li.dropdown
 							a.dropdown-toggle(data-toggle="dropdown") #{_user.local.email}

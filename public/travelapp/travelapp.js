@@ -82,6 +82,9 @@ app.config(function($routeProvider) {
 	}).when('/dash', {
 		templateUrl : 'travelapp/partials/dashboard.html',
 		controller : 'DashController'
+	}).when('/invoice', {
+		templateUrl : 'travelapp/partials/invoice.html',
+		controller : 'InvoiceController'
 	}).otherwise({
 		redirectTo : '/'
 	});

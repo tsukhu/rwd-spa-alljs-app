@@ -1,0 +1,140 @@
+<div class="container">
+	<div class="alert alert-info hidden-print" role="alert">Demo
+		Invoice layout to using Bootstrap 3.x which is printer friendly by
+		default , courtesy the build-in print media queries.</div>
+	<div class="page-header">
+		<div class="media">
+			<img class="media-object pull-left" src="img/logo.png" alt="...">
+			<div class="media-body">
+				<div class="col-xs-4">
+					<address>
+						<strong>TK Travels</strong><br> 241,Bakers Street<br>
+						Pune-411011<br> <abbr title="Phone">P:</abbr> (123) 456-7890<br>
+						<a href="mailto:#">tktravels@example.com</a>
+					</address>
+				</div>
+
+				<div class="col-xs-4">
+					<h1 class="text-center">Invoice</h1>
+				</div>
+				<div class="col-xs-4">
+					<div class="text-right">
+						<em><small>{{date | date:'yyyy-MM-dd'}}</small></em><br> <small><strong>Order
+								Number:</strong> 223121321</small>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-5">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4>Bill To</h4>
+				</div>
+				<div class="panel-body">
+					<p>
+					<address>
+						<strong>Mr. Jason Dailey</strong><br> 70 Cliff Avenue<br>
+						New London CT 06320
+					</address>
+					</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-5 col-xs-offset-2">
+			<div class="panel panel-info">
+				<div class="panel-heading">
+					<h4>Ship To</h4>
+				</div>
+				<div class="panel-body">
+					<p>
+					<address>
+						<strong>Mr. Jason Dailey</strong><br> 70 Cliff Avenue<br>
+						New London CT 06320
+					</address>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+	<hr>
+
+	<table
+		class="table table-hover table-condensed table-bordered table-striped">
+		<thead>
+			<tr>
+				<th class="text-center">No</th>
+				<th class="text-center">Item Code</th>
+				<th class="text-center">Description</th>
+				<th class="text-center">Unit Price</th>
+				<th class="text-center">Quantity</th>
+				<th class="text-center">Discount</th>
+				<th class="text-center">Amount</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>1</td>
+				<td>ABC-124322</td>
+				<td>Travel Tickets</td>
+				<td class="text-center">$200.00</td>
+				<td class="text-center">1</td>
+				<td class="text-center">0</td>
+				<td class="text-center">$200.00</td>
+			</tr>
+			<tr>
+				<td>2</td>
+				<td>ABC-124324</td>
+				<td>Visa Processing Charges</td>
+				<td class="text-center">$250.00</td>
+				<td class="text-center">1</td>
+				<td class="text-center">0</td>
+				<td class="text-center">$250.00</td>
+			</tr>
+			<tr>
+				<td>3</td>
+				<td>HOTL-3222</td>
+				<td>Grand Hotel Booking 3 nights / 2 days</td>
+				<td class="text-center">$500.00</td>
+				<td class="text-center">1</td>
+				<td class="text-center">0</td>
+				<td class="text-center">$500.00</td>
+			</tr>
+
+		</tbody>
+	</table>
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="panel panel-info">
+				<div class="panel-body">
+					<p>Deliver Note goes here !!</p>
+				</div>
+			</div>
+		</div>
+		<div class="col-xs-2 col-xs-offset-2 text-right">
+			<p>
+				<strong> Sub Total : <br> TAX : <br> Total : <br>
+				</strong>
+			</p>
+		</div>
+		<div class="col-xs-2">
+			<strong> $950.00 <br> $50.00 <br> $1000.00 <br>
+			</strong>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col">
+			<div class="panel panel-info">
+				<div class="panel-body">
+					<p>
+					<address>
+						<strong>Payment Terms:</strong><br><em>Payment should be made within 30 days by cheque or money transfer</em>
+					</address>
+					</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

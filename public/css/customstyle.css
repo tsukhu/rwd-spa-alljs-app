@@ -25,6 +25,10 @@
     .page-header h1 {
     	font-size: 24px;
     }
+    
+    h1 {
+    	font-size: 24px;
+    }
 }
  
 @media all and (max-width: 959px) and (min-width: 600px) {
@@ -44,6 +48,10 @@
     	font-size: 20px;
     }
     .page-header h1 {
+    	font-size: 20px;
+    }
+    
+    h1 {
     	font-size: 20px;
     }
 }
@@ -66,6 +74,10 @@
     	font-size: 16px;
     }
     .page-header h1 {
+    	font-size: 16px;
+    }
+    
+    h1 {
     	font-size: 16px;
     }
 }

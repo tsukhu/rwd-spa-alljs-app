@@ -28,7 +28,7 @@ module so that there is a consistent way of maintaining the configuration.
 * Added ESAPI support for the login and sign-up forms using module `node-esapi` and jquery-encoder for security handing for AngularJS controllers (used in poll question creation).
 * Added a dashboard view using HTML5/responsive canvasJS charts and created an angular JS directive `angular-canvasjs` for rendering it. It really looks [good](https://github.com/tsukhu/rwd-spa-alljs-app/blob/master/screenshots/travelDashboard.PNG) !!
 * The travel destinations `Places->All Destinations` page now has support for google maps using [Google Maps AngularJS Directive](https://github.com/allenhwkim/angularjs-google-maps) and [ngDialog for Modal and popups in AngularJS](https://github.com/likeastore/ngDialog) .. see [screenshot](https://github.com/tsukhu/rwd-spa-alljs-app/blob/master/screenshots/Destination_Maps_using_ngMap_ngDialog.PNG)
-
+* Explored the Bootstrap Printer Friendly media queries and components and created a demo invoice format using `Bootstrap 3, grid layout , panels, tables` etc. This uses the `page-header` class for the invoice header and also tried out the `hidden-print` class to show the `alert message` only in the webview. see [web view]((https://github.com/tsukhu/rwd-spa-alljs-app/blob/master/screenshots/Invoice_webPage.PNG) and [print view]((https://github.com/tsukhu/rwd-spa-alljs-app/blob/master/screenshots/Invoice_printPage.PNG)  
 
 
 Tools Used
@@ -102,4 +102,5 @@ Added so far
 * Changed the landing page Carousel to use the angular JS directives for `caurosel` and `slide`
 * Added Media Queries for responsive text (Shrinking based on resolution) and Button Sizes based on Bootstrap responsive utilities of `visible-$`, `hidden-$`, `btn-xs`, `btn-sm` etc
 * CanvasJS based dashboard created which is responsive. I required to build a directive `angular-canvasjs` for the same. Screenshot added for the same.
+* Printer Friendly Travel Invoice Format.
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.

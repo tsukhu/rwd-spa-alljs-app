@@ -452,6 +452,12 @@ app.controller('CarouselDemoCtrl', ['$scope',
 ]);
 
 
+app.controller('InvoiceController', ['i18n', '$scope',
+    function(i18n, $scope) {
+        $scope.date = new Date();
+    }
+]);
+
 // This controller for the menu actions which checked if the getClass is true
 // to initiate the route
 app.controller('DashController', ['i18n', '$scope',
