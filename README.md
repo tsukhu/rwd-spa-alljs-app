@@ -67,10 +67,16 @@ Installation
 * Run `npm install -g grunt-cli` to install grunt command line interface globally
 * Start the node server
 * `node app.js`
-* Browse the application on any device using http://localhost:3000/
+* Browse the application on any device using `http://localhost:3000/`
 * Or you could use the npm commands
 * Run Server `npm start`
 * Run Tests `npm test`
+
+
+Live Demo
+---------
+
+* See this site in action [on the OpenShift Cloud](http://myspa-tksukhu.rhcloud.com/)
 
 Added so far
 ------------
@@ -104,3 +110,7 @@ Added so far
 * CanvasJS based dashboard created which is responsive. I required to build a directive `angular-canvasjs` for the same. Screenshot added for the same.
 * Printer Friendly Travel Invoice Format.
 * Work in Progress ... Please read the [project wiki](https://github.com/tsukhu/rwd-spa-alljs-app/wiki) or take a look at the [issue tracker](https://github.com/tsukhu/rwd-spa-alljs-app/issues?state=open) for the future roadmap.
+
+License
+-------
+MIT
