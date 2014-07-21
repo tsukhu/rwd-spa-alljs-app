@@ -16,7 +16,9 @@
  */
  module.exports = {
      travelapp: {
-         dbName: "destinationsdb",
+         dbUser: "spa",
+         dbPwd: "password",
+         dbName: "myspa",
          dbHost: "localhost",
          port: 3000,
          dbPort: 27017,
@@ -26,7 +28,6 @@
          viewDir: '/views',
          publicFolder: 'public',
          logMode: 'dev', //  'default', 'short', 'tiny', 'dev' 
-         userDbUrl: 'mongodb://localhost:27017/userDb',
-         pollDbUrl: 'mongodb://localhost:27017/pollsDb'
+         dbUrl: 'mongodb://localhost:27017/myspa'
      }
  };

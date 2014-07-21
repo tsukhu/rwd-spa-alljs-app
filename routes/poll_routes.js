@@ -7,13 +7,10 @@ var mongoose = require('mongoose');
 // Setup Database config for mongoose
 var configDB = require('../config/userDb.js');
 
-var db = mongoose.createConnection('localhost', 'pollsapp'); // connect to
+var db = mongoose.createConnection(configDB.dbHost, configDB.dbName, configDB.dbPort, configDB.options); // connect to
 // polls app DB
 
-// mongoose.connect(configDB.pollsUrl); // connect to our database
-// var db = mongoose.connection;
-
-var PollSchema = require('../models/Poll.js').PollSchema; // load schema
+var PollSchema = require('../models/poll.js').PollSchema; // load schema
 var Poll = db.model('polls', PollSchema); // Load data model for schema
 
 var nullVotes = [];

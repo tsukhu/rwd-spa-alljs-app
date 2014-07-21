@@ -28,7 +28,7 @@
     "body-parser": "~1.0.0",
     "morgan": "~1.0.0",
     "method-override" : "~1.0.0",
-    "errorhandler" : "~1.0.0",
+    "errorhandler" : "*",
     "socket.io": "~0.9.16",
     "socket.io-client": "~0.9.16",
     "i18n": "*",

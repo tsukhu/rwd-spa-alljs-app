@@ -25,7 +25,7 @@ var bodyParser = require('body-parser');
 var methodOverride = require('method-override');
 
 //Development error handler
-var errorHandler = require('errorHandler');
+var errorHandler = require('errorhandler');
 
 // mongodb OM
 var mongoose = require('mongoose');
@@ -47,7 +47,7 @@ var session = require('express-session');
 var MongoStore = require('connect-mongo')(session);
 
 // configuration ===============================================================
-mongoose.connect(configDB.url); // connect to our database
+
 
 var app = express();
 
@@ -93,41 +93,42 @@ if ('development' === app.get('env')) {
     app.use(allowCrossDomain);
 }
 
-var sessionStore = new MongoStore({
-        url: configDB.url,
-        maxAge: CONFIG.cookie_max_age,
-        clear_interval: 3600,
-        auto_reconnect: true
-    },
-    function(e) { //wait for the connection to occur before allowing your application to start listening
-        // required for passport
-        app.use(session({
-            secret: CONFIG.secret, // session secret
-            store: new MongoStore({
-                url: configDB.url,
-                maxAge: CONFIG.cookie_max_age
-            }),
-            cookie: {
-                maxAge: CONFIG.cookie_max_age
-                // one week
-            }
-        }));
+mongoose.connect(configDB.dbUrl, configDB.options, function(e) {
 
-        app.use(passport.initialize());
-        app.use(passport.session()); // persistent login sessions
-        app.use(flash()); // use connect-flash for flash messages stored in session
-
-        require('./routes/routes.js')(app, passport); // load our routes and pass in
-        // our app and fully configured
-        // passport
-
-        var poll_routes = require('./routes/poll_routes');
-
-        // listen on connection event using callback method of vote
-        io.sockets.on('connection', poll_routes.vote);
-
-        server.listen(app.get('port'), function() {
-            console.log('Express server listening on port ' + app.get('port'));
-        });
+    // If error connecting
+    if (e) {
+        throw e;
     }
-);
+    // required for passport
+    app.use(session({
+        secret: CONFIG.secret, // session secret
+        store: new MongoStore({
+            url: configDB.dbUrl,
+            maxAge: CONFIG.cookie_max_age,
+            clear_interval: 3600,
+            auto_reconnect: true
+        }),
+        cookie: {
+            maxAge: CONFIG.cookie_max_age
+            // one week
+        }
+    }));
+
+    app.use(passport.initialize());
+    app.use(passport.session()); // persistent login sessions
+    app.use(flash()); // use connect-flash for flash messages stored in session
+
+    require('./routes/routes.js')(app, passport); // load our routes and pass in
+    // our app and fully configured
+    // passport
+
+    var poll_routes = require('./routes/poll_routes');
+
+    // listen on connection event using callback method of vote
+    io.sockets.on('connection', poll_routes.vote);
+
+    server.listen(app.get('port'), function() {
+        console.log('Express server listening on port ' + app.get('port'));
+    });
+
+}); // connect to our database
