@@ -46,6 +46,8 @@ var session = require('express-session');
 
 var MongoStore = require('connect-mongo')(session);
 
+// Openshift Mongo DB env variable check
+var connection = process.env.OPENSHIFT_MONGODB_DB_URL || CONFIG.dbUrl;
 // configuration ===============================================================
 
 
@@ -64,8 +66,12 @@ var allowCrossDomain = function(req, res, next) {
 
 require('./config/passport')(passport); // pass passport for configuration
 
+var port = process.env.OPENSHIFT_NODEJS_PORT || CONFIG.port,
+    ip = process.env.OPENSHIFT_NODEJS_IP || CONFIG.appHost;
+
 // all environments
-app.set('port', process.env.PORT || CONFIG.port);
+app.set('port', port);
+app.set('ipaddress', ip);
 app.set('views', __dirname + CONFIG.viewDir);
 app.set('view engine', 'jade');
 app.use(favicon(__dirname + '/public/img/favicon.ico'));
@@ -127,8 +133,8 @@ mongoose.connect(configDB.dbUrl, configDB.options, function(e) {
     // listen on connection event using callback method of vote
     io.sockets.on('connection', poll_routes.vote);
 
-    server.listen(app.get('port'), function() {
-        console.log('Express server listening on port ' + app.get('port'));
+    server.listen(port, ip, function() {
+        console.log('Express server listening on port ' + port + " ip:" + ip);
     });
 
 }); // connect to our database

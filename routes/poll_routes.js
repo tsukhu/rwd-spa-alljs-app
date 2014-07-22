@@ -7,7 +7,7 @@ var mongoose = require('mongoose');
 // Setup Database config for mongoose
 var configDB = require('../config/userDb.js');
 
-var db = mongoose.createConnection(configDB.dbHost, configDB.dbName, configDB.dbPort, configDB.options); // connect to
+var db = mongoose.createConnection(configDB.dbUrl, configDB.options); // connect to
 // polls app DB
 
 var PollSchema = require('../models/poll.js').PollSchema; // load schema

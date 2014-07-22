@@ -54,5 +54,6 @@
 	    "readable-stream" : "*",
 	    "qs" : "*",
 	    "cookiejar": "*"
-	  }
+	  },
+	"main": "app.js"
 }

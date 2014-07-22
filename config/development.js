@@ -20,6 +20,7 @@
          dbPwd: "password",
          dbName: "myspa",
          dbHost: "localhost",
+         appHost: "localhost",
          port: 3000,
          dbPort: 27017,
          auto_reconnect: true,
