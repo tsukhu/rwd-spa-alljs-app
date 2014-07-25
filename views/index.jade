@@ -44,6 +44,8 @@ block content
 						a(href="#/dash")= __('Travel Dashboard')
 					li(data-ng-class="{'active':getClass('/invoice')}")
 						a(href="#/invoice")= __('Travel Invoice')
+					li(data-ng-class="{'active':getClass('/catalog')}")
+						a(href="#/catalog")= __('Travel Catalog')
 					if (_user)
 						li.dropdown
 							a.dropdown-toggle(data-toggle="dropdown") #{_user.local.email}
@@ -123,4 +125,6 @@ block content
 	script(src="/js/ngDialog.min.js")
 	script(src="http://maps.google.com/maps/api/js?sensor=false")
 	script(src="/js/ng-map.js")
+	script(src="/travelapp/services/catalogFilterService.js")
+	script(src="/travelapp/services/catalogService.js")
 	

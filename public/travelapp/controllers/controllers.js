@@ -669,3 +669,23 @@ app.controller('DashController', ['i18n', '$scope',
         ];
     }
 ]);
+
+
+/* Controllers */
+
+function PackageListController($scope, Packages) {
+  $scope.packages = Packages.query();
+  $scope.orderProp = 'age';
+}
+
+
+
+function PackageDetailsController($scope, $routeParams, Packages) {
+  $scope.package = Packages.get({catalogId: $routeParams.catalogId}, function(package) {
+    $scope.mainImageUrl = package.images[0];
+  });
+
+  $scope.setImage = function(imageUrl) {
+    $scope.mainImageUrl = imageUrl;
+  };
+}

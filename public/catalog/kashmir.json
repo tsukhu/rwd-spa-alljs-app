@@ -1,0 +1,16 @@
+{
+    "package": "Tour of Kashmir", 
+    "days": {
+        "days": "6", 
+        "nights": "5"
+    },
+    "description": "Kashmir situated to the northwestern part of India; dazzles with deep valleys, snow-clad mountains and shimmering lakes. Termed as paradise on earth, Kashmir which captivates the tourists with lovely Dal Lake and beautiful temples makes Kashmir Tours Packages a must for all those who love to enjoy natural beauty. Shopping for woolen clothes, hand-made shawls and Kashmiri style ornaments can be exciting and fascinating for the tourists", 
+    "details": ["Day 1 - Arrive in Srinagar","Day 2 - Srinagar - Sonamarg - Srinagar","Day 3 - Srinagar Pahalgam","Day 4 - Pahalgam Srinagar","Day 5 - Srinagar Gulmarg Srinagar","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/kashmir-01.jpg", 
+        "pics/kashmir-02.jpg", 
+		"pics/kashmir-03.jpg",
+		"pics/kashmir-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

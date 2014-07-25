@@ -1,0 +1,16 @@
+{
+    "package": "Himachal Package: Kullu, Manali, Manikaran, Rohtangpass & Shimla", 
+    "days": {
+        "days": "6", 
+        "nights": "5"
+    },
+    "description": "Blessed with some of the most spectacular and beautiful landscapes anywhere, it is a travellers paradise -lofty snow peaks, deep gorges, lush green valleys, fast flowing rivers, enchanting mountain lakes, flower bedecked meadows, beautiful temples and monasteries steeped in time. May it be for relaxing, sightseeing, Trekking, Mountaineering, Fishing, Para-Gliding, Skiing, Ice Skating and Golf, Himachal has it all", 
+    "details": ["Welcome drink on arrival","Accommodation in a Standard Air-Conditioned room","Transfers from railway station/airport to hotel","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/himachal-01.jpg", 
+        "pics/himachal-02.jpg", 
+		"pics/himachal-03.jpg",
+		"pics/himachal-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

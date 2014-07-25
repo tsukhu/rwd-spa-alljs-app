@@ -1,0 +1,16 @@
+{
+    "package": "Tour of TamilNadu", 
+    "days": {
+        "days": "8", 
+        "nights": "7"
+    },
+    "description": "Leaves Chennai on every Saturday at 7.00 a.m and returns on the following Saturday by 6.00 p.m  ", 
+    "details": ["Pondicherry","Pitchavaram","Chidambaram","Vaitheeswaran Koli","Nagore","Velankanni","Madurai"],
+    "images": [
+        "pics/tamilnadu-01.jpg", 
+        "pics/tamilnadu-02.jpg", 
+		"pics/tamilnadu-03.jpg",
+		"pics/tamilnadu-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

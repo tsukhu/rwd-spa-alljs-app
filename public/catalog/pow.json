@@ -1,0 +1,16 @@
+{
+    "package": "Palace on Wheels", 
+    "days": {
+        "days": "3", 
+        "nights": "2"
+    },
+    "description": "Explore, Enjoy & Cherish - Rajasthan, the land of Rajputana Charm, Valour & Romance, with The Palace on Wheels. While experiencing the luxuries enjoyed by the Maharajas of yore do not forget to unfold the hidden mystical charm of Rajasthan. You can ask us for various programmes that would help you do so.", 
+    "details": ["Welcome drink on arrival","Accommodation in a Standard Air-Conditioned room","Transfers from railway station/airport to hotel","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/pow-01.jpg", 
+        "pics/pow-02.jpg", 
+		"pics/pow-03.jpg",
+		"pics/pow-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

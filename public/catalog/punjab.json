@@ -1,0 +1,16 @@
+{
+    "package": "Tour of Punjab", 
+    "days": {
+        "days": "6", 
+        "nights": "7"
+    },
+    "description": "Visit the richness in art & spirituality, Go for Heritage Tour of Punjab.", 
+    "details": ["Welcome drink on arrival","Accommodation in a Standard Air-Conditioned room","Transfers from railway station/airport to hotel","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/punjab-01.jpg", 
+        "pics/punjab-02.jpg", 
+		"pics/punjab-03.jpg",
+		"pics/punjab-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

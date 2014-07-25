@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2">
+      <!--Sidebar content-->
+
+      Search: <input ng-model="query">
+      Sort by:
+      <select ng-model="orderProp">
+        <option value="name">Alphabetical</option>
+        <option value="age">Newest</option>
+      </select>
+
+    </div>
+    <div class="span10">
+      <!--Body content-->
+
+      <ul class="packages">
+        <li ng-repeat="package in packages | filter:query | orderBy:orderProp" class="thumbnail">
+          <a href="#/catalog/{{package.id}}" class="thumb"><img ng-src="{{package.imageUrl}}"></a>
+          <a href="#/catalog/{{package.id}}">{{package.name}}</a>
+          <p>{{package.snippet}}</p>
+        </li>
+      </ul>
+
+    </div>
+  </div>
+</div>

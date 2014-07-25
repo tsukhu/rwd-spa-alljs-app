@@ -1,0 +1,16 @@
+{
+    "package": "Tour of Sikkim", 
+    "days": {
+        "days": "3", 
+        "nights": "2"
+    },
+    "description": "Darjeeling known for its breathtaking scenic beauty, tranquil surroundings and abundant fauna and flora attracts tourists from all over the country and abroad. The glorious sunrise touching the majestic peaks of Kanchenjunga creates a spectacular view. Steeped in Buddhist culture this amazing hill town is home to famous Buddhist monasteries and beautiful Japanese Pagoda;. a symbol of profound peace. ", 
+    "details": ["Day 1- Siliguri/Bagdogra to Darjeeling","Day 2 - Darjeeling Sightseeing","Day 3 - Darjeeling - Gangtok - Kalimpong","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/sikkim-01.jpg", 
+        "pics/sikkim-02.jpg", 
+		"pics/sikkim-03.jpg",
+		"pics/sikkim-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

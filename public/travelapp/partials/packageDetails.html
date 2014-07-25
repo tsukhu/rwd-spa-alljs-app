@@ -1,0 +1,34 @@
+<img ng-src="{{mainImageUrl}}" class="package">
+
+<h1>{{package.name}}</h1>
+
+<p>{{package.description}}</p>
+
+<ul class="package-thumbs">
+  <li ng-repeat="img in package.images">
+    <img ng-src="{{img}}" ng-click="setImage(img)">
+  </li>
+</ul>
+
+<ul class="specs">
+  <li>
+    <span>Package Details</span>
+    <dl>
+      <dt>Days</dt>
+      <dd>{{package.days.days}}</dd>
+      <dt>Nights</dt>
+      <dd>{{package.days.nights}}</dd>
+      <dt>Price</dt>
+      <dd>{{package.price}}</dd>
+    </dl>
+  </li>
+  <li>
+    <span>Inclusions</span>
+    <dl>
+      <dt>Description</dt>
+      <dt>{{package.description}}</dt>
+      <dt>Inclusions</dt>
+      <dd ng-repeat="detail in package.details">{{detail}}</dd>
+    </dl>
+  </li>
+</ul>

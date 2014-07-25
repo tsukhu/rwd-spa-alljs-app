@@ -1,0 +1,16 @@
+{
+    "package": "Tour of Uttaranchal", 
+    "days": {
+        "days": "7", 
+        "nights": "6"
+    },
+    "description": "Uttaranchal now Uttarakhand became the 27th state of the Republic of India in November 2000. Carved out of the state of Uttar Pradesh, Uttaranchal mainly comprises the hilly regions of Uttar Pradesh. The state borders Himachal Pradesh in the north-west and Uttar Pradesh in the South, and has international borders with Nepal and China.", 
+    "details": ["Day 1: Rishikesh - Gaurikund ","Day 2: 14 km trek to Kedarnath ","Day 3: Trek back to Gaurikund","Day 4: 9 km trek to Gaundhar, overnight in camp. ","Day 5: 10km trek to Madmaheshwar (3289 m.), overnight in camp. ","Day 6: trek back to Gaunduhar with packed lunch, overnight in camp. ","Day 7: 12 km trek to Jagasu + 16 km drive to Ukhimath, overnight in Hotel. "],
+    "images": [
+        "pics/uttaranchal-01.jpg", 
+        "pics/uttaranchal-02.jpg", 
+		"pics/uttaranchal-03.jpg",
+		"pics/uttaranchal-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

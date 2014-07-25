@@ -1,0 +1,16 @@
+{
+    "package": "Ayurvedic Tourism", 
+    "days": {
+        "days": "8", 
+        "nights": "7"
+    },
+    "description": "Kerala is world-renowned for being the best destination for Ayurvedic treatments and therapies. If you are looking forward to have some relaxing time away from the hustle-bustle of the daily city life then opt for Kovalam Ayurveda tour of 8 nights and 9 days.", 
+    "details": ["A consultation from the expert Ayurvedic physicians","Relaxing Yoga and Meditation sessions","Rejuvenating Ayurvedic massages","A boat cruise on the Thiruvallam backwaters"],
+    "images": [
+        "pics/ayurveda-01.jpg", 
+        "pics/ayurveda-02.jpg", 
+		"pics/ayurveda-03.jpg",
+		"pics/ayurveda-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

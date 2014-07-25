@@ -1,0 +1,16 @@
+{
+    "package": "Tour of Kerala", 
+    "days": {
+        "days": "3", 
+        "nights": "2"
+    },
+    "description": "3 Days and 2 Nights - Cochin and Munnar", 
+    "details": ["Drive to Munnar which will take almost 4 hours travel. Check into hotel on arrival and spend the day at leisure. Overnight stay is arranged in Munnar.","Accommodation in a Standard Air-Conditioned room","Transfers from railway station/airport to hotel","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/kerala-01.jpg", 
+        "pics/kerala-02.jpg", 
+		"pics/kerala-03.jpg",
+		"pics/kerala-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

@@ -1,7 +1,7 @@
 ﻿/// <reference path="../Scripts/angular-1.1.4.js" />
 
 var app = angular.module('travelApp', [ 'ngRoute', 'ngCookies', 'ngResource',
-		'travelApp.directives.localWeather' ,'travelApp.directives.switch','travelApp.directives.equalHeight','travelApp.directives.canvasjs','googlechart' , 'i18n','angularSmoothscroll','ui.bootstrap','travelapp.config','ngDialog','ngMap']);
+		'travelApp.directives.localWeather' ,'travelApp.directives.switch','travelApp.directives.equalHeight','travelApp.directives.canvasjs','googlechart' , 'i18n','angularSmoothscroll','ui.bootstrap','travelapp.config','ngDialog','ngMap','catalogService','catalogFilters']);
 
 app.factory('Poll', function($resource) {
 	return $resource('polls/:pollId', {pollId: "@pollId" }, 
@@ -85,6 +85,12 @@ app.config(function($routeProvider) {
 	}).when('/invoice', {
 		templateUrl : 'travelapp/partials/invoice.html',
 		controller : 'InvoiceController'
+	}).when('/catalog', {
+		templateUrl : 'travelapp/partials/packageList.html',
+		controller : 'PackageListController'
+	}).when('/catalog/:catalogId', {
+		templateUrl : 'travelapp/partials/packageDetails.html',
+		controller : 'PackageDetailsController'
 	}).otherwise({
 		redirectTo : '/'
 	});

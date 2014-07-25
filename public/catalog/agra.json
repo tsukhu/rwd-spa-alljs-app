@@ -1,0 +1,16 @@
+{
+    "package": "Tour of Agra",
+    "days": {
+        "days": "3", 
+        "nights": "2"
+    },
+    "description": "Agra tour - See the Taj Mahal ..", 
+    "details": ["Welcome drink on arrival","Accommodation in a Standard Air-Conditioned room","Transfers from railway station/airport to hotel","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/agra-01.jpg", 
+        "pics/agra-02.jpg", 
+		"pics/agra-03.jpg",
+		"pics/agra-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

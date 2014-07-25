@@ -1,0 +1,16 @@
+{
+    "package": "Maharastra Tour Package", 
+    "days": {
+        "days": "3", 
+        "nights": "2"
+    },
+    "description": "Maharashtra is the most visited state by foreign tourists in India and 4th most visited state by domestic tourists in the country in 2010. It is the land of religious faith and spirituality. It is must visit place during vacations or weekend holidays.", 
+    "details": ["Welcome drink on arrival","Accommodation in a Standard Air-Conditioned room","Transfers from railway station/airport to hotel","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/maharashtra-01.jpg", 
+        "pics/maharashtra-02.jpg", 
+		"pics/maharashtra-03.jpg",
+		"pics/maharashtra-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}

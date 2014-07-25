@@ -1,0 +1,16 @@
+{
+    "package": "Tour of Goa", 
+    "days": {
+        "days": "4", 
+        "nights": "3"
+    },
+    "description": "Goa is s ranked the best placed state by the Eleventh Finance Commission for its infrastructure and ranked on top for the best quality of life in India by the National Commission on Population based on the 12 Indicators. Vasco da Gama is the largest city and the historic city of Margao still exhibits the cultural influence of the Portuguese, who first landed in the early 16th century as merchants and conquered it soon thereafter. Goa is a former Portuguese colony existed for about 450 years until it was annexed by India in 1961. Renowned for its beaches, places of worship and world heritage architecture, Goa is visited by large numbers of international tourists every year. Goa has rich flora and fauna, owing to its location on the Western Ghats range, which is classified as a biodiversity hotspot.", 
+    "details": ["Welcome drink on arrival","Accommodation in a Standard Air-Conditioned room","Transfers from railway station/airport to hotel","Daily breakfasts at the hotel","Travel in an air-conditioned car as per the itinerary","Intercity transfers and sightseeing tours as per the itinerary"],
+    "images": [
+        "pics/goa-01.jpg", 
+        "pics/goa-02.jpg", 
+		"pics/goa-03.jpg",
+		"pics/goa-04.jpg"		
+    ],
+	"price" : "Rs 12345.22"
+}
