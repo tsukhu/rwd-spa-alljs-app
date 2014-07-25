@@ -77,7 +77,7 @@ Installation
 Live Demo
 ---------
 
-* See this site in action [on the OpenShift Cloud](http://myspa-tksukhu.rhcloud.com/)
+* See this site in action (v0.6) [on the OpenShift Cloud](http://myspa-tksukhu.rhcloud.com/)
 
 Added so far
 ------------
