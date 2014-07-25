@@ -4,7 +4,7 @@ var app = angular.module('travelApp', [ 'ngRoute', 'ngCookies', 'ngResource',
 		'travelApp.directives.localWeather' ,'travelApp.directives.switch','travelApp.directives.equalHeight','travelApp.directives.canvasjs','googlechart' , 'i18n','angularSmoothscroll','ui.bootstrap','travelapp.config','ngDialog','ngMap','catalogService','catalogFilters']);
 
 app.factory('Poll', function($resource) {
-	return $resource('polls/:pollId', {pollId: "@pollId" }, 
+	return $resource('polls/:pollId', {pollId: "@pollId" },
 	{
 		query : {
 			method : 'GET',
@@ -13,7 +13,7 @@ app.factory('Poll', function($resource) {
 			},
 			isArray : true
 		}
-	})
+	});
 });
 
 app.factory('socket', function($rootScope) {
@@ -35,7 +35,7 @@ app.factory('socket', function($rootScope) {
 						callback.apply(socket, args);
 					}
 				});
-			})
+			});
 		}
 	};
 });

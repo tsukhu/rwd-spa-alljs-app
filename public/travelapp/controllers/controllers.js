@@ -673,14 +673,34 @@ app.controller('DashController', ['i18n', '$scope',
 
 /* Controllers */
 
+
+
+function PadRight(inputStr,pad_char, pad_length) {
+   var result = inputStr;
+   if( (typeof pad_char === 'string') && (pad_char.length === 1) && (pad_length > inputStr.length) )
+   {
+      var padding = new Array(pad_length - inputStr.length + 1).join(pad_char); 
+      result = padding+ result;
+   }
+   return result;
+}
+
 function PackageListController($scope, Packages) {
   $scope.packages = Packages.query();
   $scope.orderProp = 'age';
+  $scope.packages.$promise.then(function(data) {
+         for (var i = 0; i < $scope.packages.length; i++) {
+  	var snippet = $scope.packages[i].snippet;
+  	console.log("before :" + $scope.packages[i].snippet);
+  	$scope.packages[i].snippet = PadRight(snippet," ",500);
+  }
+   });
+   
+
 }
 
-
-
 function PackageDetailsController($scope, $routeParams, Packages) {
+  
   $scope.package = Packages.get({catalogId: $routeParams.catalogId}, function(package) {
     $scope.mainImageUrl = package.images[0];
   });

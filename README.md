@@ -31,7 +31,7 @@ module so that there is a consistent way of maintaining the configuration.
 * Explored the Bootstrap Printer Friendly media queries and components and created a demo invoice format using `Bootstrap 3, grid layout , panels, tables` etc. This uses the `page-header` class for the invoice header and also tried out the `hidden-print` class to show the `alert message` only in the webview. see [web view](https://github.com/tsukhu/rwd-spa-alljs-app/blob/master/screenshots/Invoice_webPage.PNG) and [print view](https://github.com/tsukhu/rwd-spa-alljs-app/blob/master/screenshots/Invoice_printPage.PNG)  
 * Recently cleaned up the code for Mongo DB access. There were multiple different ways to access the db and now has been made consistent across the app using `mongoose`
 * The source code is now made compatible to deploy on OpenShift. It uses the host and mongodb cloud environment variables `OPENSHIFT_MONGODB_DB_URL` `OPENSHIFT_NODEJS_PORT` `OPENSHIFT_NODEJS_IP` if deployed on OpenShift
-* Currently working on adding a product catalog to the project. This is inspired by the wonderful example provided by [michaelben using AngularJS](https://github.com/michaelben/product-catalog-demo)
+* Currently working on adding a product catalog to the project. This is inspired by the wonderful example provided by [michaelben using AngularJS](https://github.com/michaelben/product-catalog-demo), though will have different visualization.
 
 Tools Used
 ----------

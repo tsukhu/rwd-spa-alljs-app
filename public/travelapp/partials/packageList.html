@@ -1,27 +1,36 @@
-<div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2">
-      <!--Sidebar content-->
+<div class="container-fluid"  style="background-image: url(pics/background_travel.png);background-repeat:repeat">
+	<div class="row-fluid">
+		<div class="span2">
+			<!--Sidebar content-->
 
-      Search: <input ng-model="query">
-      Sort by:
-      <select ng-model="orderProp">
-        <option value="name">Alphabetical</option>
-        <option value="age">Newest</option>
-      </select>
+			Search: <input ng-model="query" class="form-control"> <br>
+			Sort by: <select ng-model="orderProp" class="form-control">
+				<option value="name">Alphabetical</option>
+				<option value="age">Newest</option>
+			</select>
 
-    </div>
-    <div class="span10">
-      <!--Body content-->
+		</div>
 
-      <ul class="packages">
-        <li ng-repeat="package in packages | filter:query | orderBy:orderProp" class="thumbnail">
-          <a href="#/catalog/{{package.id}}" class="thumb"><img ng-src="{{package.imageUrl}}"></a>
-          <a href="#/catalog/{{package.id}}">{{package.name}}</a>
-          <p>{{package.snippet}}</p>
-        </li>
-      </ul>
-
-    </div>
-  </div>
+		<div class="span10">
+			<!--Body content-->
+			<br>
+			<div class="row-fluid" >
+				<div
+					ng-repeat="package in packages | filter:query | orderBy:orderProp"
+					class="col-sm-6 col-md-4">
+					<div class="thumbnail">
+						<img ng-src="{{package.imageUrl}}" height="300" width="300">
+						<div class="caption">
+							<h3>{{package.name}}</h3>
+							<p>{{package.snippet}}</p>
+							<p>
+								<a href="#/catalog/{{package.id}}" class="btn btn-primary"
+									role="button">Details</a>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
