@@ -687,14 +687,14 @@ function PadRight(inputStr, pad_char, pad_length) {
 function PackageListController($scope, Packages) {
     $scope.packages = Packages.query();
     $scope.orderProp = 'age';
-    $scope.packages.$promise.then(function(data) {
+ /*   $scope.packages.$promise.then(function(data) {
         for (var i = 0; i < $scope.packages.length; i++) {
             var snippet = $scope.packages[i].snippet;
             console.log("before :" + $scope.packages[i].snippet);
             $scope.packages[i].snippet = new PadRight(snippet, " ", 500);
         }
     });
-
+*/
 
 }
 
