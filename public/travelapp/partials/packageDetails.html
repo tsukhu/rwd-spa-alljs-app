@@ -1,34 +1,70 @@
-<img ng-src="{{mainImageUrl}}" class="package">
+<div class="container-fluid ">
+	<div class="row-fluid">
+		<div class="col-xs-4">
+			<img ng-src="{{mainImageUrl}}" class="thumbnail col-xs-12">
+			<ul class="thumbnail package-thumbs">
+				<li ng-repeat="img in package.images"><img ng-src="{{img}}"
+					ng-click="setImage(img)"></li>
+			</ul>
+		</div>
+		<div class="col-xs-8">
+			<ul class="list-group">
+				<h4 class="list-group-item list-group-item-info">{{package.package}}</h4>
+				<li class="list-group-item"><p class="list-group-item-text">
+						<em>{{package.description}}</em>
+					</p></li>
+				<li class="list-group-item">
+					<h5 class="list-group-item list-group-item-info">Package
+						Details</h5>
+					<table
+						class="table table-bordered table-hover table-condensed table-responsive">
+						<thead>
+							<tr>
+								<th>Days</th>
+								<th>Nights</th>
+								<th>Price</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>{{package.days.days}}</td>
+								<td>{{package.days.nights}}</td>
+								<td>{{package.price}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</li>
+				<li class="list-group-item">
 
-<h1>{{package.name}}</h1>
+					<div class="panel panel-default">
+						<div class="panel-heading">Details</div>
+						<div class="panel-body">
+							<dl>
+								<dt>Description</dt>
+								<dd>
+									<div class="panel panel-default">
+										<div class="panel-body">{{package.description}}</div>
+									</div>
+								</dd>
+								<dt>Inclusions</dt>
+								<ul class="list-group">
+									<dd ng-repeat="detail in package.details">
 
-<p>{{package.description}}</p>
+										<li class="list-group-item">{{detail}}</li>
 
-<ul class="package-thumbs">
-  <li ng-repeat="img in package.images">
-    <img ng-src="{{img}}" ng-click="setImage(img)">
-  </li>
-</ul>
 
-<ul class="specs">
-  <li>
-    <span>Package Details</span>
-    <dl>
-      <dt>Days</dt>
-      <dd>{{package.days.days}}</dd>
-      <dt>Nights</dt>
-      <dd>{{package.days.nights}}</dd>
-      <dt>Price</dt>
-      <dd>{{package.price}}</dd>
-    </dl>
-  </li>
-  <li>
-    <span>Inclusions</span>
-    <dl>
-      <dt>Description</dt>
-      <dt>{{package.description}}</dt>
-      <dt>Inclusions</dt>
-      <dd ng-repeat="detail in package.details">{{detail}}</dd>
-    </dl>
-  </li>
-</ul>
+									</dd>
+								</ul>
+							</dl>
+						</div>
+					</div>
+				</li>
+			</ul>
+
+		</div>
+
+	</div>
+
+
+
+</div>
