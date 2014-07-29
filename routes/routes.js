@@ -26,12 +26,14 @@ i18n.configure({
 // route middleware to make sure a user is logged in
 function isLoggedIn(req, res, next) {
 
-    // if user is authenticated in the session, carry on 
+    // if user is authenticated in the session, carry on
     if (req.isAuthenticated()) {
         return next();
+    } else {
+        res.send(401);
     }
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    //res.redirect('/');
 }
 
 module.exports = function(app, passport) {
@@ -73,7 +75,7 @@ module.exports = function(app, passport) {
     // =====================================
     app.get('/', function(req, res) {
         var locale = req.cookies.locale;
-        // if locale cookie not set 
+        // if locale cookie not set
         // default to en_US
         if (!locale || initializedLocale === false) {
             res.setLocale('en_US');
@@ -89,9 +91,9 @@ module.exports = function(app, passport) {
     });
 
     // =====================================
-    // Poll 
+    // Poll
     // =====================================
-    app.get('/polls', function(req, res) {
+    app.get('/polls', isLoggedIn, function(req, res) {
         res.render('polls', {
             title: 'Polls',
             _user: req.user
@@ -114,10 +116,16 @@ module.exports = function(app, passport) {
     // app.post('/login', do all our passport stuff here);
     app.post('/login', passport.authenticate('local-login', {
         successRedirect: '/', // redirect to the home page
-        failureRedirect: '/login', // redirect back to the signup page if there is an error
+        failureRedirect: '/login', // redirect back to the signup page if there
+        // is an error
         failureFlash: true // allow flash messages
     }));
 
+
+    // route to test if the user is logged in or not
+    app.get('/loggedin', function(req, res) {
+        res.send(req.isAuthenticated() ? req.user : '0');
+    });
 
 
     // =====================================
@@ -137,7 +145,8 @@ module.exports = function(app, passport) {
     // app.post('/signup', do all our passport stuff here);
     app.post('/signup', passport.authenticate('local-signup', {
         successRedirect: '/', // redirect to the home page
-        failureRedirect: '/signup', // redirect back to the signup page if there is an error
+        failureRedirect: '/signup', // redirect back to the signup page if there
+        // is an error
         failureFlash: true // allow flash messages
     }));
 
@@ -147,7 +156,6 @@ module.exports = function(app, passport) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-        //res.send(req.user);
 
         res.render('profile', {
             user: req.user // get the user out of session and pass to template
@@ -175,13 +183,13 @@ module.exports = function(app, passport) {
     app.put('/destinations/:id', destination.updateDestination);
     app.delete('/destinations/:id', destination.deleteDestination);
 
-    app.get('/polls/polls', poll_routes.list);
-    app.get('/polls/:id', poll_routes.poll);
-    app.post('/polls', poll_routes.create);
-    app.post('/vote', poll_routes.vote);
-    app.delete('/polls/:id', poll_routes.remove);
+    app.get('/polls/polls', isLoggedIn, poll_routes.list);
+    app.get('/polls/:id', isLoggedIn, poll_routes.poll);
+    app.post('/polls', isLoggedIn, poll_routes.create);
+    app.post('/vote', isLoggedIn, poll_routes.vote);
+    app.delete('/polls/:id', isLoggedIn, poll_routes.remove);
 
     app.get('/streamMovie/:fileName', video_streamer.streamMovie);
-    //   app.get('/movie.ogg',video_streamer.movieOgg);
-    //   app.get('/movie.webm',video_streamer.movieWebm);
+    // app.get('/movie.ogg',video_streamer.movieOgg);
+    // app.get('/movie.webm',video_streamer.movieWebm);
 };

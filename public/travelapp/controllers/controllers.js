@@ -180,10 +180,20 @@ app.controller('GroupedDestinationsController', ['$scope', '$http',
 
 // This controller for the menu actions which checked if the getClass is true
 // to initiate the route
-app.controller('MenuController', ['i18n', '$scope', '$location',
-    function(i18n, $scope, $location) {
+app.controller('MenuController', ['i18n', '$scope', '$location', '$rootScope',
+    function(i18n, $scope, $location, $rootScope) {
         // Inject the service into the scope, so we can access __() and 'loaded'.
         $scope.i18n = i18n;
+        $scope.isLoggedIn = function() {
+
+            console.log($rootScope.user);
+            if ($rootScope.user === undefined || $rootScope.user === '0') {
+                return false;
+            } else {
+                return true;
+            }
+        };
+
         $scope.isActive = function(viewLocation) {
             var active = (viewLocation === $location.path());
             return active;
@@ -687,7 +697,7 @@ function PadRight(inputStr, pad_char, pad_length) {
 function PackageListController($scope, Packages) {
     $scope.packages = Packages.query();
     $scope.orderProp = 'age';
- /*   $scope.packages.$promise.then(function(data) {
+    /*   $scope.packages.$promise.then(function(data) {
         for (var i = 0; i < $scope.packages.length; i++) {
             var snippet = $scope.packages[i].snippet;
             console.log("before :" + $scope.packages[i].snippet);

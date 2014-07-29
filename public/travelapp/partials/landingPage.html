@@ -5,29 +5,37 @@
 
 	<div class="jumbotron jumbotron-India">
 		<div class="well">
+			<div ng-show="isLoggedIn()">
+				<h2><em>Welcome {{user.local.email}} !</em></h2>
+			</div>
 			<h2>{{'Amazing India SPA'|i18n}}</h2>
-			<p>{{'Amazing India Description'|i18n}}
-			<p>
-				<!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p> -->
-			<p>Login or Register with:</p>
-			
-			<div class="hidden-sm hidden-xs visible-md visible-lg">
-				<a href="/login" class="btn btn-primary"><span class="fa fa-user"></span>
-				Local Login</a> <a href="/signup" class="btn btn-primary"><span
-				class="fa fa-user"></span> Local Signup</a> 
-			</div>	
-			<div class="visible-sm hidden-xs hidden-md hidden-lg">
-				<a href="/login" class="btn btn-sm btn-primary"><span class="fa fa-user"></span>
-				Local Login</a> <a href="/signup" class="btn btn-sm btn-primary"><span
-				class="fa fa-user"></span> Local Signup</a> 
+			<p>{{'Amazing India Description'|i18n}}</p>
+			<!-- <p><a class="btn btn-primary btn-lg" role="button">Learn more</a></p> -->
+			<div ng-show="!isLoggedIn()">
+				<p>{{'Travel Poll Access'|i18n}}<p>
+				<p>Login or Register with:</p>
+				<div class="hidden-sm hidden-xs visible-md visible-lg">
+					<a href="/login" class="btn btn-primary"><span
+						class="fa fa-user"></span> Local Login</a> <a href="/signup"
+						class="btn btn-primary"><span class="fa fa-user"></span> Local
+						Signup</a>
+				</div>
+				<div class="visible-sm hidden-xs hidden-md hidden-lg">
+					<a href="/login" class="btn btn-sm btn-primary"><span
+						class="fa fa-user"></span> Local Login</a> <a href="/signup"
+						class="btn btn-sm btn-primary"><span class="fa fa-user"></span>
+						Local Signup</a>
+				</div>
+
+				<div class="visible-xs hidden-sm hidden-md hidden-lg">
+					<a href="/login" class="btn btn-xs btn-primary"><span
+						class="fa fa-user"></span> Local Login</a> <a href="/signup"
+						class="btn btn-xs btn-primary"><span class="fa fa-user"></span>
+						Local Signup</a>
+				</div>
 			</div>
-			
-			<div class="visible-xs hidden-sm hidden-md hidden-lg">
-				<a href="/login" class="btn btn-xs btn-primary"><span class="fa fa-user"></span>
-				Local Login</a> <a href="/signup" class="btn btn-xs btn-primary"><span
-				class="fa fa-user"></span> Local Signup</a> 
-			</div>
-			<br> 
+
+			<br>
 		</div>
 		<br>
 		<div ng-controller="CarouselDemoCtrl" id="slides_control">
@@ -113,7 +121,8 @@
 								<h3>Twitter Bootstrap</h3>
 								<p>This is a caption for Bootstrap</p>
 								<p>
-									<a class="btn btn-primary btn-lg center-block" role="button">Learn more</a>
+									<a class="btn btn-primary btn-lg center-block" role="button">Learn
+										more</a>
 								</p>
 							</div>
 						</div>
@@ -125,7 +134,8 @@
 								<h3>Node.js</h3>
 								<p>This is a caption for Node.js
 								<p>
-									<a class="btn btn-primary btn-lg center-block" role="button">Learn more</a>
+									<a class="btn btn-primary btn-lg center-block" role="button">Learn
+										more</a>
 								</p>
 							</div>
 						</div>
@@ -138,7 +148,8 @@
 								<h3>AngularJS</h3>
 								<p>This is a caption for AngularJS</p>
 								<p>
-									<a class="btn btn-primary btn-lg center-block" role="button">Learn more</a>
+									<a class="btn btn-primary btn-lg center-block" role="button">Learn
+										more</a>
 								</p>
 							</div>
 						</div>

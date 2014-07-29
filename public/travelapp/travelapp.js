@@ -47,7 +47,8 @@ app.config(function($routeProvider) {
 		controller : 'MenuController',
 		templateUrl : 'travelapp/partials/landingPage.html',
 		resolve  : {
-                           i18n    : [ "i18n", function( i18n ) { return i18n.i18n(); } ]
+                           i18n    : [ "i18n", function( i18n ) { return i18n.i18n(); } ],
+                           loggedin: checkLoggedin
                     }
 	}).when('/placesAll', {
 		controller : 'DestinationsController',
@@ -69,7 +70,10 @@ app.config(function($routeProvider) {
                     }
 	}).when('/polls', {
 		templateUrl : 'travelapp/partials/pollListing.html',
-		controller : 'PollListCtrl'
+		controller : 'PollListCtrl',
+		resolve  : {
+                           loggedin: checkLoggedin
+                    }
 	}).when('/poll/:pollId', {
 		templateUrl : 'travelapp/partials/pollItem.html',
 		controller : 'PollItemCtrl'
@@ -95,3 +99,35 @@ app.config(function($routeProvider) {
 		redirectTo : '/'
 	});
 });
+
+// Interceptor to avoid user from accessing protected pages which 
+// require logging in.
+app.config(function($httpProvider) {
+	$httpProvider.responseInterceptors.push(function($q, $location) {
+    return function(promise) {
+     return promise.then(
+     // Success: just return the response
+     function(response){
+     	return response;
+     },
+     // Error: check the error status to get only the 401
+     function(response) {
+     	if (response.status === 401)
+     		$location.url('/login');
+     	return $q.reject(response);
+     }
+     );
+     };
+	});
+});
+
+var checkLoggedin = function($q, $timeout, $http, $location, $rootScope)
+{
+	// Make an AJAX call to check if the user is logged in
+	var loggedIn = $http.get('/loggedin');
+	$rootScope.user = 0;
+	loggedIn.then(function(dataResponse) {
+        $rootScope.user = dataResponse.data;
+
+	});
+};

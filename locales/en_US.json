@@ -12,12 +12,13 @@
 	"Remember me": "Remember me",
 	"Signup": "Signup",
 	"Amazing India SPA": "Amazing India SPA",
-	"Amazing India Description": "Visit some of the exciting destinations in India. The idea behind this site was to create an end to end java script based SPA.Tools and Frameworks used AngularJS, Bootstrap , Node.js , MongoDB for Persistence , Social Buttons for Twitter Bootstrap, JQuery One Page Navigation Plugin",
+	"Amazing India Description": "Visit some of the exciting destinations in India. The idea behind this site was to create an end to end java script based SPA.Tools and Frameworks used AngularJS, Bootstrap , Node.js , MongoDB for Persistence , Social Buttons for Twitter Bootstrap, JQuery One Page Navigation Plugin.",
 	"Username": "Username",
 	"Travel Destinations": "Travel Destinations",
 	"Travel Destinations by Group": "Travel Destinations by Group",
 	"Travel Page Details": "List of all travel destinations with location information and weather",
 	"Travel Dashboard": "Travel Dashboard",
 	"Travel Invoice": "Travel Invoice",
-	"Travel Catalog": "Travel Catalog"
+	"Travel Catalog": "Travel Catalog",
+	"Travel Poll Access": "Please login to access the travel poll"
 }
